@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6A1DD3272538454C00D54BDF /* color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1DD3262538454B00D54BDF /* color.xcassets */; };
+		97CBF3DFA0FEB62098D7CD7A /* Pods_Digitalent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E132D853F045F6E48FDE9F /* Pods_Digitalent.framework */; };
 		B96D54142538309A0064956F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54132538309A0064956F /* AppDelegate.swift */; };
 		B96D54162538309A0064956F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54152538309A0064956F /* SceneDelegate.swift */; };
 		B96D54182538309A0064956F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54172538309A0064956F /* ViewController.swift */; };
@@ -18,6 +19,9 @@
 		B96D54392538309D0064956F /* DigitalentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54382538309D0064956F /* DigitalentUITests.swift */; };
 		B96D544E253832030064956F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D544C253832030064956F /* HomeViewController.swift */; };
 		B96D544F253832030064956F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96D544D253832030064956F /* HomeViewController.xib */; };
+		B96D546625384E100064956F /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D546525384E100064956F /* HomeTabBarViewController.swift */; };
+		E1580D5BB4B4250767633859 /* Pods_DigitalentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE14E8FC709F09B794F3552 /* Pods_DigitalentTests.framework */; };
+		EEB704D1F303C84716A88C22 /* Pods_Digitalent_DigitalentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E89BA3BE3424B523B38D77 /* Pods_Digitalent_DigitalentUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		074AC4BEAC3406798C132AB1 /* Pods-Digitalent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digitalent.release.xcconfig"; path = "Target Support Files/Pods-Digitalent/Pods-Digitalent.release.xcconfig"; sourceTree = "<group>"; };
+		0EBEEC09247CA98A997D7C7D /* Pods-DigitalentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalentTests.debug.xcconfig"; path = "Target Support Files/Pods-DigitalentTests/Pods-DigitalentTests.debug.xcconfig"; sourceTree = "<group>"; };
+		39809ACBD909C2D51CC00699 /* Pods-DigitalentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalentTests.release.xcconfig"; path = "Target Support Files/Pods-DigitalentTests/Pods-DigitalentTests.release.xcconfig"; sourceTree = "<group>"; };
+		5E3FC2C4F3886A1FF21683D0 /* Pods-Digitalent-DigitalentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digitalent-DigitalentUITests.release.xcconfig"; path = "Target Support Files/Pods-Digitalent-DigitalentUITests/Pods-Digitalent-DigitalentUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6A1DD3262538454B00D54BDF /* color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = color.xcassets; sourceTree = "<group>"; };
+		81E132D853F045F6E48FDE9F /* Pods_Digitalent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digitalent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85CE077D5BEFF13D91362F33 /* Pods-Digitalent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digitalent.debug.xcconfig"; path = "Target Support Files/Pods-Digitalent/Pods-Digitalent.debug.xcconfig"; sourceTree = "<group>"; };
+		8EE14E8FC709F09B794F3552 /* Pods_DigitalentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96D54102538309A0064956F /* Digitalent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digitalent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96D54132538309A0064956F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B96D54152538309A0064956F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +66,9 @@
 		B96D543A2538309D0064956F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B96D544C253832030064956F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B96D544D253832030064956F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		B96D546525384E100064956F /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
+		BC16A3402C35C39AEB428B2D /* Pods-Digitalent-DigitalentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digitalent-DigitalentUITests.debug.xcconfig"; path = "Target Support Files/Pods-Digitalent-DigitalentUITests/Pods-Digitalent-DigitalentUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E2E89BA3BE3424B523B38D77 /* Pods_Digitalent_DigitalentUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digitalent_DigitalentUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97CBF3DFA0FEB62098D7CD7A /* Pods_Digitalent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1580D5BB4B4250767633859 /* Pods_DigitalentTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +92,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEB704D1F303C84716A88C22 /* Pods_Digitalent_DigitalentUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2125EA1F50EF557FD8F92E8F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85CE077D5BEFF13D91362F33 /* Pods-Digitalent.debug.xcconfig */,
+				074AC4BEAC3406798C132AB1 /* Pods-Digitalent.release.xcconfig */,
+				BC16A3402C35C39AEB428B2D /* Pods-Digitalent-DigitalentUITests.debug.xcconfig */,
+				5E3FC2C4F3886A1FF21683D0 /* Pods-Digitalent-DigitalentUITests.release.xcconfig */,
+				0EBEEC09247CA98A997D7C7D /* Pods-DigitalentTests.debug.xcconfig */,
+				39809ACBD909C2D51CC00699 /* Pods-DigitalentTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6117ADA79A3B2BB31830F379 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81E132D853F045F6E48FDE9F /* Pods_Digitalent.framework */,
+				E2E89BA3BE3424B523B38D77 /* Pods_Digitalent_DigitalentUITests.framework */,
+				8EE14E8FC709F09B794F3552 /* Pods_DigitalentTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B96D54072538309A0064956F = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +130,8 @@
 				B96D542C2538309D0064956F /* DigitalentTests */,
 				B96D54372538309D0064956F /* DigitalentUITests */,
 				B96D54112538309A0064956F /* Products */,
+				2125EA1F50EF557FD8F92E8F /* Pods */,
+				6117ADA79A3B2BB31830F379 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +148,7 @@
 		B96D54122538309A0064956F /* Digitalent */ = {
 			isa = PBXGroup;
 			children = (
+				B96D546425384DE10064956F /* Home */,
 				B96D54132538309A0064956F /* AppDelegate.swift */,
 				B96D54152538309A0064956F /* SceneDelegate.swift */,
 				B96D54172538309A0064956F /* ViewController.swift */,
@@ -113,8 +156,6 @@
 				B96D54212538309C0064956F /* LaunchScreen.storyboard */,
 				B96D54242538309C0064956F /* Info.plist */,
 				B96D541C2538309A0064956F /* Digitalent.xcdatamodeld */,
-				B96D544C253832030064956F /* HomeViewController.swift */,
-				B96D544D253832030064956F /* HomeViewController.xib */,
 			);
 			path = Digitalent;
 			sourceTree = "<group>";
@@ -137,6 +178,16 @@
 			path = DigitalentUITests;
 			sourceTree = "<group>";
 		};
+		B96D546425384DE10064956F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B96D544C253832030064956F /* HomeViewController.swift */,
+				B96D544D253832030064956F /* HomeViewController.xib */,
+				B96D546525384E100064956F /* HomeTabBarViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B96D543D2538309D0064956F /* Build configuration list for PBXNativeTarget "Digitalent" */;
 			buildPhases = (
+				0E561F564C9331ABB0E8FF0B /* [CP] Check Pods Manifest.lock */,
 				B96D540C2538309A0064956F /* Sources */,
 				B96D540D2538309A0064956F /* Frameworks */,
 				B96D540E2538309A0064956F /* Resources */,
+				2591DBC2EE329812F8DA06A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B96D54402538309D0064956F /* Build configuration list for PBXNativeTarget "DigitalentTests" */;
 			buildPhases = (
+				E3D6EA73C0E5C534FD72CA79 /* [CP] Check Pods Manifest.lock */,
 				B96D54252538309D0064956F /* Sources */,
 				B96D54262538309D0064956F /* Frameworks */,
 				B96D54272538309D0064956F /* Resources */,
@@ -179,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B96D54432538309D0064956F /* Build configuration list for PBXNativeTarget "DigitalentUITests" */;
 			buildPhases = (
+				8BB078A3202AE95D40A2A79B /* [CP] Check Pods Manifest.lock */,
 				B96D54302538309D0064956F /* Sources */,
 				B96D54312538309D0064956F /* Frameworks */,
 				B96D54322538309D0064956F /* Resources */,
+				91E9F01048EA74758EF97D2B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -263,6 +319,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E561F564C9331ABB0E8FF0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Digitalent-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2591DBC2EE329812F8DA06A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Digitalent/Pods-Digitalent-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Digitalent/Pods-Digitalent-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Digitalent/Pods-Digitalent-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BB078A3202AE95D40A2A79B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Digitalent-DigitalentUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91E9F01048EA74758EF97D2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Digitalent-DigitalentUITests/Pods-Digitalent-DigitalentUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Digitalent-DigitalentUITests/Pods-Digitalent-DigitalentUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Digitalent-DigitalentUITests/Pods-Digitalent-DigitalentUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3D6EA73C0E5C534FD72CA79 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DigitalentTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B96D540C2538309A0064956F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -271,6 +430,7 @@
 				B96D544E253832030064956F /* HomeViewController.swift in Sources */,
 				B96D541E2538309A0064956F /* Digitalent.xcdatamodeld in Sources */,
 				B96D54182538309A0064956F /* ViewController.swift in Sources */,
+				B96D546625384E100064956F /* HomeTabBarViewController.swift in Sources */,
 				B96D54142538309A0064956F /* AppDelegate.swift in Sources */,
 				B96D54162538309A0064956F /* SceneDelegate.swift in Sources */,
 			);
@@ -437,6 +597,7 @@
 		};
 		B96D543E2538309D0064956F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85CE077D5BEFF13D91362F33 /* Pods-Digitalent.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -456,6 +617,7 @@
 		};
 		B96D543F2538309D0064956F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 074AC4BEAC3406798C132AB1 /* Pods-Digitalent.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -475,6 +637,7 @@
 		};
 		B96D54412538309D0064956F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EBEEC09247CA98A997D7C7D /* Pods-DigitalentTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -497,6 +660,7 @@
 		};
 		B96D54422538309D0064956F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39809ACBD909C2D51CC00699 /* Pods-DigitalentTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -519,6 +683,7 @@
 		};
 		B96D54442538309D0064956F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC16A3402C35C39AEB428B2D /* Pods-Digitalent-DigitalentUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -539,6 +704,7 @@
 		};
 		B96D54452538309D0064956F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E3FC2C4F3886A1FF21683D0 /* Pods-Digitalent-DigitalentUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
