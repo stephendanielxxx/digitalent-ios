@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B96D54142538309A0064956F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54132538309A0064956F /* AppDelegate.swift */; };
+		B96D54162538309A0064956F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54152538309A0064956F /* SceneDelegate.swift */; };
+		B96D54182538309A0064956F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54172538309A0064956F /* ViewController.swift */; };
+		B96D541B2538309A0064956F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96D54192538309A0064956F /* Main.storyboard */; };
+		B96D541E2538309A0064956F /* Digitalent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B96D541C2538309A0064956F /* Digitalent.xcdatamodeld */; };
+		B96D54202538309C0064956F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96D541F2538309C0064956F /* Assets.xcassets */; };
+		B96D54232538309C0064956F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96D54212538309C0064956F /* LaunchScreen.storyboard */; };
+		B96D542E2538309D0064956F /* DigitalentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D542D2538309D0064956F /* DigitalentTests.swift */; };
+		B96D54392538309D0064956F /* DigitalentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54382538309D0064956F /* DigitalentUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B96D542A2538309D0064956F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B96D54082538309A0064956F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B96D540F2538309A0064956F;
+			remoteInfo = Digitalent;
+		};
+		B96D54352538309D0064956F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B96D54082538309A0064956F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B96D540F2538309A0064956F;
+			remoteInfo = Digitalent;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B96D54102538309A0064956F /* Digitalent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digitalent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B96D54132538309A0064956F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B96D54152538309A0064956F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B96D54172538309A0064956F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B96D541A2538309A0064956F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B96D541D2538309A0064956F /* Digitalent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Digitalent.xcdatamodel; sourceTree = "<group>"; };
+		B96D541F2538309C0064956F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B96D54222538309C0064956F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B96D54242538309C0064956F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B96D54292538309D0064956F /* DigitalentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigitalentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B96D542D2538309D0064956F /* DigitalentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalentTests.swift; sourceTree = "<group>"; };
+		B96D542F2538309D0064956F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B96D54342538309D0064956F /* DigitalentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigitalentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B96D54382538309D0064956F /* DigitalentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalentUITests.swift; sourceTree = "<group>"; };
+		B96D543A2538309D0064956F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B96D540D2538309A0064956F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B96D54262538309D0064956F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B96D54312538309D0064956F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B96D54072538309A0064956F = {
+			isa = PBXGroup;
+			children = (
+				B96D54122538309A0064956F /* Digitalent */,
+				B96D542C2538309D0064956F /* DigitalentTests */,
+				B96D54372538309D0064956F /* DigitalentUITests */,
+				B96D54112538309A0064956F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B96D54112538309A0064956F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B96D54102538309A0064956F /* Digitalent.app */,
+				B96D54292538309D0064956F /* DigitalentTests.xctest */,
+				B96D54342538309D0064956F /* DigitalentUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B96D54122538309A0064956F /* Digitalent */ = {
+			isa = PBXGroup;
+			children = (
+				B96D54132538309A0064956F /* AppDelegate.swift */,
+				B96D54152538309A0064956F /* SceneDelegate.swift */,
+				B96D54172538309A0064956F /* ViewController.swift */,
+				B96D54192538309A0064956F /* Main.storyboard */,
+				B96D541F2538309C0064956F /* Assets.xcassets */,
+				B96D54212538309C0064956F /* LaunchScreen.storyboard */,
+				B96D54242538309C0064956F /* Info.plist */,
+				B96D541C2538309A0064956F /* Digitalent.xcdatamodeld */,
+			);
+			path = Digitalent;
+			sourceTree = "<group>";
+		};
+		B96D542C2538309D0064956F /* DigitalentTests */ = {
+			isa = PBXGroup;
+			children = (
+				B96D542D2538309D0064956F /* DigitalentTests.swift */,
+				B96D542F2538309D0064956F /* Info.plist */,
+			);
+			path = DigitalentTests;
+			sourceTree = "<group>";
+		};
+		B96D54372538309D0064956F /* DigitalentUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B96D54382538309D0064956F /* DigitalentUITests.swift */,
+				B96D543A2538309D0064956F /* Info.plist */,
+			);
+			path = DigitalentUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B96D540F2538309A0064956F /* Digitalent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B96D543D2538309D0064956F /* Build configuration list for PBXNativeTarget "Digitalent" */;
+			buildPhases = (
+				B96D540C2538309A0064956F /* Sources */,
+				B96D540D2538309A0064956F /* Frameworks */,
+				B96D540E2538309A0064956F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Digitalent;
+			productName = Digitalent;
+			productReference = B96D54102538309A0064956F /* Digitalent.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B96D54282538309D0064956F /* DigitalentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B96D54402538309D0064956F /* Build configuration list for PBXNativeTarget "DigitalentTests" */;
+			buildPhases = (
+				B96D54252538309D0064956F /* Sources */,
+				B96D54262538309D0064956F /* Frameworks */,
+				B96D54272538309D0064956F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B96D542B2538309D0064956F /* PBXTargetDependency */,
+			);
+			name = DigitalentTests;
+			productName = DigitalentTests;
+			productReference = B96D54292538309D0064956F /* DigitalentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B96D54332538309D0064956F /* DigitalentUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B96D54432538309D0064956F /* Build configuration list for PBXNativeTarget "DigitalentUITests" */;
+			buildPhases = (
+				B96D54302538309D0064956F /* Sources */,
+				B96D54312538309D0064956F /* Frameworks */,
+				B96D54322538309D0064956F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B96D54362538309D0064956F /* PBXTargetDependency */,
+			);
+			name = DigitalentUITests;
+			productName = DigitalentUITests;
+			productReference = B96D54342538309D0064956F /* DigitalentUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B96D54082538309A0064956F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					B96D540F2538309A0064956F = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					B96D54282538309D0064956F = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = B96D540F2538309A0064956F;
+					};
+					B96D54332538309D0064956F = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = B96D540F2538309A0064956F;
+					};
+				};
+			};
+			buildConfigurationList = B96D540B2538309A0064956F /* Build configuration list for PBXProject "Digitalent" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B96D54072538309A0064956F;
+			productRefGroup = B96D54112538309A0064956F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B96D540F2538309A0064956F /* Digitalent */,
+				B96D54282538309D0064956F /* DigitalentTests */,
+				B96D54332538309D0064956F /* DigitalentUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B96D540E2538309A0064956F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B96D54232538309C0064956F /* LaunchScreen.storyboard in Resources */,
+				B96D54202538309C0064956F /* Assets.xcassets in Resources */,
+				B96D541B2538309A0064956F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B96D54272538309D0064956F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B96D54322538309D0064956F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B96D540C2538309A0064956F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B96D541E2538309A0064956F /* Digitalent.xcdatamodeld in Sources */,
+				B96D54182538309A0064956F /* ViewController.swift in Sources */,
+				B96D54142538309A0064956F /* AppDelegate.swift in Sources */,
+				B96D54162538309A0064956F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B96D54252538309D0064956F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B96D542E2538309D0064956F /* DigitalentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B96D54302538309D0064956F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B96D54392538309D0064956F /* DigitalentUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B96D542B2538309D0064956F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B96D540F2538309A0064956F /* Digitalent */;
+			targetProxy = B96D542A2538309D0064956F /* PBXContainerItemProxy */;
+		};
+		B96D54362538309D0064956F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B96D540F2538309A0064956F /* Digitalent */;
+			targetProxy = B96D54352538309D0064956F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B96D54192538309A0064956F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B96D541A2538309A0064956F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B96D54212538309C0064956F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B96D54222538309C0064956F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B96D543B2538309D0064956F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B96D543C2538309D0064956F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B96D543E2538309D0064956F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SVJWF75PJ;
+				INFOPLIST_FILE = Digitalent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = digimaster.Digitalent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B96D543F2538309D0064956F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SVJWF75PJ;
+				INFOPLIST_FILE = Digitalent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = digimaster.Digitalent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B96D54412538309D0064956F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SVJWF75PJ;
+				INFOPLIST_FILE = DigitalentTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = digimaster.DigitalentTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Digitalent.app/Digitalent";
+			};
+			name = Debug;
+		};
+		B96D54422538309D0064956F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SVJWF75PJ;
+				INFOPLIST_FILE = DigitalentTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = digimaster.DigitalentTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Digitalent.app/Digitalent";
+			};
+			name = Release;
+		};
+		B96D54442538309D0064956F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SVJWF75PJ;
+				INFOPLIST_FILE = DigitalentUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = digimaster.DigitalentUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Digitalent;
+			};
+			name = Debug;
+		};
+		B96D54452538309D0064956F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4SVJWF75PJ;
+				INFOPLIST_FILE = DigitalentUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = digimaster.DigitalentUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Digitalent;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B96D540B2538309A0064956F /* Build configuration list for PBXProject "Digitalent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B96D543B2538309D0064956F /* Debug */,
+				B96D543C2538309D0064956F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B96D543D2538309D0064956F /* Build configuration list for PBXNativeTarget "Digitalent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B96D543E2538309D0064956F /* Debug */,
+				B96D543F2538309D0064956F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B96D54402538309D0064956F /* Build configuration list for PBXNativeTarget "DigitalentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B96D54412538309D0064956F /* Debug */,
+				B96D54422538309D0064956F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B96D54432538309D0064956F /* Build configuration list for PBXNativeTarget "DigitalentUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B96D54442538309D0064956F /* Debug */,
+				B96D54452538309D0064956F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B96D541C2538309A0064956F /* Digitalent.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B96D541D2538309A0064956F /* Digitalent.xcdatamodel */,
+			);
+			currentVersion = B96D541D2538309A0064956F /* Digitalent.xcdatamodel */;
+			path = Digitalent.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B96D54082538309A0064956F /* Project object */;
+}
