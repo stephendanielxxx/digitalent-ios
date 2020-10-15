@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A1DD3272538454C00D54BDF /* color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1DD3262538454B00D54BDF /* color.xcassets */; };
 		B96D54142538309A0064956F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54132538309A0064956F /* AppDelegate.swift */; };
 		B96D54162538309A0064956F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54152538309A0064956F /* SceneDelegate.swift */; };
 		B96D54182538309A0064956F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54172538309A0064956F /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A1DD3262538454B00D54BDF /* color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = color.xcassets; sourceTree = "<group>"; };
 		B96D54102538309A0064956F /* Digitalent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digitalent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96D54132538309A0064956F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B96D54152538309A0064956F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		B96D54072538309A0064956F = {
 			isa = PBXGroup;
 			children = (
+				6A1DD3262538454B00D54BDF /* color.xcassets */,
 				B96D54122538309A0064956F /* Digitalent */,
 				B96D542C2538309D0064956F /* DigitalentTests */,
 				B96D54372538309D0064956F /* DigitalentUITests */,
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B96D54232538309C0064956F /* LaunchScreen.storyboard in Resources */,
+				6A1DD3272538454C00D54BDF /* color.xcassets in Resources */,
 				B96D54202538309C0064956F /* Assets.xcassets in Resources */,
 				B96D544F253832030064956F /* HomeViewController.xib in Resources */,
 			);
