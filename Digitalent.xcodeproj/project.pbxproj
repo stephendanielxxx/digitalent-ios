@@ -10,12 +10,13 @@
 		B96D54142538309A0064956F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54132538309A0064956F /* AppDelegate.swift */; };
 		B96D54162538309A0064956F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54152538309A0064956F /* SceneDelegate.swift */; };
 		B96D54182538309A0064956F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54172538309A0064956F /* ViewController.swift */; };
-		B96D541B2538309A0064956F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96D54192538309A0064956F /* Main.storyboard */; };
 		B96D541E2538309A0064956F /* Digitalent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B96D541C2538309A0064956F /* Digitalent.xcdatamodeld */; };
 		B96D54202538309C0064956F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96D541F2538309C0064956F /* Assets.xcassets */; };
 		B96D54232538309C0064956F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96D54212538309C0064956F /* LaunchScreen.storyboard */; };
 		B96D542E2538309D0064956F /* DigitalentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D542D2538309D0064956F /* DigitalentTests.swift */; };
 		B96D54392538309D0064956F /* DigitalentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54382538309D0064956F /* DigitalentUITests.swift */; };
+		B96D544E253832030064956F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D544C253832030064956F /* HomeViewController.swift */; };
+		B96D544F253832030064956F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B96D544D253832030064956F /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,6 @@
 		B96D54132538309A0064956F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B96D54152538309A0064956F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B96D54172538309A0064956F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B96D541A2538309A0064956F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B96D541D2538309A0064956F /* Digitalent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Digitalent.xcdatamodel; sourceTree = "<group>"; };
 		B96D541F2538309C0064956F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B96D54222538309C0064956F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		B96D54342538309D0064956F /* DigitalentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigitalentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96D54382538309D0064956F /* DigitalentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalentUITests.swift; sourceTree = "<group>"; };
 		B96D543A2538309D0064956F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B96D544C253832030064956F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B96D544D253832030064956F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +106,12 @@
 				B96D54132538309A0064956F /* AppDelegate.swift */,
 				B96D54152538309A0064956F /* SceneDelegate.swift */,
 				B96D54172538309A0064956F /* ViewController.swift */,
-				B96D54192538309A0064956F /* Main.storyboard */,
 				B96D541F2538309C0064956F /* Assets.xcassets */,
 				B96D54212538309C0064956F /* LaunchScreen.storyboard */,
 				B96D54242538309C0064956F /* Info.plist */,
 				B96D541C2538309A0064956F /* Digitalent.xcdatamodeld */,
+				B96D544C253832030064956F /* HomeViewController.swift */,
+				B96D544D253832030064956F /* HomeViewController.xib */,
 			);
 			path = Digitalent;
 			sourceTree = "<group>";
@@ -236,7 +239,7 @@
 			files = (
 				B96D54232538309C0064956F /* LaunchScreen.storyboard in Resources */,
 				B96D54202538309C0064956F /* Assets.xcassets in Resources */,
-				B96D541B2538309A0064956F /* Main.storyboard in Resources */,
+				B96D544F253832030064956F /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B96D544E253832030064956F /* HomeViewController.swift in Sources */,
 				B96D541E2538309A0064956F /* Digitalent.xcdatamodeld in Sources */,
 				B96D54182538309A0064956F /* ViewController.swift in Sources */,
 				B96D54142538309A0064956F /* AppDelegate.swift in Sources */,
@@ -300,14 +304,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B96D54192538309A0064956F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B96D541A2538309A0064956F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B96D54212538309C0064956F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
