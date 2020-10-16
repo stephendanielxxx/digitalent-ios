@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bannerIdentifier" id="gTV-IL-0wX" customClass="HomeBannerCollectionViewCell" customModule="Digitalent" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="328" height="194"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="328" height="194"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-NL-5KX">
+                        <rect key="frame" x="0.0" y="44" width="328" height="150"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_banner_dummy" translatesAutoresizingMaskIntoConstraints="NO" id="upz-xP-10n">
+                                <rect key="frame" x="0.0" y="0.0" width="328" height="150"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="upz-xP-10n" secondAttribute="trailing" id="2wB-1m-LWr"/>
+                            <constraint firstAttribute="bottom" secondItem="upz-xP-10n" secondAttribute="bottom" id="Isr-CJ-7mR"/>
+                            <constraint firstItem="upz-xP-10n" firstAttribute="leading" secondItem="ezO-NL-5KX" secondAttribute="leading" id="Ug5-0C-nZX"/>
+                            <constraint firstItem="upz-xP-10n" firstAttribute="top" secondItem="ezO-NL-5KX" secondAttribute="top" id="wcw-V9-dGL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="ezO-NL-5KX" secondAttribute="bottom" id="NGH-cm-LII"/>
+                <constraint firstItem="ezO-NL-5KX" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="O5n-Ft-zxb"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="ezO-NL-5KX" secondAttribute="trailing" id="a7l-IT-KWC"/>
+                <constraint firstItem="ezO-NL-5KX" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="ojt-qR-JZx"/>
+            </constraints>
+            <size key="customSize" width="328" height="174"/>
+            <connections>
+                <outlet property="bannerImage" destination="upz-xP-10n" id="0Js-4m-YL3"/>
+            </connections>
+            <point key="canvasLocation" x="181.15942028985509" y="145.3125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_banner_dummy" width="316" height="117"/>
+    </resources>
+</document>

@@ -22,6 +22,7 @@ target 'Digitalent' do
   pod 'CodableFirebase'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'IQKeyboardManagerSwift'
+  pod 'UPCarouselFlowLayout'
   # Pods for Digitalent
 
   target 'DigitalentTests' do
