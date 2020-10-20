@@ -18,11 +18,14 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var collectionHeight: NSLayoutConstraint!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var onlineClassViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var greetingLabel: UILabel!
     
     @IBOutlet weak var imageBanner: ImageSlideshow!
     
     var bannerModel: BannerModel!
     var onlineClassModel: OnlineClassModel!
+    var homeProfileModel: HomeProfileModel!
+    
     var cellMarginSize = 16.0
     var estimatedWidth = 200.0
     var itemCount = 0
@@ -46,10 +49,11 @@ class HomeViewController: BaseViewController {
         getRequest(url: "home/get_home_banner", tag: "get banner")
         
         getRequest(url: "home/get_online_course", tag: "get online class")
-        //        let parameters: [String:Any] = [
-        //            "uid": "5853"
-        //        ]
-        //        postRequest(url: "api/verify_progress", parameters: parameters, tag: "post verify")
+        
+        let parameters: [String:Any] = [
+            "id": "5853"
+        ]
+        postRequest(url: "api/apiprofil", parameters: parameters, tag: "post profile")
         
         setupGridView()
         
@@ -90,11 +94,22 @@ class HomeViewController: BaseViewController {
                 itemCount = self.onlineClassModel.online.count
                 
                 let sisaBawah = CGFloat(Double(((itemCount / 2))) * cellMarginSize)
-            
+                
                 let height = CGFloat(itemCount * Int(200) / 2) + sisaBawah + CGFloat(cellMarginSize * 2)
                 self.onlineClassViewHeight.constant = height
                 
                 self.onlineClassView.reloadData()
+            }catch{
+                print(error.localizedDescription)
+            }
+        }else if tag == "post profile"{
+            do{
+                self.homeProfileModel = try decoder.decode(HomeProfileModel.self, from:data)
+                
+                let firstName = self.homeProfileModel.profil[0].firstName
+                let lastName = self.homeProfileModel.profil[0].lastName
+                
+                greetingLabel.text = "Hello \(firstName) \(lastName)"
             }catch{
                 print(error.localizedDescription)
             }
@@ -116,7 +131,7 @@ class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == bannerCollectionView {
             return bannerModel?.banner.count ?? 0
@@ -176,18 +191,18 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             //        let size: CGSize = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
             return CGSize(width: collectionView.frame.width - 20, height: 150)
         }else{
-//            let width = (Int(UIScreen.main.bounds.size.width) - (numberOfItemsInRow - 1) * minimumSpacing - edgeInsetPadding) / numberOfItemsInRow
-//            return CGSize(width: width, height: width)
+            //            let width = (Int(UIScreen.main.bounds.size.width) - (numberOfItemsInRow - 1) * minimumSpacing - edgeInsetPadding) / numberOfItemsInRow
+            //            return CGSize(width: width, height: width)
             
             let width = self.calculateWidth()
             return CGSize(width: width, height: 200)
         }
         
     }
-        
+    
     func calculateWidth() -> CGFloat{
         let estimateWidth = CGFloat(estimatedWidth)
-//        let cellCount = floor(CGFloat(self.view.frame.size.width) / estimateWidth)
+        //        let cellCount = floor(CGFloat(self.view.frame.size.width) / estimateWidth)
         let cellCount = CGFloat(2)
         let margin = CGFloat(cellMarginSize * 2)
         let width = (self.view.frame.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
@@ -195,18 +210,18 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return width
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        let inset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-//        edgeInsetPadding = Int(inset.left+inset.right)
-//        return inset
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return CGFloat(minimumSpacing)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return CGFloat(minimumSpacing)
-//    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    //        let inset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    //        edgeInsetPadding = Int(inset.left+inset.right)
+    //        return inset
+    //    }
+    //
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    //        return CGFloat(minimumSpacing)
+    //    }
+    //
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    //        return CGFloat(minimumSpacing)
+    //    }
 }
 

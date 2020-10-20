@@ -10,6 +10,7 @@
 		6A1DD3272538454C00D54BDF /* color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1DD3262538454B00D54BDF /* color.xcassets */; };
 		97CBF3DFA0FEB62098D7CD7A /* Pods_Digitalent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E132D853F045F6E48FDE9F /* Pods_Digitalent.framework */; };
 		B935D5A6253EBD3D004A6957 /* OnlineClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935D5A5253EBD3D004A6957 /* OnlineClassModel.swift */; };
+		B935D5AB253ECC25004A6957 /* HomeProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B935D5AA253ECC25004A6957 /* HomeProfileModel.swift */; };
 		B95DE6A6253D7B6A00FC95E2 /* OnlineClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95DE6A4253D7B6A00FC95E2 /* OnlineClassCollectionViewCell.swift */; };
 		B95DE6A7253D7B6A00FC95E2 /* OnlineClassCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95DE6A5253D7B6A00FC95E2 /* OnlineClassCollectionViewCell.xib */; };
 		B96D54142538309A0064956F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54132538309A0064956F /* AppDelegate.swift */; };
@@ -60,6 +61,7 @@
 		85CE077D5BEFF13D91362F33 /* Pods-Digitalent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digitalent.debug.xcconfig"; path = "Target Support Files/Pods-Digitalent/Pods-Digitalent.debug.xcconfig"; sourceTree = "<group>"; };
 		8EE14E8FC709F09B794F3552 /* Pods_DigitalentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B935D5A5253EBD3D004A6957 /* OnlineClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineClassModel.swift; sourceTree = "<group>"; };
+		B935D5AA253ECC25004A6957 /* HomeProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProfileModel.swift; sourceTree = "<group>"; };
 		B95DE6A4253D7B6A00FC95E2 /* OnlineClassCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineClassCollectionViewCell.swift; sourceTree = "<group>"; };
 		B95DE6A5253D7B6A00FC95E2 /* OnlineClassCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineClassCollectionViewCell.xib; sourceTree = "<group>"; };
 		B96D54102538309A0064956F /* Digitalent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digitalent.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +229,7 @@
 			children = (
 				B98D7A1A25395B5000C24C16 /* BannerModel.swift */,
 				B935D5A5253EBD3D004A6957 /* OnlineClassModel.swift */,
+				B935D5AA253ECC25004A6957 /* HomeProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 			files = (
 				B95DE6A6253D7B6A00FC95E2 /* OnlineClassCollectionViewCell.swift in Sources */,
 				B96D544E253832030064956F /* HomeViewController.swift in Sources */,
+				B935D5AB253ECC25004A6957 /* HomeProfileModel.swift in Sources */,
 				B96D5498253853A10064956F /* ExtensionUtils.swift in Sources */,
 				B96D541E2538309A0064956F /* Digitalent.xcdatamodeld in Sources */,
 				B96D54182538309A0064956F /* ViewController.swift in Sources */,

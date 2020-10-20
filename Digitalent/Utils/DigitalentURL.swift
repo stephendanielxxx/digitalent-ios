@@ -8,7 +8,7 @@
 import Foundation
 
 struct DigitalentURL {
-    static let BASE_URL = "http://54.251.83.205/api_digicoursev2/"
+    static let BASE_URL = "http://54.251.83.205/api_digitalent/"
     static let URL_IMAGE_BANNER = "http://54.251.83.205/admin-master-3/assets.digicourse.id/image/"
     static let URL_IMAGE_CLASS = "http://54.251.83.205/digicourse_v2/assets.digicourse.id/image/"
 }
