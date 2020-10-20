@@ -1,13 +1,14 @@
 //
-//  HomeViewController.swift
+//  LoginViewController.swift
 //  Digitalent
 //
-//  Created by Teke on 15/10/20.
+//  Created by Seraphina Tatiana   on 19/10/20.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

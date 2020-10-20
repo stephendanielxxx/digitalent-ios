@@ -4,7 +4,7 @@
 target 'Digitalent' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Alamofire', '~> 5.2'
+  pod 'Alamofire'
   pod 'PINRemoteImage'
   pod 'MaterialComponents/Cards'
   pod 'MaterialComponents/BottomNavigation'
@@ -13,7 +13,7 @@ target 'Digitalent' do
   pod 'MaterialComponents/Tabs+TabBarView'
   pod 'ExpandableCell'
   pod 'Toast-Swift', '~> 5.0.1'
-  pod 'ASPVideoPlayer'
+  #pod 'ASPVideoPlayer'
   pod 'DropDown'
   pod 'PopupDialog', '~> 1.1'
   pod 'Firebase/Analytics'
