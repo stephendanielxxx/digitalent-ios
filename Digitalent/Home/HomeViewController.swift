@@ -8,34 +8,35 @@
 import UIKit
 import ImageSlideshow
 import PINRemoteImage
-import UPCarouselFlowLayout
 
 class HomeViewController: BaseViewController {
     
     @IBOutlet weak var imageProfile: UIImageView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var bannerCollectionView: UICollectionView!
+    @IBOutlet weak var onlineClassView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var onlineClassView: UITableView!
-    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var collectionHeight: NSLayoutConstraint!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var onlineClassViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var imageBanner: ImageSlideshow!
     
     var bannerModel: BannerModel!
+    var onlineClassModel: OnlineClassModel!
+    var cellMarginSize = 16.0
+    var estimatedWidth = 200.0
+    var itemCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        setupLayout()
-        
         imageProfile.makeRoundedWithBorder()
+        
+        bannerCollectionView.delegate = self
+        bannerCollectionView.dataSource = self
         
         onlineClassView.delegate = self
         onlineClassView.dataSource = self
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
         
         registerNib()
         
@@ -44,20 +45,29 @@ class HomeViewController: BaseViewController {
         
         getRequest(url: "home/get_home_banner", tag: "get banner")
         
+        getRequest(url: "home/get_online_course", tag: "get online class")
         //        let parameters: [String:Any] = [
         //            "uid": "5853"
         //        ]
         //        postRequest(url: "api/verify_progress", parameters: parameters, tag: "post verify")
         
-        let height = CGFloat(Float(20) * Float(125))
-        tableViewHeight.constant = height
+        setupGridView()
         
-        onlineClassView.reloadData()
     }
     
     func registerNib() {
         let nib = UINib(nibName: "HomeBannerCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "bannerIdentifier")
+        bannerCollectionView.register(nib, forCellWithReuseIdentifier: "bannerIdentifier")
+        
+        let nibClass = UINib(nibName: "OnlineClassCollectionViewCell", bundle: nil)
+        onlineClassView.register(nibClass, forCellWithReuseIdentifier: "onlineClassIdentifier")
+    }
+    
+    func setupGridView(){
+        let flow = onlineClassView.collectionViewLayout as! UICollectionViewFlowLayout
+        flow.minimumInteritemSpacing = 8
+        flow.minimumLineSpacing = 16
+        
     }
     
     override func onSuccess(data: Data, tag: String) {
@@ -67,9 +77,24 @@ class HomeViewController: BaseViewController {
                 self.bannerModel = try decoder.decode(BannerModel.self, from:data)
                 pageControl.numberOfPages = self.bannerModel.banner.count
                 pageControl.currentPage = 0
-                collectionHeight.constant = collectionView.contentSize.height
+                collectionHeight.constant = bannerCollectionView.contentSize.height
                 
-                self.collectionView.reloadData()
+                self.bannerCollectionView.reloadData()
+            }catch{
+                print(error.localizedDescription)
+            }
+        }else if tag == "get online class"{
+            do{
+                self.onlineClassModel = try decoder.decode(OnlineClassModel.self, from:data)
+                
+                itemCount = self.onlineClassModel.online.count
+                
+                let sisaBawah = CGFloat(Double(((itemCount / 2))) * cellMarginSize)
+            
+                let height = CGFloat(itemCount * Int(200) / 2) + sisaBawah + CGFloat(cellMarginSize * 2)
+                self.onlineClassViewHeight.constant = height
+                
+                self.onlineClassView.reloadData()
             }catch{
                 print(error.localizedDescription)
             }
@@ -80,11 +105,7 @@ class HomeViewController: BaseViewController {
     
     @objc func refreshData(){
         scrollView.refreshControl?.endRefreshing()
-    }
-    
-    func setupLayout() {
-        let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout
-        layout.spacingMode = UPCarouselFlowLayoutSpacingMode.overlap(visibleOffset: 30)
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -94,48 +115,98 @@ class HomeViewController: BaseViewController {
     
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bannerModel?.banner.count ?? 0
+        if collectionView == bannerCollectionView {
+            return bannerModel?.banner.count ?? 0
+        }else{
+            return itemCount
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bannerIdentifier", for: indexPath) as! HomeBannerCollectionViewCell
+        if collectionView == bannerCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bannerIdentifier", for: indexPath) as! HomeBannerCollectionViewCell
+            
+            let banner: Banner = bannerModel.banner[indexPath.row]
+            
+            cell.bannerImage.pin_updateWithProgress = true
+            cell.bannerImage.layer.cornerRadius = 15
+            cell.bannerImage.contentMode = .scaleToFill
+            cell.bannerImage.clipsToBounds = true
+            
+            let url = Foundation.URL(string: "\(DigitalentURL.URL_IMAGE_BANNER)\(banner.image)")!
+            
+            cell.bannerImage.pin_setImage(from: url)
+            
+            return cell
+        }else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onlineClassIdentifier", for: indexPath) as! OnlineClassCollectionViewCell
+            
+            let onlineClass: OnlineModel = onlineClassModel.online[indexPath.row]
+            
+            cell.onlineClassImage.pin_updateWithProgress = true
+            cell.onlineClassImage.layer.cornerRadius = 15
+            cell.onlineClassImage.contentMode = .scaleToFill
+            cell.onlineClassImage.clipsToBounds = true
+            
+            let url = Foundation.URL(string: "\(DigitalentURL.URL_IMAGE_CLASS)\(onlineClass.image)")!
+            
+            cell.onlineClassImage.pin_setImage(from: url)
+            
+            cell.onlineClassLabel.text = onlineClass.title
+            
+            return cell
+        }
         
-        let banner: Banner = bannerModel.banner[indexPath.row]
-        
-        cell.bannerImage.pin_updateWithProgress = true
-        cell.bannerImage.layer.cornerRadius = 15
-        cell.bannerImage.contentMode = .scaleToFill
-        cell.bannerImage.clipsToBounds = true
-        
-        let url = Foundation.URL(string: "\(DigitalentURL.URL_IMAGE_BANNER)\(banner.image)")!
-        
-        cell.bannerImage.pin_setImage(from: url)
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let cell: HomeBannerCollectionViewCell = Bundle.main.loadNibNamed("HomeBannerCollectionViewCell",
-                                                                                owner: self, options: nil)?.first as? HomeBannerCollectionViewCell else {
-            return CGSize.zero
+        if collectionView == bannerCollectionView {
+            guard let cell: HomeBannerCollectionViewCell = Bundle.main.loadNibNamed("HomeBannerCollectionViewCell",
+                                                                                    owner: self, options: nil)?.first as? HomeBannerCollectionViewCell else {
+                return CGSize.zero
+            }
+            
+            cell.setNeedsLayout()
+            cell.layoutIfNeeded()
+            //        let size: CGSize = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+            return CGSize(width: collectionView.frame.width - 20, height: 150)
+        }else{
+//            let width = (Int(UIScreen.main.bounds.size.width) - (numberOfItemsInRow - 1) * minimumSpacing - edgeInsetPadding) / numberOfItemsInRow
+//            return CGSize(width: width, height: width)
+            
+            let width = self.calculateWidth()
+            return CGSize(width: width, height: 200)
         }
         
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
-//        let size: CGSize = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        return CGSize(width: collectionView.frame.width - 20, height: 150)
+    }
+        
+    func calculateWidth() -> CGFloat{
+        let estimateWidth = CGFloat(estimatedWidth)
+//        let cellCount = floor(CGFloat(self.view.frame.size.width) / estimateWidth)
+        let cellCount = CGFloat(2)
+        let margin = CGFloat(cellMarginSize * 2)
+        let width = (self.view.frame.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
+        
+        return width
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        let inset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+//        edgeInsetPadding = Int(inset.left+inset.right)
+//        return inset
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return CGFloat(minimumSpacing)
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return CGFloat(minimumSpacing)
+//    }
 }
 
