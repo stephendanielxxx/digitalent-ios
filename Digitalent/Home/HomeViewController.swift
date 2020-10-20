@@ -20,14 +20,11 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var onlineClassViewHeight: NSLayoutConstraint!
     @IBOutlet weak var greetingLabel: UILabel!
     
-    @IBOutlet weak var imageBanner: ImageSlideshow!
-    
     var bannerModel: BannerModel!
     var onlineClassModel: OnlineClassModel!
     var homeProfileModel: HomeProfileModel!
     
     var cellMarginSize = 16.0
-    var estimatedWidth = 200.0
     var itemCount = 0
     
     override func viewDidLoad() {
@@ -71,7 +68,6 @@ class HomeViewController: BaseViewController {
         let flow = onlineClassView.collectionViewLayout as! UICollectionViewFlowLayout
         flow.minimumInteritemSpacing = 8
         flow.minimumLineSpacing = 16
-        
     }
     
     override func onSuccess(data: Data, tag: String) {
@@ -128,6 +124,11 @@ class HomeViewController: BaseViewController {
         pageControl.currentPage = Int(scrollPos)
     }
     
+    @IBAction func seeAllClassAction(_ sender: UIButton) {
+        let allClass = AllOnlineClassViewController()
+        allClass.modalPresentationStyle = .fullScreen
+        present(allClass, animated: true, completion: nil)
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -188,12 +189,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
-            //        let size: CGSize = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
             return CGSize(width: collectionView.frame.width - 20, height: 150)
         }else{
-            //            let width = (Int(UIScreen.main.bounds.size.width) - (numberOfItemsInRow - 1) * minimumSpacing - edgeInsetPadding) / numberOfItemsInRow
-            //            return CGSize(width: width, height: width)
-            
             let width = self.calculateWidth()
             return CGSize(width: width, height: 200)
         }
@@ -201,27 +198,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func calculateWidth() -> CGFloat{
-        let estimateWidth = CGFloat(estimatedWidth)
-        //        let cellCount = floor(CGFloat(self.view.frame.size.width) / estimateWidth)
         let cellCount = CGFloat(2)
         let margin = CGFloat(cellMarginSize * 2)
         let width = (self.view.frame.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
         
         return width
     }
-    
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    //        let inset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-    //        edgeInsetPadding = Int(inset.left+inset.right)
-    //        return inset
-    //    }
-    //
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    //        return CGFloat(minimumSpacing)
-    //    }
-    //
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    //        return CGFloat(minimumSpacing)
-    //    }
 }
 

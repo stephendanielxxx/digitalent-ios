@@ -44,6 +44,8 @@
 		B946B217253ED74900D027A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AAB6C253D74D300B9B7D2 /* LoginViewController.swift */; };
 		B946B257253ED81800D027A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54132538309A0064956F /* AppDelegate.swift */; };
 		B946B258253ED81800D027A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54152538309A0064956F /* SceneDelegate.swift */; };
+		B946B266253EE85600D027A3 /* AllOnlineClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B264253EE85600D027A3 /* AllOnlineClassViewController.swift */; };
+		B946B267253EE85600D027A3 /* AllOnlineClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B946B265253EE85600D027A3 /* AllOnlineClassViewController.xib */; };
 		B96D54202538309C0064956F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96D541F2538309C0064956F /* Assets.xcassets */; };
 		B96D54232538309C0064956F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96D54212538309C0064956F /* LaunchScreen.storyboard */; };
 		B96D542E2538309D0064956F /* DigitalentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D542D2538309D0064956F /* DigitalentTests.swift */; };
@@ -88,6 +90,8 @@
 		81E132D853F045F6E48FDE9F /* Pods_Digitalent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digitalent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85CE077D5BEFF13D91362F33 /* Pods-Digitalent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digitalent.debug.xcconfig"; path = "Target Support Files/Pods-Digitalent/Pods-Digitalent.debug.xcconfig"; sourceTree = "<group>"; };
 		8EE14E8FC709F09B794F3552 /* Pods_DigitalentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B946B264253EE85600D027A3 /* AllOnlineClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOnlineClassViewController.swift; sourceTree = "<group>"; };
+		B946B265253EE85600D027A3 /* AllOnlineClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllOnlineClassViewController.xib; sourceTree = "<group>"; };
 		B95DE6A5253D7B6A00FC95E2 /* OnlineClassCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineClassCollectionViewCell.xib; sourceTree = "<group>"; };
 		B96D54102538309A0064956F /* Digitalent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digitalent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96D54132538309A0064956F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -231,6 +235,15 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		B946B263253EE83E00D027A3 /* Online Class */ = {
+			isa = PBXGroup;
+			children = (
+				B946B264253EE85600D027A3 /* AllOnlineClassViewController.swift */,
+				B946B265253EE85600D027A3 /* AllOnlineClassViewController.xib */,
+			);
+			path = "Online Class";
+			sourceTree = "<group>";
+		};
 		B96D54072538309A0064956F = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +271,7 @@
 		B96D54122538309A0064956F /* Digitalent */ = {
 			isa = PBXGroup;
 			children = (
+				B946B263253EE83E00D027A3 /* Online Class */,
 				B9B8EBF8253ED269002A6647 /* Utils */,
 				B9B8EBDF253ED25A002A6647 /* Home */,
 				6A52843E253982E6001D76EB /* forgett */,
@@ -456,6 +470,7 @@
 				6A5AAB6F253D74D300B9B7D2 /* LoginViewController.xib in Resources */,
 				6A94639125393F0F007AA0A1 /* FirstViewController.xib in Resources */,
 				B9B8EBF0253ED25A002A6647 /* HomeBannerCollectionViewCell.xib in Resources */,
+				B946B267253EE85600D027A3 /* AllOnlineClassViewController.xib in Resources */,
 				6A9463A125394043007AA0A1 /* SignUpViewController.xib in Resources */,
 				B96D54232538309C0064956F /* LaunchScreen.storyboard in Resources */,
 				6A52844225398304001D76EB /* ForgetPasswordViewController.xib in Resources */,
@@ -592,6 +607,7 @@
 				B946B257253ED81800D027A3 /* AppDelegate.swift in Sources */,
 				B946B258253ED81800D027A3 /* SceneDelegate.swift in Sources */,
 				B946B204253ED74900D027A3 /* ExtensionUtils.swift in Sources */,
+				B946B266253EE85600D027A3 /* AllOnlineClassViewController.swift in Sources */,
 				B946B205253ED74900D027A3 /* BaseViewController.swift in Sources */,
 				B946B206253ED74900D027A3 /* DigitalentURL.swift in Sources */,
 				B946B207253ED74900D027A3 /* OnlineClassCollectionViewCell.swift in Sources */,

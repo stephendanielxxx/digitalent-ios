@@ -31,7 +31,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDa-bP-bL4" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1HO-s3-f4X" userLabel="Top Background">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -145,12 +145,6 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9O-US-3LU">
-                                    <rect key="frame" x="355" y="449.5" width="47" height="30"/>
-                                    <state key="normal" title="See All">
-                                        <color key="titleColor" name="color_2C64EE"/>
-                                    </state>
-                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckK-ul-YoJ">
                                     <rect key="frame" x="12" y="483" width="390" height="33.5"/>
                                     <attributedString key="attributedText">
@@ -177,22 +171,29 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1YX-EI-czQ" userLabel="See All Button">
-                                    <rect key="frame" x="0.0" y="788" width="414" height="30"/>
+                                    <rect key="frame" x="120" y="788" width="174" height="37"/>
                                     <color key="backgroundColor" name="color_2C64EE"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="DyE-6M-QPA"/>
+                                        <constraint firstAttribute="height" constant="37" id="DyE-6M-QPA"/>
                                     </constraints>
                                     <state key="normal" title="See All">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="18"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="seeAllClassAction:" destination="-1" eventType="touchUpInside" id="PGi-TX-bth"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemGray6Color"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="1HO-s3-f4X" secondAttribute="trailing" id="47o-Og-I0r"/>
                                 <constraint firstItem="1HO-s3-f4X" firstAttribute="leading" secondItem="aDa-bP-bL4" secondAttribute="leading" id="4pw-Qt-1Lr"/>
-                                <constraint firstItem="c9O-US-3LU" firstAttribute="centerY" secondItem="YoW-Qy-dTe" secondAttribute="centerY" id="8WV-Yt-40a"/>
-                                <constraint firstAttribute="trailing" secondItem="1YX-EI-czQ" secondAttribute="trailing" id="8uV-Mc-2Ib"/>
+                                <constraint firstAttribute="trailing" secondItem="1YX-EI-czQ" secondAttribute="trailing" constant="120" id="8uV-Mc-2Ib"/>
                                 <constraint firstItem="AiA-tH-gy1" firstAttribute="leading" secondItem="aDa-bP-bL4" secondAttribute="leading" constant="24" id="Cjr-U5-rDc"/>
                                 <constraint firstItem="XLm-eQ-Vaz" firstAttribute="top" secondItem="AiA-tH-gy1" secondAttribute="bottom" constant="15.5" id="JdM-Cy-X7G"/>
                                 <constraint firstItem="SiG-gM-Tan" firstAttribute="leading" secondItem="aDa-bP-bL4" secondAttribute="leading" constant="12" id="KlX-Uv-Wlf"/>
@@ -202,17 +203,16 @@
                                 <constraint firstAttribute="trailing" secondItem="SiG-gM-Tan" secondAttribute="trailing" constant="12" id="Lep-dA-bf2"/>
                                 <constraint firstItem="YoW-Qy-dTe" firstAttribute="leading" secondItem="aDa-bP-bL4" secondAttribute="leading" constant="12" id="Ogh-LU-g9V"/>
                                 <constraint firstAttribute="trailing" secondItem="AiA-tH-gy1" secondAttribute="trailing" constant="24" id="Tnb-q3-jCu"/>
-                                <constraint firstItem="1YX-EI-czQ" firstAttribute="leading" secondItem="aDa-bP-bL4" secondAttribute="leading" id="UdK-tt-NYu"/>
+                                <constraint firstItem="1YX-EI-czQ" firstAttribute="leading" secondItem="aDa-bP-bL4" secondAttribute="leading" constant="120" id="UdK-tt-NYu"/>
                                 <constraint firstItem="SiG-gM-Tan" firstAttribute="top" secondItem="ckK-ul-YoJ" secondAttribute="bottom" constant="7.5" id="ZPc-1a-et7"/>
                                 <constraint firstItem="YoW-Qy-dTe" firstAttribute="top" secondItem="XLm-eQ-Vaz" secondAttribute="bottom" constant="21" id="ZYh-a9-nCm"/>
                                 <constraint firstItem="1HO-s3-f4X" firstAttribute="top" secondItem="aDa-bP-bL4" secondAttribute="top" id="ZhO-t4-sUW"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="818" id="ZuE-u6-CYh"/>
                                 <constraint firstItem="ckK-ul-YoJ" firstAttribute="top" secondItem="YoW-Qy-dTe" secondAttribute="bottom" constant="8" symbolic="YES" id="c2q-5M-mNK"/>
                                 <constraint firstItem="XLm-eQ-Vaz" firstAttribute="centerX" secondItem="AiA-tH-gy1" secondAttribute="centerX" id="dg6-Af-0uU"/>
-                                <constraint firstAttribute="bottom" secondItem="1YX-EI-czQ" secondAttribute="bottom" id="dzi-a5-jUb"/>
+                                <constraint firstAttribute="bottom" secondItem="1YX-EI-czQ" secondAttribute="bottom" constant="25" id="dzi-a5-jUb"/>
                                 <constraint firstItem="AiA-tH-gy1" firstAttribute="top" secondItem="BBi-jV-fBB" secondAttribute="bottom" constant="14" id="pcF-Ak-D40"/>
                                 <constraint firstItem="1YX-EI-czQ" firstAttribute="top" secondItem="SiG-gM-Tan" secondAttribute="bottom" constant="14" id="wYn-Gp-r8s"/>
-                                <constraint firstAttribute="trailing" secondItem="c9O-US-3LU" secondAttribute="trailing" constant="12" id="zVV-4x-eNy"/>
                             </constraints>
                         </view>
                     </subviews>
