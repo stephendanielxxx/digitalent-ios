@@ -41,7 +41,6 @@ class HomeTabBarViewController: UITabBarController {
         
         viewControllers = [homeViewController, taskViewController, profile]
 
-
     }
 
 }
