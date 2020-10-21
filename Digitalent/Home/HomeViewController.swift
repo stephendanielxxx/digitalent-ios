@@ -129,6 +129,12 @@ class HomeViewController: BaseViewController {
         allClass.modalPresentationStyle = .fullScreen
         present(allClass, animated: true, completion: nil)
     }
+    
+    @IBAction func notifAction(_ sender: UIButton) {
+        let notif = NotificationViewController()
+        notif.modalPresentationStyle = .fullScreen
+        present(notif, animated: true, completion: nil)
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{

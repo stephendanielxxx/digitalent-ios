@@ -46,6 +46,11 @@
 		B946B258253ED81800D027A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54152538309A0064956F /* SceneDelegate.swift */; };
 		B946B266253EE85600D027A3 /* AllOnlineClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B264253EE85600D027A3 /* AllOnlineClassViewController.swift */; };
 		B946B267253EE85600D027A3 /* AllOnlineClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B946B265253EE85600D027A3 /* AllOnlineClassViewController.xib */; };
+		B946B271253EEEC200D027A3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B26F253EEEC200D027A3 /* NotificationViewController.swift */; };
+		B946B272253EEEC200D027A3 /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B946B270253EEEC200D027A3 /* NotificationViewController.xib */; };
+		B946B278253EF01E00D027A3 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B277253EF01E00D027A3 /* NotificationModel.swift */; };
+		B946B281253EF0ED00D027A3 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946B27F253EF0ED00D027A3 /* NotificationTableViewCell.swift */; };
+		B946B282253EF0ED00D027A3 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B946B280253EF0ED00D027A3 /* NotificationTableViewCell.xib */; };
 		B96D54202538309C0064956F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B96D541F2538309C0064956F /* Assets.xcassets */; };
 		B96D54232538309C0064956F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96D54212538309C0064956F /* LaunchScreen.storyboard */; };
 		B96D542E2538309D0064956F /* DigitalentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D542D2538309D0064956F /* DigitalentTests.swift */; };
@@ -92,6 +97,11 @@
 		8EE14E8FC709F09B794F3552 /* Pods_DigitalentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B946B264253EE85600D027A3 /* AllOnlineClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOnlineClassViewController.swift; sourceTree = "<group>"; };
 		B946B265253EE85600D027A3 /* AllOnlineClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllOnlineClassViewController.xib; sourceTree = "<group>"; };
+		B946B26F253EEEC200D027A3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		B946B270253EEEC200D027A3 /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
+		B946B277253EF01E00D027A3 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		B946B27F253EF0ED00D027A3 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		B946B280253EF0ED00D027A3 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		B95DE6A5253D7B6A00FC95E2 /* OnlineClassCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineClassCollectionViewCell.xib; sourceTree = "<group>"; };
 		B96D54102538309A0064956F /* Digitalent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digitalent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96D54132538309A0064956F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +254,26 @@
 			path = "Online Class";
 			sourceTree = "<group>";
 		};
+		B946B26E253EEEA900D027A3 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				B946B276253EF01300D027A3 /* Model */,
+				B946B26F253EEEC200D027A3 /* NotificationViewController.swift */,
+				B946B270253EEEC200D027A3 /* NotificationViewController.xib */,
+				B946B27F253EF0ED00D027A3 /* NotificationTableViewCell.swift */,
+				B946B280253EF0ED00D027A3 /* NotificationTableViewCell.xib */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		B946B276253EF01300D027A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B946B277253EF01E00D027A3 /* NotificationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B96D54072538309A0064956F = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +301,7 @@
 		B96D54122538309A0064956F /* Digitalent */ = {
 			isa = PBXGroup;
 			children = (
+				B946B26E253EEEA900D027A3 /* Notification */,
 				B946B263253EE83E00D027A3 /* Online Class */,
 				B9B8EBF8253ED269002A6647 /* Utils */,
 				B9B8EBDF253ED25A002A6647 /* Home */,
@@ -469,6 +500,7 @@
 				B946B196253ED63000D027A3 /* OnlineClassCollectionViewCell.xib in Resources */,
 				6A5AAB6F253D74D300B9B7D2 /* LoginViewController.xib in Resources */,
 				6A94639125393F0F007AA0A1 /* FirstViewController.xib in Resources */,
+				B946B282253EF0ED00D027A3 /* NotificationTableViewCell.xib in Resources */,
 				B9B8EBF0253ED25A002A6647 /* HomeBannerCollectionViewCell.xib in Resources */,
 				B946B267253EE85600D027A3 /* AllOnlineClassViewController.xib in Resources */,
 				6A9463A125394043007AA0A1 /* SignUpViewController.xib in Resources */,
@@ -477,6 +509,7 @@
 				6A1DD3272538454C00D54BDF /* color.xcassets in Resources */,
 				B96D54202538309C0064956F /* Assets.xcassets in Resources */,
 				B9B8EBEC253ED25A002A6647 /* HomeViewController.xib in Resources */,
+				B946B272253EEEC200D027A3 /* NotificationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,9 +651,12 @@
 				B946B20F253ED74900D027A3 /* HomeProfileModel.swift in Sources */,
 				B946B210253ED74900D027A3 /* HomeTabBarViewController.swift in Sources */,
 				B946B212253ED74900D027A3 /* LoginModel.swift in Sources */,
+				B946B271253EEEC200D027A3 /* NotificationViewController.swift in Sources */,
 				B946B213253ED74900D027A3 /* FirstViewController.swift in Sources */,
+				B946B281253EF0ED00D027A3 /* NotificationTableViewCell.swift in Sources */,
 				B946B215253ED74900D027A3 /* SignUpViewController.swift in Sources */,
 				B946B217253ED74900D027A3 /* LoginViewController.swift in Sources */,
+				B946B278253EF01E00D027A3 /* NotificationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -59,6 +59,9 @@
                                             </constraints>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" image="ic_notif"/>
+                                            <connections>
+                                                <action selector="notifAction:" destination="-1" eventType="touchUpInside" id="zDg-zq-zoy"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What will you learn today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhX-Sy-URZ">
                                             <rect key="frame" x="30" y="144" width="354" height="22"/>
