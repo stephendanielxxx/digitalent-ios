@@ -7,7 +7,7 @@ import Foundation
 
 // MARK: - Welcome
 struct LoginModel: Decodable {
-    let user: [User]
+    let user: [User]?
     let message: String
 }
 

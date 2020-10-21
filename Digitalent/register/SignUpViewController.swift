@@ -11,5 +11,11 @@ class SignUpViewController: UIViewController {
         
     }
 
-
+    @IBAction func signInButton(_ sender: UIButton) {
+        
+            let signin = LoginViewController()
+            signin.modalPresentationStyle = .fullScreen
+            self.present(signin, animated: true, completion: nil)
+    }
+    
 }
