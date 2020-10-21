@@ -13,11 +13,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = HomeTabBarViewController()
-//        window.rootViewController = FirstViewController()
-        window.makeKeyAndVisible()
-        self.window = window
+        if readStringPreference(key: DigitalentKeys.ID).caseInsensitiveCompare("") == .orderedSame{
+            let window = UIWindow(windowScene: windowScene)
+            window.rootViewController = FirstViewController()
+            window.makeKeyAndVisible()
+            self.window = window
+        }else{
+            let window = UIWindow(windowScene: windowScene)
+            window.rootViewController = HomeTabBarViewController()
+            window.makeKeyAndVisible()
+            self.window = window
+        }
+        
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -51,6 +58,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
     
+    func saveStringPreference(value: String, key: String){
+        let preferences = UserDefaults.standard
+        preferences.set(value, forKey: key)
+        preferences.synchronize()
+    }
+    
+    func readStringPreference(key: String) -> String {
+        let preferences = UserDefaults.standard
+        return preferences.string(forKey: key) ?? ""
+    }
     
 }
 
