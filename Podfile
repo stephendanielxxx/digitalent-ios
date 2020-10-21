@@ -23,6 +23,7 @@ target 'Digitalent' do
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'IQKeyboardManagerSwift'
   pod 'AnimatedCollectionViewLayout'
+  pod 'Gemini'
   # Pods for Digitalent
 
   target 'DigitalentTests' do

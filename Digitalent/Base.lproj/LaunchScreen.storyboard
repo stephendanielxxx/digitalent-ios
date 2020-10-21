@@ -25,7 +25,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="color_6771E4"/>
+                        <color key="backgroundColor" name="color_2C64EE"/>
                         <constraints>
                             <constraint firstItem="81g-xf-jaH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NFQ-dx-QdO"/>
                             <constraint firstItem="81g-xf-jaH" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="dDC-RL-n7o"/>
@@ -38,9 +38,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_logo_digitalent" width="215" height="151"/>
-        <namedColor name="color_6771E4">
-            <color red="0.40400001406669617" green="0.44299998879432678" blue="0.89399999380111694" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="ic_logo_digitalent" width="225" height="225"/>
+        <namedColor name="color_2C64EE">
+            <color red="0.17299999296665192" green="0.3919999897480011" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
