@@ -8,11 +8,12 @@
 import UIKit
 import ImageSlideshow
 import PINRemoteImage
+import Gemini
 
 class HomeViewController: BaseViewController, UISearchBarDelegate {
     
     @IBOutlet weak var imageProfile: UIImageView!
-    @IBOutlet weak var bannerCollectionView: UICollectionView!
+    @IBOutlet weak var bannerCollectionView: GeminiCollectionView!
     @IBOutlet weak var onlineClassView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var collectionHeight: NSLayoutConstraint!
@@ -60,6 +61,8 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
         searchClass.clipsToBounds = true
         
         searchClass.delegate = self
+        
+        bannerCollectionView.gemini.scaleAnimation().scale(0.85).scaleEffect(.scaleUp)
         
     }
     
@@ -129,6 +132,8 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollPos = (scrollView.contentOffset.x + 90) / view.frame.width
         pageControl.currentPage = Int(scrollPos)
+        
+        bannerCollectionView.animateVisibleCells()
     }
     
     @IBAction func seeAllClassAction(_ sender: UIButton) {
@@ -156,6 +161,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == bannerCollectionView {
             return bannerModel?.banner.count ?? 0
+            //            return 3
         }else{
             return itemCount
         }
@@ -175,6 +181,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let url = Foundation.URL(string: "\(DigitalentURL.URL_IMAGE_BANNER)\(banner.image)")!
             
             cell.bannerImage.pin_setImage(from: url)
+            self.bannerCollectionView.animateCell(cell)
             
             return cell
         }else{
@@ -198,6 +205,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if collectionView == bannerCollectionView {
+            if let cell = cell as? GeminiCell {
+                self.bannerCollectionView.animateCell(cell)
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -209,7 +224,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
-            return CGSize(width: collectionView.frame.width - 20, height: 150)
+            return CGSize(width: collectionView.frame.width - 40, height: 150)
         }else{
             let width = self.calculateWidth()
             return CGSize(width: width, height: 200)

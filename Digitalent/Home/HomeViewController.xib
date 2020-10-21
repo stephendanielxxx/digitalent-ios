@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Digitalent" customModuleProvider="target">
             <connections>
-                <outlet property="bannerCollectionView" destination="AiA-tH-gy1" id="Zz8-Rk-toS"/>
+                <outlet property="bannerCollectionView" destination="AiA-tH-gy1" id="7pl-sh-ob1"/>
                 <outlet property="collectionHeight" destination="U2D-gg-xcx" id="4h1-Kw-xI8"/>
                 <outlet property="greetingLabel" destination="leT-jA-Wxw" id="TuE-tr-ugI"/>
                 <outlet property="imageProfile" destination="rbj-eF-Sde" id="CSO-bX-gUr"/>
@@ -123,7 +123,7 @@
                                         <constraint firstItem="leT-jA-Wxw" firstAttribute="leading" secondItem="rbj-eF-Sde" secondAttribute="trailing" constant="8" symbolic="YES" id="xnH-V6-Yjo"/>
                                     </constraints>
                                 </view>
-                                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AiA-tH-gy1">
+                                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AiA-tH-gy1" customClass="GeminiCollectionView" customModule="Gemini">
                                     <rect key="frame" x="24" y="197" width="366" height="150"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
