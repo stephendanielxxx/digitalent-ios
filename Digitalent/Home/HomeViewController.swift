@@ -9,7 +9,7 @@ import UIKit
 import ImageSlideshow
 import PINRemoteImage
 
-class HomeViewController: BaseViewController {
+class HomeViewController: BaseViewController, UISearchBarDelegate {
     
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var bannerCollectionView: UICollectionView!
@@ -19,6 +19,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var onlineClassViewHeight: NSLayoutConstraint!
     @IBOutlet weak var greetingLabel: UILabel!
+    @IBOutlet weak var searchClass: UISearchBar!
     
     var bannerModel: BannerModel!
     var onlineClassModel: OnlineClassModel!
@@ -53,6 +54,12 @@ class HomeViewController: BaseViewController {
         postRequest(url: "api/apiprofil", parameters: parameters, tag: "post profile")
         
         setupGridView()
+        
+        searchClass.searchTextField.backgroundColor = .clear
+        searchClass.layer.cornerRadius = 15
+        searchClass.clipsToBounds = true
+        
+        searchClass.delegate = self
         
     }
     
@@ -134,6 +141,13 @@ class HomeViewController: BaseViewController {
         let notif = NotificationViewController()
         notif.modalPresentationStyle = .fullScreen
         present(notif, animated: true, completion: nil)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchResult = SearchResultViewController()
+        searchResult.modalPresentationStyle = .fullScreen
+        searchResult.textSearched = searchBar.text!
+        present(searchResult, animated: true, completion: nil)
     }
 }
 

@@ -57,6 +57,9 @@
 		B96D54392538309D0064956F /* DigitalentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54382538309D0064956F /* DigitalentUITests.swift */; };
 		B9B8EBEC253ED25A002A6647 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B8EBE1253ED25A002A6647 /* HomeViewController.xib */; };
 		B9B8EBF0253ED25A002A6647 /* HomeBannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B8EBE5253ED25A002A6647 /* HomeBannerCollectionViewCell.xib */; };
+		B9BB3279253FE254009186EF /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB3277253FE254009186EF /* SearchResultViewController.swift */; };
+		B9BB327A253FE254009186EF /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BB3278253FE254009186EF /* SearchResultViewController.xib */; };
+		B9BB3283253FE3C9009186EF /* SearchClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB3282253FE3C9009186EF /* SearchClassModel.swift */; };
 		E1580D5BB4B4250767633859 /* Pods_DigitalentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE14E8FC709F09B794F3552 /* Pods_DigitalentTests.framework */; };
 		EEB704D1F303C84716A88C22 /* Pods_Digitalent_DigitalentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E89BA3BE3424B523B38D77 /* Pods_Digitalent_DigitalentUITests.framework */; };
 /* End PBXBuildFile section */
@@ -137,6 +140,9 @@
 		B9B8EBF9253ED269002A6647 /* ExtensionUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUtils.swift; sourceTree = "<group>"; };
 		B9B8EBFA253ED269002A6647 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B9B8EBFB253ED269002A6647 /* DigitalentURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalentURL.swift; sourceTree = "<group>"; };
+		B9BB3277253FE254009186EF /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		B9BB3278253FE254009186EF /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
+		B9BB3282253FE3C9009186EF /* SearchClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClassModel.swift; sourceTree = "<group>"; };
 		BC16A3402C35C39AEB428B2D /* Pods-Digitalent-DigitalentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digitalent-DigitalentUITests.debug.xcconfig"; path = "Target Support Files/Pods-Digitalent-DigitalentUITests/Pods-Digitalent-DigitalentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2E89BA3BE3424B523B38D77 /* Pods_Digitalent_DigitalentUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digitalent_DigitalentUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -248,6 +254,8 @@
 		B946B263253EE83E00D027A3 /* Online Class */ = {
 			isa = PBXGroup;
 			children = (
+				B9BB3281253FE3BD009186EF /* Model */,
+				B9BB3276253FE23E009186EF /* Search */,
 				B946B264253EE85600D027A3 /* AllOnlineClassViewController.swift */,
 				B946B265253EE85600D027A3 /* AllOnlineClassViewController.xib */,
 			);
@@ -369,6 +377,23 @@
 				B9B8EBFB253ED269002A6647 /* DigitalentURL.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B9BB3276253FE23E009186EF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B9BB3277253FE254009186EF /* SearchResultViewController.swift */,
+				B9BB3278253FE254009186EF /* SearchResultViewController.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B9BB3281253FE3BD009186EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B9BB3282253FE3C9009186EF /* SearchClassModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,6 +535,7 @@
 				B96D54202538309C0064956F /* Assets.xcassets in Resources */,
 				B9B8EBEC253ED25A002A6647 /* HomeViewController.xib in Resources */,
 				B946B272253EEEC200D027A3 /* NotificationViewController.xib in Resources */,
+				B9BB327A253FE254009186EF /* SearchResultViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B946B257253ED81800D027A3 /* AppDelegate.swift in Sources */,
+				B9BB3279253FE254009186EF /* SearchResultViewController.swift in Sources */,
 				B946B258253ED81800D027A3 /* SceneDelegate.swift in Sources */,
 				B946B204253ED74900D027A3 /* ExtensionUtils.swift in Sources */,
 				B946B266253EE85600D027A3 /* AllOnlineClassViewController.swift in Sources */,
@@ -648,6 +675,7 @@
 				B946B20B253ED74900D027A3 /* HomeBannerCollectionViewCell.swift in Sources */,
 				B946B20D253ED74900D027A3 /* OnlineClassModel.swift in Sources */,
 				B946B20E253ED74900D027A3 /* BannerModel.swift in Sources */,
+				B9BB3283253FE3C9009186EF /* SearchClassModel.swift in Sources */,
 				B946B20F253ED74900D027A3 /* HomeProfileModel.swift in Sources */,
 				B946B210253ED74900D027A3 /* HomeTabBarViewController.swift in Sources */,
 				B946B212253ED74900D027A3 /* LoginModel.swift in Sources */,
