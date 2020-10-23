@@ -111,7 +111,8 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 
                 itemCount = self.onlineClassModel.online.count
                 
-                let sisaBawah = CGFloat(Double(((itemCount / 2))) * cellMarginSize)
+//                let sisaBawah = CGFloat(Double(((itemCount / 2))) * cellMarginSize * 2)
+                let sisaBawah = CGFloat(200 / 2)
                 
                 let height = CGFloat(itemCount * Int(200) / 2) + sisaBawah + CGFloat(cellMarginSize * 2)
                 self.onlineClassViewHeight.constant = height
@@ -142,8 +143,14 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let scrollPos = (scrollView.contentOffset.x + 90) / view.frame.width
-        pageControl.currentPage = Int(scrollPos)
+        debugPrint(scrollView.contentOffset.x)
+        if scrollView.contentOffset.x == 0 {
+            pageControl.currentPage = 0
+        }else{
+            let scrollPos = (scrollView.contentOffset.x + view.frame.width) / view.frame.width
+            pageControl.currentPage = Int(scrollPos)
+        }
+       
         
         bannerCollectionView.animateVisibleCells()
     }
