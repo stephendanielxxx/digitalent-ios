@@ -36,10 +36,10 @@
                     </items>
                 </navigationBar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8g-8C-gjL">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="biV-z0-amd">
-                            <rect key="frame" x="12" y="28" width="390" height="762"/>
+                            <rect key="frame" x="12" y="28" width="390" height="718"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2hY-4E-MWZ">
                                 <size key="itemSize" width="128" height="128"/>
@@ -62,7 +62,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="0PI-Qe-A0h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0a8-XW-LCS"/>
-                <constraint firstItem="f8g-8C-gjL" firstAttribute="top" secondItem="0PI-Qe-A0h" secondAttribute="bottom" constant="-44" id="IaD-3C-aou"/>
+                <constraint firstItem="f8g-8C-gjL" firstAttribute="top" secondItem="0PI-Qe-A0h" secondAttribute="bottom" id="1Pa-3a-hgd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0PI-Qe-A0h" secondAttribute="trailing" id="XjW-dm-pSH"/>
                 <constraint firstItem="f8g-8C-gjL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="avx-CY-8h0"/>
                 <constraint firstItem="0PI-Qe-A0h" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lFU-9O-skC"/>

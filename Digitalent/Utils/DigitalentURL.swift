@@ -11,4 +11,5 @@ struct DigitalentURL {
     static let BASE_URL = "http://54.251.83.205/api_digitalent/"
     static let URL_IMAGE_BANNER = "http://54.251.83.205/digitalent/assets.digitalent/image/"
     static let URL_IMAGE_CLASS = "http://54.251.83.205/digitalent/assets.digitalent/image/"
+    static let URL_IMAGE_PROFILE = "http://54.251.83.205/digicourse_v2/assets.digicourse.id/user/profile_picture/"
 }

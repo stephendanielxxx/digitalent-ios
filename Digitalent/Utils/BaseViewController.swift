@@ -62,6 +62,7 @@ class BaseViewController: UIViewController {
                    method: .post,
                    parameters: parameters,
                    encoding: URLEncoding.httpBody).responseData { response in
+                    debugPrint(response)
                     switch response.result {
                     case .success(let data):
                         self.onSuccess(data: data, tag: tag)

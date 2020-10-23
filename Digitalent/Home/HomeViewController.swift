@@ -49,8 +49,9 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
         
         getRequest(url: "home/get_online_course", tag: "get online class")
         
+        let userId = readStringPreference(key: DigitalentKeys.ID)
         let parameters: [String:Any] = [
-            "id": "5853"
+            "id": "\(userId)"
         ]
         postRequest(url: "api/apiprofil", parameters: parameters, tag: "post profile")
         
@@ -63,7 +64,18 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
         searchClass.delegate = self
         
         bannerCollectionView.gemini.scaleAnimation().scale(0.85).scaleEffect(.scaleUp)
+     
+        loadImageProfile()
+    }
+    
+    fileprivate func loadImageProfile(){
+        imageProfile.pin_updateWithProgress = true
+        imageProfile.contentMode = .scaleToFill
+        imageProfile.clipsToBounds = true
+        let imageName = readStringPreference(key: DigitalentKeys.USER_PROFILE)
+        let url = Foundation.URL(string: "\(DigitalentURL.URL_IMAGE_PROFILE)\(imageName)")!
         
+        imageProfile.pin_setImage(from: url)
     }
     
     func registerNib() {

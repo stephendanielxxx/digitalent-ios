@@ -20,8 +20,9 @@ class MyClassViewController: BaseViewController {
         let nibClass = UINib(nibName: "MyClassTableViewCell", bundle: nil)
         tableView.register(nibClass, forCellReuseIdentifier: "myClassIdentifier")
         
+        let userId = readStringPreference(key: DigitalentKeys.ID)
         let parameters: [String:Any] = [
-            "uid": "5853"
+            "uid": "\(userId)"
         ]
         postRequest(url: "onsite/ambilPerUser", parameters: parameters, tag: "post my class")
     }
