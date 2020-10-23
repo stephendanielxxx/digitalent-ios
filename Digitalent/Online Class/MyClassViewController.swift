@@ -77,6 +77,8 @@ extension MyClassViewController: UITableViewDelegate, UITableViewDataSource{
             cell.classProgress.setProgress(Float(percentage / 100), animated: true)
         }
         
+        cell.classDeadline.text = "Finished this class before: \(myClass.expiredAt?.parseDateToString ?? "")"
+        
         cell.classItem.text = "Videos \(myClass.videosu!)    |    Quizes \(myClass.videosu!)    |    Pdfs \(myClass.videosu!)"
         
         return cell

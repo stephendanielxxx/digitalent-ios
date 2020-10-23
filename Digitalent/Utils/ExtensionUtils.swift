@@ -57,4 +57,13 @@ extension String {
     var htmlToString: String {
         return htmlToAttributedString?.string ?? ""
     }
+    
+    var parseDateToString: String{
+        let dateFormatter = DateFormatter()
+        let dateResultFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateResultFormatter.dateFormat = "dd-MM-yyyy"
+        let date = dateFormatter.date(from: self)!
+        return dateResultFormatter.string(from: date)
+    }
 }
