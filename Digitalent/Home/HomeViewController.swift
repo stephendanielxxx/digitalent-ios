@@ -143,7 +143,6 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        debugPrint(scrollView.contentOffset.x)
         if scrollView.contentOffset.x == 0 {
             pageControl.currentPage = 0
         }else{

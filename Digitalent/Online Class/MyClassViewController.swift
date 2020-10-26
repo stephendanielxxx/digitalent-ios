@@ -60,26 +60,9 @@ extension MyClassViewController: UITableViewDelegate, UITableViewDataSource{
         
         cell.classImage.pin_setImage(from: url)
         
-        let total = Float(myClass.videosu!)! * 3
-        
-        let totalVideo = Float(myClass.totalVideo!)
-        let totalQuiz = Float(myClass.totalQuiz!)
-        let totalPdf = Float(myClass.totalPDF!)
-        
-        let totalAll = totalVideo! + totalQuiz! + totalPdf!
-        let percent = totalAll * 100
-        if percent == 0 {
-            cell.classProgress.setProgress(Float(totalAll), animated: true)
-            cell.classPercentage.text = "\(Int(totalAll))%"
-        }else{
-            let percentage = percent / total
-            cell.classPercentage.text = "\(Int(percentage))%"
-            cell.classProgress.setProgress(Float(percentage / 100), animated: true)
-        }
-        
         cell.classDeadline.text = "Finished this class before: \(myClass.expiredAt?.parseDateToString ?? "")"
         
-        cell.classItem.text = "Videos \(myClass.videosu!)    |    Quizes \(myClass.videosu!)    |    Pdfs \(myClass.videosu!)"
+        cell.classItem.text = "Videos \(myClass.totalVideo!)    |    Quizes \(myClass.totalQuiz!)    |    Pdfs \(myClass.totalPDF!)"
         
         return cell
     }
