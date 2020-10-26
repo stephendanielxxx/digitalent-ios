@@ -10,6 +10,7 @@ import MaterialComponents.MDCCard
 
 class OnlineClassCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var baseView: MDCCard!
     @IBOutlet weak var onlineClassImage: UIImageView!
     @IBOutlet weak var onlineClassLabel: UILabel!
     @IBOutlet weak var cardView: MDCCard!

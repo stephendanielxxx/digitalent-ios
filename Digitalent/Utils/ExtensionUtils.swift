@@ -47,13 +47,38 @@ extension String {
            """
         guard let data = htmlTemplate.data(using: .utf8) else { return nil }
         do {
-            let font = UIFont.systemFont(ofSize: 100)
-            let attributes = [NSAttributedString.Key.font: font]
-            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue, .defaultAttributes: attributes], documentAttributes: nil)
+            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
         } catch {
             return nil
         }
     }
+    
+    var htmlToAttributedStringWhite: NSAttributedString? {
+        let htmlTemplate = """
+           <!doctype html>
+           <html>
+             <head>
+               <style>
+                 body {
+                   font-family: -apple-system;
+                   font-size: 14px;
+                   color: white;
+                 }
+               </style>
+             </head>
+             <body>
+               \(self)
+             </body>
+           </html>
+           """
+        guard let data = htmlTemplate.data(using: .utf8) else { return nil }
+        do {
+            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            return nil
+        }
+    }
+    
     var htmlToString: String {
         return htmlToAttributedString?.string ?? ""
     }

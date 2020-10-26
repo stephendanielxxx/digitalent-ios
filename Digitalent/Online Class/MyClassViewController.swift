@@ -64,6 +64,29 @@ extension MyClassViewController: UITableViewDelegate, UITableViewDataSource{
         
         cell.classItem.text = "Videos \(myClass.totalVideo!)    |    Quizes \(myClass.totalQuiz!)    |    Pdfs \(myClass.totalPDF!)"
         
+        let tap = ClassDetailTapGesture(target: self, action: #selector(selectCourse(_:)))
+        tap.courseId = myClass.courseID
+        tap.totalVideo = myClass.totalVideo
+        tap.totalQuiz = myClass.totalQuiz
+        tap.totalPdf = myClass.totalPDF
+        cell.baseVIew.addGestureRecognizer(tap)
+        
         return cell
+    }
+    
+    @objc func selectCourse(_ sender: ClassDetailTapGesture?) {
+        let courseId = sender!.courseId!
+        let totalVideo = sender!.totalVideo!
+        let totalQuiz = sender!.totalQuiz!
+        let totalPdf = sender!.totalPdf!
+       
+        let detailClass = OnlineClassDetailViewController()
+        detailClass.courseId = courseId
+        detailClass.totalVideo = totalVideo
+        detailClass.totalQuiz = totalQuiz
+        detailClass.totalPdf = totalPdf
+        detailClass.modalPresentationStyle = .fullScreen
+        present(detailClass, animated: true, completion: nil)
+        
     }
 }

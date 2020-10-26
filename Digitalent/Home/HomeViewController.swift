@@ -218,6 +218,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             cell.onlineClassLabel.text = onlineClass.title
             
+            let tap = ClassDetailTapGesture(target: self, action: #selector(selectCourse(_:)))
+            tap.courseId = onlineClass.id
+            cell.baseView.addGestureRecognizer(tap)
+            
             return cell
         }
         
@@ -256,6 +260,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let width = (self.view.frame.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
         
         return width
+    }
+    
+    @objc func selectCourse(_ sender: ClassDetailTapGesture?) {
+        let courseId = sender!.courseId!
+       
+        let detailClass = OnlineClassDetailViewController()
+        detailClass.courseId = courseId
+        detailClass.modalPresentationStyle = .fullScreen
+        present(detailClass, animated: true, completion: nil)
+        
     }
 }
 
