@@ -10,6 +10,7 @@ import UIKit
 class SearchResultViewController: BaseViewController {
 
     @IBOutlet weak var onlineClassView: UICollectionView!
+    @IBOutlet weak var emptyImage: UIImageView!
     var searchClassModel: SearchClassModel!
     var cellMarginSize = 16.0
     var textSearched = ""
@@ -41,8 +42,15 @@ class SearchResultViewController: BaseViewController {
         do{
             let decoder = JSONDecoder()
             self.searchClassModel = try decoder.decode(SearchClassModel.self, from:data)
+            if self.searchClassModel.data.count > 0 {
+                emptyImage.isHidden = true
+                onlineClassView.isHidden = false
+                self.onlineClassView.reloadData()
+            }else{
+                emptyImage.isHidden = false
+                onlineClassView.isHidden = true
+            }
             
-            self.onlineClassView.reloadData()
         }catch{
             print(error.localizedDescription)
         }

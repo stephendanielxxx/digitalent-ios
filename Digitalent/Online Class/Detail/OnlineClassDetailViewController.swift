@@ -26,6 +26,7 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
     @IBOutlet weak var videoCount: UILabel!
     @IBOutlet weak var quizCount: UILabel!
     @IBOutlet weak var pdfCount: UILabel!
+    @IBOutlet weak var joinClassButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,6 +15,7 @@
                 <outlet property="courseAuthor" destination="VFS-iX-thy" id="WyV-0h-NOW"/>
                 <outlet property="courseDesc" destination="c2J-OF-jxl" id="sxW-2Y-1C7"/>
                 <outlet property="courseTitle" destination="ecI-q2-Aol" id="CHe-Hj-0le"/>
+                <outlet property="joinClassButton" destination="Vkz-CM-Sqj" id="E60-pq-9qe"/>
                 <outlet property="learNow" destination="zbz-ux-kIq" id="ZMh-kb-2Kg"/>
                 <outlet property="pdfCount" destination="YeA-bR-gKu" id="4qR-dm-Ult"/>
                 <outlet property="quizCount" destination="Ase-AP-k5Q" id="fKD-2p-zLX"/>
@@ -264,16 +265,30 @@
                         <constraint firstAttribute="height" constant="50" id="xsD-mq-9oZ"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkz-CM-Sqj" userLabel="Join Button">
+                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <color key="backgroundColor" name="color_589D0B"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Kvf-f5-38U"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="JOIN CLASS">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="xoH-3j-eBn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6vb-Xx-chj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VTK-Cr-9NQ" secondAttribute="trailing" id="DgI-gD-Rjp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Vkz-CM-Sqj" secondAttribute="bottom" id="FdG-nj-OQh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xoH-3j-eBn" secondAttribute="trailing" id="IXe-dN-ZQo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xoH-3j-eBn" secondAttribute="bottom" id="R0o-RC-J7l"/>
                 <constraint firstItem="VTK-Cr-9NQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aQa-v7-dUW"/>
                 <constraint firstItem="VTK-Cr-9NQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="ca8-cG-DKX"/>
+                <constraint firstItem="Vkz-CM-Sqj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hNx-zy-PkH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vkz-CM-Sqj" secondAttribute="trailing" id="uI3-ww-Yn8"/>
                 <constraint firstItem="xoH-3j-eBn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yse-Fz-TQM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
