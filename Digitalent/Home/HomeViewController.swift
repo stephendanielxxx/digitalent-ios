@@ -49,21 +49,33 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
         
         getRequest(url: "home/get_online_course", tag: "get online class")
         
+        let userId = readStringPreference(key: DigitalentKeys.ID)
         let parameters: [String:Any] = [
-            "id": "5853"
+            "id": "\(userId)"
         ]
         postRequest(url: "api/apiprofil", parameters: parameters, tag: "post profile")
         
         setupGridView()
         
         searchClass.searchTextField.backgroundColor = .clear
-        searchClass.layer.cornerRadius = 15
+        searchClass.layer.cornerRadius = 20
         searchClass.clipsToBounds = true
         
         searchClass.delegate = self
         
         bannerCollectionView.gemini.scaleAnimation().scale(0.85).scaleEffect(.scaleUp)
+     
+        loadImageProfile()
+    }
+    
+    fileprivate func loadImageProfile(){
+        imageProfile.pin_updateWithProgress = true
+        imageProfile.contentMode = .scaleToFill
+        imageProfile.clipsToBounds = true
+        let imageName = readStringPreference(key: DigitalentKeys.USER_PROFILE)
+        let url = Foundation.URL(string: "\(DigitalentURL.URL_IMAGE_PROFILE)\(imageName)")!
         
+        imageProfile.pin_setImage(from: url)
     }
     
     func registerNib() {
@@ -99,7 +111,8 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 
                 itemCount = self.onlineClassModel.online.count
                 
-                let sisaBawah = CGFloat(Double(((itemCount / 2))) * cellMarginSize)
+//                let sisaBawah = CGFloat(Double(((itemCount / 2))) * cellMarginSize * 2)
+                let sisaBawah = CGFloat(200 / 2)
                 
                 let height = CGFloat(itemCount * Int(200) / 2) + sisaBawah + CGFloat(cellMarginSize * 2)
                 self.onlineClassViewHeight.constant = height
@@ -115,7 +128,7 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 let firstName = self.homeProfileModel.profil[0].firstName
                 let lastName = self.homeProfileModel.profil[0].lastName
                 
-                greetingLabel.text = "Hello \(firstName) \(lastName)"
+                greetingLabel.text = "Hello \(firstName) \(lastName) !"
             }catch{
                 print(error.localizedDescription)
             }
@@ -130,8 +143,13 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let scrollPos = (scrollView.contentOffset.x + 90) / view.frame.width
-        pageControl.currentPage = Int(scrollPos)
+        if scrollView.contentOffset.x == 0 {
+            pageControl.currentPage = 0
+        }else{
+            let scrollPos = (scrollView.contentOffset.x + view.frame.width) / view.frame.width
+            pageControl.currentPage = Int(scrollPos)
+        }
+       
         
         bannerCollectionView.animateVisibleCells()
     }
@@ -200,6 +218,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             cell.onlineClassLabel.text = onlineClass.title
             
+            let tap = ClassDetailTapGesture(target: self, action: #selector(selectCourse(_:)))
+            tap.courseId = onlineClass.id
+            cell.baseView.addGestureRecognizer(tap)
+            
             return cell
         }
         
@@ -238,6 +260,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let width = (self.view.frame.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
         
         return width
+    }
+    
+    @objc func selectCourse(_ sender: ClassDetailTapGesture?) {
+        let courseId = sender!.courseId!
+       
+        let detailClass = OnlineClassDetailViewController()
+        detailClass.courseId = courseId
+        detailClass.modalPresentationStyle = .fullScreen
+        present(detailClass, animated: true, completion: nil)
+        
     }
 }
 

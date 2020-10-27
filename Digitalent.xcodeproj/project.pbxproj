@@ -56,6 +56,10 @@
 		B96D54232538309C0064956F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B96D54212538309C0064956F /* LaunchScreen.storyboard */; };
 		B96D542E2538309D0064956F /* DigitalentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D542D2538309D0064956F /* DigitalentTests.swift */; };
 		B96D54392538309D0064956F /* DigitalentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54382538309D0064956F /* DigitalentUITests.swift */; };
+		B9AD4D712547CD2D0046BD2D /* ClassBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD4D6F2547CD2D0046BD2D /* ClassBottomSheetViewController.swift */; };
+		B9AD4D722547CD2D0046BD2D /* ClassBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AD4D702547CD2D0046BD2D /* ClassBottomSheetViewController.xib */; };
+		B9AD4DEF2547DC290046BD2D /* JoinClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD4DEE2547DC290046BD2D /* JoinClassModel.swift */; };
+		B9AD4DF4254819BA0046BD2D /* CourseStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD4DF3254819BA0046BD2D /* CourseStatusModel.swift */; };
 		B9B8EBEC253ED25A002A6647 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B8EBE1253ED25A002A6647 /* HomeViewController.xib */; };
 		B9B8EBF0253ED25A002A6647 /* HomeBannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B8EBE5253ED25A002A6647 /* HomeBannerCollectionViewCell.xib */; };
 		B9BB3279253FE254009186EF /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB3277253FE254009186EF /* SearchResultViewController.swift */; };
@@ -66,6 +70,10 @@
 		B9BB32F1253FEFC4009186EF /* MyClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB32EF253FEFC4009186EF /* MyClassTableViewCell.swift */; };
 		B9BB32F2253FEFC4009186EF /* MyClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BB32F0253FEFC4009186EF /* MyClassTableViewCell.xib */; };
 		B9BB32F7253FF0D6009186EF /* MyClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB32F6253FF0D6009186EF /* MyClassModel.swift */; };
+		B9E3672425467E2F0044509D /* OnlineClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3672225467E2F0044509D /* OnlineClassDetailViewController.swift */; };
+		B9E3672525467E2F0044509D /* OnlineClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E3672325467E2F0044509D /* OnlineClassDetailViewController.xib */; };
+		B9E3672D254680B30044509D /* ClassDetailTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3672C254680B30044509D /* ClassDetailTapGesture.swift */; };
+		B9E36732254683DE0044509D /* GetOnlineClassDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E36731254683DE0044509D /* GetOnlineClassDetailModel.swift */; };
 		E1580D5BB4B4250767633859 /* Pods_DigitalentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE14E8FC709F09B794F3552 /* Pods_DigitalentTests.framework */; };
 		EEB704D1F303C84716A88C22 /* Pods_Digitalent_DigitalentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E89BA3BE3424B523B38D77 /* Pods_Digitalent_DigitalentUITests.framework */; };
 /* End PBXBuildFile section */
@@ -134,6 +142,10 @@
 		B98D7A1A25395B5000C24C16 /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
 		B98D7A462539711C00C24C16 /* HomeBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		B98D7A472539711C00C24C16 /* HomeBannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBannerCollectionViewCell.xib; sourceTree = "<group>"; };
+		B9AD4D6F2547CD2D0046BD2D /* ClassBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassBottomSheetViewController.swift; sourceTree = "<group>"; };
+		B9AD4D702547CD2D0046BD2D /* ClassBottomSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassBottomSheetViewController.xib; sourceTree = "<group>"; };
+		B9AD4DEE2547DC290046BD2D /* JoinClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinClassModel.swift; sourceTree = "<group>"; };
+		B9AD4DF3254819BA0046BD2D /* CourseStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseStatusModel.swift; sourceTree = "<group>"; };
 		B9B8EBE0253ED25A002A6647 /* OnlineClassCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnlineClassCollectionViewCell.xib; sourceTree = "<group>"; };
 		B9B8EBE1253ED25A002A6647 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B9B8EBE2253ED25A002A6647 /* HomeBannerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBannerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -155,6 +167,10 @@
 		B9BB32EF253FEFC4009186EF /* MyClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassTableViewCell.swift; sourceTree = "<group>"; };
 		B9BB32F0253FEFC4009186EF /* MyClassTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyClassTableViewCell.xib; sourceTree = "<group>"; };
 		B9BB32F6253FF0D6009186EF /* MyClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassModel.swift; sourceTree = "<group>"; };
+		B9E3672225467E2F0044509D /* OnlineClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineClassDetailViewController.swift; sourceTree = "<group>"; };
+		B9E3672325467E2F0044509D /* OnlineClassDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineClassDetailViewController.xib; sourceTree = "<group>"; };
+		B9E3672C254680B30044509D /* ClassDetailTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailTapGesture.swift; sourceTree = "<group>"; };
+		B9E36731254683DE0044509D /* GetOnlineClassDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOnlineClassDetailModel.swift; sourceTree = "<group>"; };
 		BC16A3402C35C39AEB428B2D /* Pods-Digitalent-DigitalentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digitalent-DigitalentUITests.debug.xcconfig"; path = "Target Support Files/Pods-Digitalent-DigitalentUITests/Pods-Digitalent-DigitalentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2E89BA3BE3424B523B38D77 /* Pods_Digitalent_DigitalentUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digitalent_DigitalentUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -266,6 +282,8 @@
 		B946B263253EE83E00D027A3 /* Online Class */ = {
 			isa = PBXGroup;
 			children = (
+				B9AD4D6B2547C8690046BD2D /* BottomSheet */,
+				B9E3672125467E150044509D /* Detail */,
 				B9BB3281253FE3BD009186EF /* Model */,
 				B9BB3276253FE23E009186EF /* Search */,
 				B946B264253EE85600D027A3 /* AllOnlineClassViewController.swift */,
@@ -360,6 +378,15 @@
 			path = DigitalentUITests;
 			sourceTree = "<group>";
 		};
+		B9AD4D6B2547C8690046BD2D /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				B9AD4D6F2547CD2D0046BD2D /* ClassBottomSheetViewController.swift */,
+				B9AD4D702547CD2D0046BD2D /* ClassBottomSheetViewController.xib */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
 		B9B8EBDF253ED25A002A6647 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,8 +437,21 @@
 			children = (
 				B9BB3282253FE3C9009186EF /* SearchClassModel.swift */,
 				B9BB32F6253FF0D6009186EF /* MyClassModel.swift */,
+				B9E36731254683DE0044509D /* GetOnlineClassDetailModel.swift */,
+				B9AD4DEE2547DC290046BD2D /* JoinClassModel.swift */,
+				B9AD4DF3254819BA0046BD2D /* CourseStatusModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B9E3672125467E150044509D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B9E3672225467E2F0044509D /* OnlineClassDetailViewController.swift */,
+				B9E3672325467E2F0044509D /* OnlineClassDetailViewController.xib */,
+				B9E3672C254680B30044509D /* ClassDetailTapGesture.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,6 +566,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E3672525467E2F0044509D /* OnlineClassDetailViewController.xib in Resources */,
 				B946B1C0253ED69000D027A3 /* ExtensionUtils.swift in Resources */,
 				B946B1C1253ED69000D027A3 /* BaseViewController.swift in Resources */,
 				B946B1C2253ED69000D027A3 /* DigitalentURL.swift in Resources */,
@@ -539,6 +580,7 @@
 				B946B1CA253ED69000D027A3 /* LoginModel.swift in Resources */,
 				B946B1CB253ED69000D027A3 /* FirstViewController.swift in Resources */,
 				B946B1CC253ED69000D027A3 /* SignUpViewController.swift in Resources */,
+				B9AD4D722547CD2D0046BD2D /* ClassBottomSheetViewController.xib in Resources */,
 				B946B1CD253ED69000D027A3 /* LoginViewController.swift in Resources */,
 				B946B196253ED63000D027A3 /* OnlineClassCollectionViewCell.xib in Resources */,
 				6A5AAB6F253D74D300B9B7D2 /* LoginViewController.xib in Resources */,
@@ -685,14 +727,19 @@
 			files = (
 				B946B257253ED81800D027A3 /* AppDelegate.swift in Sources */,
 				B9BB32E7253FEEB9009186EF /* MyClassViewController.swift in Sources */,
+				B9E36732254683DE0044509D /* GetOnlineClassDetailModel.swift in Sources */,
 				B9BB3279253FE254009186EF /* SearchResultViewController.swift in Sources */,
+				B9AD4DEF2547DC290046BD2D /* JoinClassModel.swift in Sources */,
 				B946B258253ED81800D027A3 /* SceneDelegate.swift in Sources */,
 				B9BB32F1253FEFC4009186EF /* MyClassTableViewCell.swift in Sources */,
 				B946B204253ED74900D027A3 /* ExtensionUtils.swift in Sources */,
+				B9E3672425467E2F0044509D /* OnlineClassDetailViewController.swift in Sources */,
 				B946B266253EE85600D027A3 /* AllOnlineClassViewController.swift in Sources */,
 				B946B205253ED74900D027A3 /* BaseViewController.swift in Sources */,
 				B946B206253ED74900D027A3 /* DigitalentURL.swift in Sources */,
 				B946B207253ED74900D027A3 /* OnlineClassCollectionViewCell.swift in Sources */,
+				B9AD4D712547CD2D0046BD2D /* ClassBottomSheetViewController.swift in Sources */,
+				B9E3672D254680B30044509D /* ClassDetailTapGesture.swift in Sources */,
 				B946B209253ED74900D027A3 /* HomeViewController.swift in Sources */,
 				B946B20B253ED74900D027A3 /* HomeBannerCollectionViewCell.swift in Sources */,
 				B946B20D253ED74900D027A3 /* OnlineClassModel.swift in Sources */,
@@ -702,6 +749,7 @@
 				B946B20F253ED74900D027A3 /* HomeProfileModel.swift in Sources */,
 				B946B210253ED74900D027A3 /* HomeTabBarViewController.swift in Sources */,
 				B946B212253ED74900D027A3 /* LoginModel.swift in Sources */,
+				B9AD4DF4254819BA0046BD2D /* CourseStatusModel.swift in Sources */,
 				B946B271253EEEC200D027A3 /* NotificationViewController.swift in Sources */,
 				B946B213253ED74900D027A3 /* FirstViewController.swift in Sources */,
 				B946B281253EF0ED00D027A3 /* NotificationTableViewCell.swift in Sources */,
