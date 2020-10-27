@@ -21,8 +21,6 @@ class MyClassViewController: BaseViewController {
         let nibClass = UINib(nibName: "MyClassTableViewCell", bundle: nil)
         tableView.register(nibClass, forCellReuseIdentifier: "myClassIdentifier")
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
