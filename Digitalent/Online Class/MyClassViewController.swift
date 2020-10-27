@@ -10,6 +10,7 @@ import UIKit
 class MyClassViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyImage: UIImageView!
     var myClassModel: MyClassModel!
     
     override func viewDidLoad() {
@@ -20,8 +21,12 @@ class MyClassViewController: BaseViewController {
         let nibClass = UINib(nibName: "MyClassTableViewCell", bundle: nil)
         tableView.register(nibClass, forCellReuseIdentifier: "myClassIdentifier")
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let userId = readStringPreference(key: DigitalentKeys.ID)
         let parameters: [String:Any] = [
-            "uid": "5853"
+            "uid": "\(userId)"
         ]
         postRequest(url: "onsite/ambilPerUser", parameters: parameters, tag: "post my class")
     }
@@ -31,8 +36,13 @@ class MyClassViewController: BaseViewController {
             let decoder = JSONDecoder()
             self.myClassModel = try decoder.decode(MyClassModel.self, from:data)
             
+            emptyImage.isHidden = true
+            tableView.isHidden = false
+            
             self.tableView.reloadData()
         }catch{
+            emptyImage.isHidden = false
+            tableView.isHidden = true
             print(error.localizedDescription)
         }
     }
@@ -59,25 +69,33 @@ extension MyClassViewController: UITableViewDelegate, UITableViewDataSource{
         
         cell.classImage.pin_setImage(from: url)
         
-        let total = Float(myClass.videosu!)! * 3
+        cell.classDeadline.text = "Finished this class before: \(myClass.expiredAt?.parseDateToString ?? "")"
         
-        let totalVideo = Float(myClass.totalVideo!)
-        let totalQuiz = Float(myClass.totalQuiz!)
-        let totalPdf = Float(myClass.totalPDF!)
+        cell.classItem.text = "Videos \(myClass.totalVideo!)    |    Quizes \(myClass.totalQuiz!)    |    Pdfs \(myClass.totalPDF!)"
         
-        let totalAll = totalVideo! + totalQuiz! + totalPdf!
-        let percent = totalAll * 100
-        if percent == 0 {
-            cell.classProgress.setProgress(Float(totalAll), animated: true)
-            cell.classPercentage.text = "\(Int(totalAll))%"
-        }else{
-            let percentage = percent / total
-            cell.classPercentage.text = "\(Int(percentage))%"
-            cell.classProgress.setProgress(Float(percentage / 100), animated: true)
-        }
-        
-        cell.classItem.text = "Videos \(myClass.videosu!)    |    Quizes \(myClass.videosu!)    |    Pdfs \(myClass.videosu!)"
+        let tap = ClassDetailTapGesture(target: self, action: #selector(selectCourse(_:)))
+        tap.courseId = myClass.courseID
+        tap.totalVideo = myClass.totalVideo
+        tap.totalQuiz = myClass.totalQuiz
+        tap.totalPdf = myClass.totalPDF
+        cell.baseVIew.addGestureRecognizer(tap)
         
         return cell
     }
+    
+    @objc func selectCourse(_ sender: ClassDetailTapGesture?) {
+        let courseId = sender!.courseId!
+        let totalVideo = sender!.totalVideo!
+        let totalQuiz = sender!.totalQuiz!
+        let totalPdf = sender!.totalPdf!
+       
+        let detailClass = OnlineClassDetailViewController()
+        detailClass.courseId = courseId
+        detailClass.totalVideo = totalVideo
+        detailClass.totalQuiz = totalQuiz
+        detailClass.totalPdf = totalPdf
+        detailClass.modalPresentationStyle = .fullScreen
+        present(detailClass, animated: true, completion: nil)
+    }
+    
 }

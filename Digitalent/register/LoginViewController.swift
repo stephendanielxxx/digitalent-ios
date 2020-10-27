@@ -59,6 +59,7 @@ class LoginViewController: BaseViewController {
                     self.saveStringPreference(value: (loginModel.user?[0].tempatlahir)!, key: DigitalentKeys.TEMPAT_LAHIR)
                     self.saveStringPreference(value: (loginModel.user?[0].userPhoto)!, key: DigitalentKeys.USER_PHOTO)
                     self.saveStringPreference(value: (loginModel.user?[0].userPhotoStatus)!, key: DigitalentKeys.USER_PHOTO_STATUS)
+                    self.saveStringPreference(value: (loginModel.user?[0].userProfile)!, key: DigitalentKeys.USER_PROFILE)
                     self.saveStringPreference(value: (loginModel.user?[0].about)!, key: DigitalentKeys.ABOUT)
                     self.saveStringPreference(value: (loginModel.user?[0].isTeacher)!, key: DigitalentKeys.IS_TEACHER)
                 

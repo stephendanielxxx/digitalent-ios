@@ -9,6 +9,7 @@ import UIKit
 
 class MyClassTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var baseVIew: UIView!
     @IBOutlet weak var classImage: UIImageView!
     @IBOutlet weak var classTitle: UILabel!
     @IBOutlet weak var classDeadline: UILabel!
