@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyClassViewController" customModule="Digitalent" customModuleProvider="target">
             <connections>
+                <outlet property="emptyImage" destination="11J-Aw-L4S" id="JhP-8X-MmV"/>
                 <outlet property="tableView" destination="MI2-aI-tPz" id="6aE-Nl-asF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -32,10 +33,19 @@
                     <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_empty_course" translatesAutoresizingMaskIntoConstraints="NO" id="11J-Aw-L4S">
+                    <rect key="frame" x="0.0" y="328" width="414" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="414" id="Vyz-Wp-YuS"/>
+                        <constraint firstAttribute="height" constant="250" id="ltH-56-h1m"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="11J-Aw-L4S" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="5Hb-Pd-KvS"/>
+                <constraint firstItem="11J-Aw-L4S" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="8ZG-83-bE9"/>
                 <constraint firstItem="MI2-aI-tPz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BSb-eG-HPe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MI2-aI-tPz" secondAttribute="trailing" id="IbP-Od-eKH"/>
                 <constraint firstItem="Yg5-Qy-VNU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LnO-Lu-tnb"/>
@@ -49,6 +59,7 @@
         </view>
     </objects>
     <resources>
+        <image name="ic_empty_course" width="308" height="219"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

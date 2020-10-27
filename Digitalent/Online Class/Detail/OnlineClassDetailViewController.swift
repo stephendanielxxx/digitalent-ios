@@ -44,6 +44,7 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
     
     fileprivate func showBottomView() {
         let bottomView = ClassBottomSheetViewController()
+        bottomView.detailClassModel = detailClassModel
         
         let options = SheetOptions(
             useInlineMode: true)
@@ -78,13 +79,30 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
     }
     
     override func onSuccess(data: Data, tag: String) {
-        do{
-            let decoder = JSONDecoder()
-            self.detailClassModel = try decoder.decode(GetOnlineClassDetailModel.self, from:data)
-            
-            loadData(detailModel: self.detailClassModel)
-        }catch{
-            print(error.localizedDescription)
+        let decoder = JSONDecoder()
+        
+        if tag == "get course detail" {
+            do{
+                self.detailClassModel = try decoder.decode(GetOnlineClassDetailModel.self, from:data)
+                
+                loadData(detailModel: self.detailClassModel)
+            }catch{
+                print(error.localizedDescription)
+            }
+        }else {
+            do{
+                let courseStatusModel = try decoder.decode(CourseStatusModel.self, from:data)
+                
+                if courseStatusModel.status == "100" {
+                    if courseStatusModel.data?[0].transactionStatus == "settlement"{
+                        joinClassButton.isHidden = true
+                    }else {
+                        joinClassButton.isHidden = false
+                    }
+                }
+            }catch{
+                print(error.localizedDescription)
+            }
         }
     }
     
@@ -105,6 +123,14 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
         videoCount.text = totalVideo
         quizCount.text = totalQuiz
         pdfCount.text = totalPdf
+        
+        let userId = readStringPreference(key: DigitalentKeys.ID)
+        let parameters: [String:Any] = [
+            "user_id": "\(userId)",
+            "course_id":"\(detailClassModel.courseID)"
+        ]
+        
+        postRequest(url: "online/get_transaction_stats", parameters: parameters, tag: "get course status")
         
     }
     

@@ -58,6 +58,8 @@
 		B96D54392538309D0064956F /* DigitalentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54382538309D0064956F /* DigitalentUITests.swift */; };
 		B9AD4D712547CD2D0046BD2D /* ClassBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD4D6F2547CD2D0046BD2D /* ClassBottomSheetViewController.swift */; };
 		B9AD4D722547CD2D0046BD2D /* ClassBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AD4D702547CD2D0046BD2D /* ClassBottomSheetViewController.xib */; };
+		B9AD4DEF2547DC290046BD2D /* JoinClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD4DEE2547DC290046BD2D /* JoinClassModel.swift */; };
+		B9AD4DF4254819BA0046BD2D /* CourseStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD4DF3254819BA0046BD2D /* CourseStatusModel.swift */; };
 		B9B8EBEC253ED25A002A6647 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B8EBE1253ED25A002A6647 /* HomeViewController.xib */; };
 		B9B8EBF0253ED25A002A6647 /* HomeBannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B8EBE5253ED25A002A6647 /* HomeBannerCollectionViewCell.xib */; };
 		B9BB3279253FE254009186EF /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB3277253FE254009186EF /* SearchResultViewController.swift */; };
@@ -142,6 +144,8 @@
 		B98D7A472539711C00C24C16 /* HomeBannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBannerCollectionViewCell.xib; sourceTree = "<group>"; };
 		B9AD4D6F2547CD2D0046BD2D /* ClassBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassBottomSheetViewController.swift; sourceTree = "<group>"; };
 		B9AD4D702547CD2D0046BD2D /* ClassBottomSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassBottomSheetViewController.xib; sourceTree = "<group>"; };
+		B9AD4DEE2547DC290046BD2D /* JoinClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinClassModel.swift; sourceTree = "<group>"; };
+		B9AD4DF3254819BA0046BD2D /* CourseStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseStatusModel.swift; sourceTree = "<group>"; };
 		B9B8EBE0253ED25A002A6647 /* OnlineClassCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnlineClassCollectionViewCell.xib; sourceTree = "<group>"; };
 		B9B8EBE1253ED25A002A6647 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B9B8EBE2253ED25A002A6647 /* HomeBannerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBannerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -434,6 +438,8 @@
 				B9BB3282253FE3C9009186EF /* SearchClassModel.swift */,
 				B9BB32F6253FF0D6009186EF /* MyClassModel.swift */,
 				B9E36731254683DE0044509D /* GetOnlineClassDetailModel.swift */,
+				B9AD4DEE2547DC290046BD2D /* JoinClassModel.swift */,
+				B9AD4DF3254819BA0046BD2D /* CourseStatusModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -723,6 +729,7 @@
 				B9BB32E7253FEEB9009186EF /* MyClassViewController.swift in Sources */,
 				B9E36732254683DE0044509D /* GetOnlineClassDetailModel.swift in Sources */,
 				B9BB3279253FE254009186EF /* SearchResultViewController.swift in Sources */,
+				B9AD4DEF2547DC290046BD2D /* JoinClassModel.swift in Sources */,
 				B946B258253ED81800D027A3 /* SceneDelegate.swift in Sources */,
 				B9BB32F1253FEFC4009186EF /* MyClassTableViewCell.swift in Sources */,
 				B946B204253ED74900D027A3 /* ExtensionUtils.swift in Sources */,
@@ -742,6 +749,7 @@
 				B946B20F253ED74900D027A3 /* HomeProfileModel.swift in Sources */,
 				B946B210253ED74900D027A3 /* HomeTabBarViewController.swift in Sources */,
 				B946B212253ED74900D027A3 /* LoginModel.swift in Sources */,
+				B9AD4DF4254819BA0046BD2D /* CourseStatusModel.swift in Sources */,
 				B946B271253EEEC200D027A3 /* NotificationViewController.swift in Sources */,
 				B946B213253ED74900D027A3 /* FirstViewController.swift in Sources */,
 				B946B281253EF0ED00D027A3 /* NotificationTableViewCell.swift in Sources */,

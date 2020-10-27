@@ -10,6 +10,7 @@ import UIKit
 class MyClassViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyImage: UIImageView!
     var myClassModel: MyClassModel!
     
     override func viewDidLoad() {
@@ -20,6 +21,11 @@ class MyClassViewController: BaseViewController {
         let nibClass = UINib(nibName: "MyClassTableViewCell", bundle: nil)
         tableView.register(nibClass, forCellReuseIdentifier: "myClassIdentifier")
         
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let userId = readStringPreference(key: DigitalentKeys.ID)
         let parameters: [String:Any] = [
             "uid": "\(userId)"
@@ -32,8 +38,13 @@ class MyClassViewController: BaseViewController {
             let decoder = JSONDecoder()
             self.myClassModel = try decoder.decode(MyClassModel.self, from:data)
             
+            emptyImage.isHidden = true
+            tableView.isHidden = false
+            
             self.tableView.reloadData()
         }catch{
+            emptyImage.isHidden = false
+            tableView.isHidden = true
             print(error.localizedDescription)
         }
     }
@@ -87,6 +98,6 @@ extension MyClassViewController: UITableViewDelegate, UITableViewDataSource{
         detailClass.totalPdf = totalPdf
         detailClass.modalPresentationStyle = .fullScreen
         present(detailClass, animated: true, completion: nil)
-        
     }
+    
 }

@@ -91,4 +91,11 @@ extension String {
         let date = dateFormatter.date(from: self)!
         return dateResultFormatter.string(from: date)
     }
+    
+    var generateTransactionId: String{
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HHmmss"
+        return "\(dateFormatter.string(from: date))\(self)"
+    }
 }
