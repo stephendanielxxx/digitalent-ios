@@ -15,12 +15,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if readStringPreference(key: DigitalentKeys.ID).caseInsensitiveCompare("") == .orderedSame{
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = FirstViewController()
+            window.rootViewController = SettingsViewController()
             window.makeKeyAndVisible()
             self.window = window
         }else{
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = HomeTabBarViewController()
+            window.rootViewController = SettingsViewController()
             window.makeKeyAndVisible()
             self.window = window
         }
