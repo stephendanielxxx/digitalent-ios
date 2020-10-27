@@ -85,6 +85,10 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
             
             cell.onlineClassLabel.text = searchData.courseTitle
             
+            let tap = ClassDetailTapGesture(target: self, action: #selector(selectCourse(_:)))
+            tap.courseId = searchData.courseID
+            cell.baseView.addGestureRecognizer(tap)
+        
             return cell
         
     }
@@ -103,5 +107,15 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         let width = (self.view.frame.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
         
         return width
+    }
+    
+    @objc func selectCourse(_ sender: ClassDetailTapGesture?) {
+        let courseId = sender!.courseId!
+       
+        let detailClass = OnlineClassDetailViewController()
+        detailClass.courseId = courseId
+        detailClass.modalPresentationStyle = .fullScreen
+        present(detailClass, animated: true, completion: nil)
+        
     }
 }

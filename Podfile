@@ -11,6 +11,8 @@ target 'Digitalent' do
   pod 'ImageSlideshow', '~> 1.9.0'
   pod 'ImageSlideshow/Alamofire'
   pod 'MaterialComponents/Tabs+TabBarView'
+  #pod 'MaterialComponents/BottomSheet'
+  pod 'FittedSheets'
   pod 'ExpandableCell'
   pod 'Toast-Swift', '~> 5.0.1'
   #pod 'ASPVideoPlayer'

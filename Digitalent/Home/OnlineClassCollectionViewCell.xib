@@ -29,6 +29,9 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Now-wc-u60">
                                 <rect key="frame" x="8" y="150" width="191" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Alm-T4-lru"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,6 +43,7 @@
                             <constraint firstAttribute="bottom" secondItem="Now-wc-u60" secondAttribute="bottom" constant="8" id="7JJ-DR-CRd"/>
                             <constraint firstItem="Now-wc-u60" firstAttribute="leading" secondItem="0B2-2i-suO" secondAttribute="leading" constant="8" id="Fq0-zs-RR8"/>
                             <constraint firstItem="4hF-A8-tiG" firstAttribute="top" secondItem="0B2-2i-suO" secondAttribute="top" id="MkB-Od-xFn"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="194" id="g5A-rU-EaU"/>
                             <constraint firstItem="Now-wc-u60" firstAttribute="top" secondItem="4hF-A8-tiG" secondAttribute="bottom" id="gpV-5e-lbN"/>
                             <constraint firstAttribute="trailing" secondItem="Now-wc-u60" secondAttribute="trailing" constant="8" id="oBy-6j-vNY"/>
                             <constraint firstItem="4hF-A8-tiG" firstAttribute="leading" secondItem="0B2-2i-suO" secondAttribute="leading" id="zPJ-lP-AUD"/>

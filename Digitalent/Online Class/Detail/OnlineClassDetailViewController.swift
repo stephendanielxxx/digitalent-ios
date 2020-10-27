@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FittedSheets
 
 class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate {
 
@@ -39,6 +40,37 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
         learNow.layer.cornerRadius = 15
         seeAllButotn.layer.cornerRadius = 15
         
+    }
+    
+    fileprivate func showBottomView() {
+        let bottomView = ClassBottomSheetViewController()
+        
+        let options = SheetOptions(
+            useInlineMode: true)
+        
+        let sheetController = SheetViewController(controller: bottomView,
+                                              sizes: [.percent(0.75), .fullscreen],
+                                              options: options)
+
+        sheetController.willMove(toParent: self)
+        self.addChild(sheetController)
+        view.addSubview(sheetController.view)
+        sheetController.didMove(toParent: self)
+
+        sheetController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            sheetController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            sheetController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            sheetController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            sheetController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+
+        // animate in
+        sheetController.animateIn()
+    }
+    
+    @IBAction func showBottom(_ sender: UIButton) {
+        showBottomView()
     }
     
     @IBAction func backAction(_ sender: UIButton) {

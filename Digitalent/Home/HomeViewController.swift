@@ -58,7 +58,7 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
         setupGridView()
         
         searchClass.searchTextField.backgroundColor = .clear
-        searchClass.layer.cornerRadius = 15
+        searchClass.layer.cornerRadius = 20
         searchClass.clipsToBounds = true
         
         searchClass.delegate = self
@@ -128,7 +128,7 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 let firstName = self.homeProfileModel.profil[0].firstName
                 let lastName = self.homeProfileModel.profil[0].lastName
                 
-                greetingLabel.text = "Hello \(firstName) \(lastName)"
+                greetingLabel.text = "Hello \(firstName) \(lastName) !"
             }catch{
                 print(error.localizedDescription)
             }
