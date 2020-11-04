@@ -120,9 +120,9 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
         courseAuthor.text = "Created By \(detailModel.author)"
         courseDesc.attributedText = detailModel.desc?.htmlToAttributedStringWhite
         
-        videoCount.text = totalVideo
-        quizCount.text = totalQuiz
-        pdfCount.text = totalPdf
+        videoCount.text = detailModel.vid
+        quizCount.text = detailModel.totalQuiz
+        pdfCount.text = detailModel.totalPdf
         
         let userId = readStringPreference(key: DigitalentKeys.ID)
         let parameters: [String:Any] = [

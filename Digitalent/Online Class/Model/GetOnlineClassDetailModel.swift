@@ -21,6 +21,8 @@ struct GetOnlineClassDetailModel: Decodable {
     let slug: String?
     let vid: String?
     let vidPre: String?
+    let totalQuiz: String?
+    let totalPdf: String?
     let materi: [Materi]
 
     enum CodingKeys: String, CodingKey {
@@ -30,6 +32,8 @@ struct GetOnlineClassDetailModel: Decodable {
         case title, author, price
         case specialPrice = "special_price"
         case desc, img, slug, vid
+        case totalQuiz = "total_quiz"
+        case totalPdf = "total_pdf"
         case vidPre = "vid_pre"
         case materi
     }

@@ -23,9 +23,9 @@ class HomeTabBarViewController: UITabBarController {
         
         let homeItem = UITabBarItem(title: "Home", image: UIImage(named: "ic_home"), tag: 0)
         let taskItem = UITabBarItem(title: "My Class", image: UIImage(named: "ic_class"), tag: 1)
-        let profileItem = UITabBarItem(title: "Settings", image: UIImage(named: "ic_setting"), tag: 3)
+        let settingItem = UITabBarItem(title: "Settings", image: UIImage(named: "ic_setting"), tag: 3)
         
-        bottomNavBar.items = [homeItem, taskItem, profileItem]
+        bottomNavBar.items = [homeItem, taskItem, settingItem]
         
         bottomNavBar.selectedItem = homeItem
         
@@ -33,13 +33,13 @@ class HomeTabBarViewController: UITabBarController {
         
         let homeViewController = HomeViewController()
         let myClassViewController = MyClassViewController()
-        let profile = HomeViewController()
+        let setting = SettingsViewController()
         
         homeViewController.tabBarItem = homeItem
         myClassViewController.tabBarItem = taskItem
-        profile.tabBarItem = profileItem
+        setting.tabBarItem = settingItem
         
-        viewControllers = [homeViewController, myClassViewController, profile]
+        viewControllers = [homeViewController, myClassViewController, setting]
 
     }
 
