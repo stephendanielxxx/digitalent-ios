@@ -8,7 +8,7 @@
 import UIKit
 
 class ClassContentTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var materialTitle: UILabel!
     @IBOutlet weak var subMaterialTitle: UILabel!
     @IBOutlet weak var rightArrow: UIButton!
@@ -23,13 +23,25 @@ class ClassContentTableViewCell: UITableViewCell {
         subMaterialView.layer.cornerRadius = 18
         iconView.layer.cornerRadius = 18
         iconView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        
     }
     
     @IBAction func rightArrowAction(_ sender: UIButton) {
-        iconView.isHidden = false
+        //        iconView.isHidden = false
+        UIView.transition(with: iconView, duration: 0.8,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            self.iconView.isHidden = false
+                          })
     }
     
     @IBAction func leftArrowAction(_ sender: UIButton) {
-        iconView.isHidden = true
+        UIView.transition(with: iconView, duration: 0.8,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            self.iconView.isHidden = true
+                          })
+        
+        
     }
 }
