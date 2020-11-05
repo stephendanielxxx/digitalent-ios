@@ -71,7 +71,7 @@ extension MyClassViewController: UITableViewDelegate, UITableViewDataSource{
         
         cell.classDeadline.text = "Finished this class before: \(myClass.expiredAt?.parseDateToString ?? "")"
         
-        cell.classItem.text = "Video \(myClass.totalVideo!)    |    Quiz \(myClass.totalQuiz!)    |    Pdf \(myClass.totalPDF!)"
+        cell.classItem.text = "\(myClass.totalVideo!) Video     |    \(myClass.totalQuiz!) Quiz     |    \(myClass.totalPDF!) Pdf "
         
         let tap = ClassDetailTapGesture(target: self, action: #selector(selectCourse(_:)))
         tap.courseId = myClass.courseID

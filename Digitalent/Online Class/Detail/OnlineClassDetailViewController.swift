@@ -78,6 +78,13 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func seeAllAction(_ sender: Any) {
+        let contents = ClassContentViewController()
+        contents.course_id = courseId
+        contents.modalPresentationStyle = .fullScreen
+        present(contents, animated: true, completion: nil)
+    }
+    
     override func onSuccess(data: Data, tag: String) {
         let decoder = JSONDecoder()
         
