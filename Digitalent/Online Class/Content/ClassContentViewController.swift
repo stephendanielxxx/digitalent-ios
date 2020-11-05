@@ -59,6 +59,10 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
         
         if materi.video != nil {
             cell.videoIcon.isHidden = false
+            
+            let tapVideo = ClassContentTapGesture(target: self, action: #selector(openVideo(_:)))
+            tapVideo.video = materi.video!
+            cell.videoIcon.addGestureRecognizer(tapVideo)
         }
         
         if materi.materialID != nil {
@@ -67,8 +71,27 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
         
         if materi.pdf != nil {
             cell.pdfIcon.isHidden = false
+            
+            let tapPdf = ClassContentTapGesture(target: self, action: #selector(openPdf(_:)))
+            tapPdf.pdf = materi.pdf!
+            cell.pdfIcon.addGestureRecognizer(tapPdf)
         }
         
+        
+        
         return cell
+    }
+    
+    @objc func openVideo(_ sender: ClassContentTapGesture?) {
+//        let video = sender!.video
+    }
+    
+    @objc func openPdf(_ sender: ClassContentTapGesture?) {
+        let pdf = sender!.pdf
+        
+        let openPdf = MaterialPdfViewController()
+        openPdf.pdf = pdf
+        openPdf.modalPresentationStyle = .fullScreen
+        present(openPdf, animated: true, completion: nil)
     }
 }
