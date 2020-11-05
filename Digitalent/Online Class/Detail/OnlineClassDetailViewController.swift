@@ -106,6 +106,8 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
                     }else {
                         joinClassButton.isHidden = false
                     }
+                }else{
+                    joinClassButton.isHidden = false
                 }
             }catch{
                 print(error.localizedDescription)

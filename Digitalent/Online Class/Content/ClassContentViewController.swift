@@ -83,7 +83,11 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     @objc func openVideo(_ sender: ClassContentTapGesture?) {
-//        let video = sender!.video
+        let video = sender!.video
+        let openVideo = MaterialVideoViewController()
+        openVideo.video = video
+        openVideo.modalPresentationStyle = .fullScreen
+        present(openVideo, animated: true, completion: nil)
     }
     
     @objc func openPdf(_ sender: ClassContentTapGesture?) {

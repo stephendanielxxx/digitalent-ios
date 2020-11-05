@@ -3,13 +3,16 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MaterialVideoViewController" customModule="Digitalent" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="jLq-2g-Acw" id="4Nt-jp-V6Z"/>
+                <outlet property="videoPlayer" destination="ljh-jq-th7" id="Vv1-SX-1jp"/>
+                <outlet property="videoPlayerBackgroundView" destination="ZLN-UN-eWw" id="JBE-7d-OLS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,15 +20,72 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltl-28-1a1">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <color key="barTintColor" name="color_2C64EE"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <offsetWrapper key="textShadowOffset" horizontal="800" vertical="0.0"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="Video" id="ewh-Hb-sEA">
+                            <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="Wxz-jl-QFr">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="backAction:" destination="-1" id="rSF-l8-J2H"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLq-2g-Acw" userLabel="Container View">
+                    <rect key="frame" x="0.0" y="303" width="414" height="300"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLN-UN-eWw" userLabel="Video Player Background View">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljh-jq-th7" userLabel="Video Player" customClass="ASPVideoPlayer" customModule="ASPVideoPlayer">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ljh-jq-th7" firstAttribute="top" secondItem="jLq-2g-Acw" secondAttribute="top" id="5JY-d9-B3V"/>
+                        <constraint firstItem="ZLN-UN-eWw" firstAttribute="top" secondItem="jLq-2g-Acw" secondAttribute="top" id="BLR-fw-nxP"/>
+                        <constraint firstAttribute="bottom" secondItem="ZLN-UN-eWw" secondAttribute="bottom" id="Mch-5v-yfm"/>
+                        <constraint firstAttribute="bottom" secondItem="ljh-jq-th7" secondAttribute="bottom" id="aGn-hx-qPd"/>
+                        <constraint firstAttribute="trailing" secondItem="ljh-jq-th7" secondAttribute="trailing" id="kv7-g2-j2r"/>
+                        <constraint firstItem="ZLN-UN-eWw" firstAttribute="leading" secondItem="jLq-2g-Acw" secondAttribute="leading" id="qwE-SY-b8X"/>
+                        <constraint firstAttribute="height" constant="300" id="vfy-F1-Ysv"/>
+                        <constraint firstItem="ljh-jq-th7" firstAttribute="leading" secondItem="jLq-2g-Acw" secondAttribute="leading" id="wa8-Rw-apO"/>
+                        <constraint firstAttribute="trailing" secondItem="ZLN-UN-eWw" secondAttribute="trailing" id="wsR-6L-Qjx"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="color_2C64EE"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jLq-2g-Acw" secondAttribute="trailing" id="6Zw-cW-Ah8"/>
+                <constraint firstItem="jLq-2g-Acw" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="MHD-PI-2oX"/>
+                <constraint firstItem="Ltl-28-1a1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Y7w-jw-dlK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ltl-28-1a1" secondAttribute="trailing" id="csB-Tf-SXf"/>
+                <constraint firstItem="jLq-2g-Acw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rXa-9k-lpw"/>
+                <constraint firstItem="jLq-2g-Acw" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="tgc-2m-LcH"/>
+                <constraint firstItem="Ltl-28-1a1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="y8p-V2-wAd"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-20" y="108"/>
+            <point key="canvasLocation" x="-20.289855072463769" y="107.8125"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <namedColor name="color_2C64EE">
+            <color red="0.17299999296665192" green="0.3919999897480011" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
