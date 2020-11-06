@@ -67,6 +67,11 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
         
         if materi.materialID != nil {
             cell.quizIcon.isHidden = false
+            
+            let tapQuiz = ClassContentTapGesture(target: self, action: #selector(openQuiz(_:)))
+            tapQuiz.quiz = materi.materialID!
+            tapQuiz.subMaterial = materi.submaterial!
+            cell.quizIcon.addGestureRecognizer(tapQuiz)
         }
         
         if materi.pdf != nil {
@@ -76,8 +81,6 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
             tapPdf.pdf = materi.pdf!
             cell.pdfIcon.addGestureRecognizer(tapPdf)
         }
-        
-        
         
         return cell
     }
@@ -97,5 +100,15 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
         openPdf.pdf = pdf
         openPdf.modalPresentationStyle = .fullScreen
         present(openPdf, animated: true, completion: nil)
+    }
+    
+    @objc func openQuiz(_ sender: ClassContentTapGesture?) {
+        let quiz = sender!.quiz
+        let submaterial = sender!.subMaterial
+        let openQuiz = QuizViewController()
+        openQuiz.submaterial = submaterial
+        openQuiz.material_id = quiz
+        openQuiz.modalPresentationStyle = .fullScreen
+        present(openQuiz, animated: true, completion: nil)
     }
 }

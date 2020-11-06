@@ -12,4 +12,5 @@ class ClassContentTapGesture: UITapGestureRecognizer {
     var video: String = ""
     var pdf: String = ""
     var quiz: String = ""
+    var subMaterial: String = ""
 }
