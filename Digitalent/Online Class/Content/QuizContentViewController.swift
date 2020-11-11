@@ -170,7 +170,7 @@ class QuizContentViewController: BaseViewController {
             // do something when time is up
             let alert = UIAlertController(title: "", message: "Time's Up", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Close", style: .default, handler: {action in
-                self.dismiss(animated: true, completion: nil)
+                self.delegate.closeAction(index: self.index, duration: self.quizTimer.text!)
             }))
             self.present(alert, animated: true)
         }
