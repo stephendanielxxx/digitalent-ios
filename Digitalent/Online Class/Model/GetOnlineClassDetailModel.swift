@@ -47,10 +47,12 @@ struct Materi: Decodable {
     let pdf: String?
     let materialID: String?
     let quizDuration: String
+    let doneStat: String
 
     enum CodingKeys: String, CodingKey {
         case material, submaterial, video, pdf
         case materialID = "material_id"
         case quizDuration = "quiz_duration"
+        case doneStat = "done_stat"
     }
 }

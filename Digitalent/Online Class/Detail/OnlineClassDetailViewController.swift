@@ -34,7 +34,8 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
         
         scrollView.delegate = self
         
-        let requestUrl = "online/get_detail_course/\(courseId)"
+        let userId = readStringPreference(key: DigitalentKeys.ID)
+        let requestUrl = "online/get_detail_course/\(courseId)/\(userId)"
         getRequest(url: requestUrl, tag: "get course detail")
         
         learNow.layer.cornerRadius = 15

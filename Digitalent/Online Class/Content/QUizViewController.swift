@@ -47,7 +47,7 @@ class QUizViewController: BaseViewController {
     }
 }
 
-extension QuizViewController: QuizDelegate{
+extension QUizViewController: QuizDelegate{
     func openQuiz(index: Int){
         let content = QuizContentViewController()
         content.delegate = self

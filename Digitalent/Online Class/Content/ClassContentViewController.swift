@@ -22,7 +22,8 @@ class ClassContentViewController: BaseViewController {
         let nibClass = UINib(nibName: "ClassContentTableViewCell", bundle: nil)
         tableView.register(nibClass, forCellReuseIdentifier: "classContentIdentifier")
         
-        let requestUrl = "online/get_detail_course/\(course_id)"
+        let userId = readStringPreference(key: DigitalentKeys.ID)
+        let requestUrl = "online/get_detail_course/\(course_id)/\(userId)"
         getRequest(url: requestUrl, tag: "get course detail")
     }
     
@@ -105,7 +106,7 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
     @objc func openQuiz(_ sender: ClassContentTapGesture?) {
         let quiz = sender!.quiz
         let submaterial = sender!.subMaterial
-        let openQuiz = QuizViewController()
+        let openQuiz = QUizViewController()
         openQuiz.submaterial = submaterial
         openQuiz.material_id = quiz
         openQuiz.modalPresentationStyle = .fullScreen
