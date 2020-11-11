@@ -152,11 +152,28 @@ class QuizContentViewController: BaseViewController {
         if totalSecond == 0 {
             timer?.invalidate()
         }
-        totalSecond = totalSecond - 1
-        hours = totalSecond / 3600
-        minutes = (totalSecond % 3600) / 60
-        seconds = (totalSecond % 3600) % 60
-        quizTimer.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        
+        if totalSecond > 0 {
+            
+            if totalSecond == 60 {
+                let alert = UIAlertController(title: "", message: "1 Minute left", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+            
+            totalSecond = totalSecond - 1
+            hours = totalSecond / 3600
+            minutes = (totalSecond % 3600) / 60
+            seconds = (totalSecond % 3600) % 60
+            quizTimer.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        }else{
+            // do something when time is up
+            let alert = UIAlertController(title: "", message: "Time's Up", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .default, handler: {action in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true)
+        }
     }
 
     @IBAction func backAction(_ sender: UIButton) {

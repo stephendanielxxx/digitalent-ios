@@ -26,6 +26,7 @@ class QUizViewController: BaseViewController {
         ]
         postRequest(url: "quiz/get_quiz_course", parameters: parameters, tag: "post get quiz")
         
+        quiz_duration = "00:01:30"
     }
     
     @IBAction func backAction(_ sender: UIBarButtonItem) {
