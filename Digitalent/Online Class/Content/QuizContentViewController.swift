@@ -18,10 +18,15 @@ class QuizContentViewController: BaseViewController {
     var index: Int = 0
     var quizIndex = ""
     var totalQuestion = ""
-    var timer = ""
     var tempAnswer = ""
     var transactionId = ""
     var userId = ""
+    var quiz_duration = ""
+    
+    var totalHour = Int()
+    var totalMinut = Int()
+    var totalSecond = Int()
+    var timer:Timer?
     
     @IBOutlet weak var quizTitle: UILabel!
     @IBOutlet weak var quizNumber: UILabel!
@@ -69,7 +74,14 @@ class QuizContentViewController: BaseViewController {
         quizTitle.text = submaterial
         quizNumber.text = "\(quizIndex)/\(totalQuestion)"
         totalQuiz.text = "\(totalQuestion) Questions"
-        quizTimer.text = "\(timer)"
+//        quizTimer.text = "\(timer)"
+        
+        let durations = quiz_duration.components(separatedBy: ":")
+        let hours = durations[0]
+        let minutes = durations[1]
+        let seconds = durations[2]
+        
+        totalSecond = (Int(hours)! * 3600) + (Int(minutes)! * 60) + (Int(seconds)! * 1)
         
         let progress =  Float(quizIndex)! / Float(totalQuestion)!
         progressView.setProgress(progress, animated: true)
@@ -120,10 +132,35 @@ class QuizContentViewController: BaseViewController {
             "quiz_id": "\(quizModel.quizID)"
         ]
         postRequest(url: "quiz/checkanswer", parameters: parameters, tag: "load answer")
+        
+        startTimer()
+    }
+    
+    func startTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer(){
+
+    }
+
+    @objc func countdown() {
+        var hours: Int
+        var minutes: Int
+        var seconds: Int
+
+        if totalSecond == 0 {
+            timer?.invalidate()
+        }
+        totalSecond = totalSecond - 1
+        hours = totalSecond / 3600
+        minutes = (totalSecond % 3600) / 60
+        seconds = (totalSecond % 3600) % 60
+        quizTimer.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
 
     @IBAction func backAction(_ sender: UIButton) {
-        delegate.prevAction(index: index)
+        delegate.prevAction(index: index, duration: quizTimer.text!)
     }
     
     @IBAction func nextAction(_ sender: UIButton) {
@@ -134,7 +171,6 @@ class QuizContentViewController: BaseViewController {
             if tempAnswer.caseInsensitiveCompare(quizModel.answer) == .orderedSame {
                 point = 1
             }
-            
             
             let parameters: [String:Any] = [
                 "transaction_id": "\(transactionId)",
@@ -147,7 +183,7 @@ class QuizContentViewController: BaseViewController {
             ]
             postRequest(url: "quiz/insertanswer", parameters: parameters, tag: "insert answer")
             
-            delegate.nextAction(index: index)
+            delegate.nextAction(index: index, duration: quizTimer.text!)
         }
         
     }
@@ -253,6 +289,6 @@ class QuizContentViewController: BaseViewController {
 }
 
 protocol QuizDelegate {
-    func nextAction(index: Int)
-    func prevAction(index: Int)
+    func nextAction(index: Int, duration: String)
+    func prevAction(index: Int, duration: String)
 }

@@ -13,6 +13,7 @@ class QUizViewController: BaseViewController {
     var material_id = ""
     var submaterial = ""
     var transactionId = ""
+    var quiz_duration = ""
     var getQuizModel: GetQuizModel!
     var indexPage = 0
     @IBOutlet weak var embedView: UIView!
@@ -39,7 +40,7 @@ class QUizViewController: BaseViewController {
                 self.getQuizModel = try decoder.decode(GetQuizModel.self, from:data)
                 
                 if self.getQuizModel.assessmentQuiz.count > 0 {
-                    openQuiz(index: indexPage)
+                    openQuiz(index: indexPage, duration: quiz_duration)
                 }
                 
             }catch{
@@ -50,8 +51,9 @@ class QUizViewController: BaseViewController {
 }
 
 extension QUizViewController: QuizDelegate{
-    func openQuiz(index: Int){
+    func openQuiz(index: Int, duration: String){
         let content = QuizContentViewController()
+        content.quiz_duration = duration
         content.course_id = course_id
         content.transactionId = transactionId
         content.delegate = self
@@ -67,12 +69,14 @@ extension QUizViewController: QuizDelegate{
         embed(content, inParent: self, inView: embedView)
     }
     
-    func nextAction(index: Int) {
-        openQuiz(index: index + 1)
+    func nextAction(index: Int, duration: String) {
+        debugPrint(duration)
+        openQuiz(index: index + 1, duration: duration)
     }
     
-    func prevAction(index: Int) {
-        openQuiz(index: index - 1)
+    func prevAction(index: Int, duration: String) {
+        debugPrint(duration)
+        openQuiz(index: index - 1, duration: duration)
     }
 
 }

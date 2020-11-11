@@ -73,6 +73,7 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
             let tapQuiz = ClassContentTapGesture(target: self, action: #selector(openQuiz(_:)))
             tapQuiz.quiz = materi.materialID!
             tapQuiz.subMaterial = materi.submaterial!
+            tapQuiz.quiz_duration = materi.quizDuration
             cell.quizIcon.addGestureRecognizer(tapQuiz)
         }
         
@@ -107,7 +108,9 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
     @objc func openQuiz(_ sender: ClassContentTapGesture?) {
         let quiz = sender!.quiz
         let submaterial = sender!.subMaterial
+        let duration = sender!.quiz_duration
         let openQuiz = QUizViewController()
+        openQuiz.quiz_duration = duration
         openQuiz.course_id = course_id
         openQuiz.submaterial = submaterial
         openQuiz.material_id = quiz

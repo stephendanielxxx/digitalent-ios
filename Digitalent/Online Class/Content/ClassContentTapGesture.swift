@@ -13,4 +13,5 @@ class ClassContentTapGesture: UITapGestureRecognizer {
     var pdf: String = ""
     var quiz: String = ""
     var subMaterial: String = ""
+    var quiz_duration = ""
 }
