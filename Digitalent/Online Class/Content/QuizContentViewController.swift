@@ -303,9 +303,13 @@ class QuizContentViewController: BaseViewController {
         self.view.hideAllToasts()
         self.view.makeToast(message)
     }
+    @IBAction func closeAction(_ sender: UIBarButtonItem) {
+        delegate.closeAction(index: index, duration: quizTimer.text!)
+    }
 }
 
 protocol QuizDelegate {
     func nextAction(index: Int, duration: String)
     func prevAction(index: Int, duration: String)
+    func closeAction(index: Int, duration: String)
 }

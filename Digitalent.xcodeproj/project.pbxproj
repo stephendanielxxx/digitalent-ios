@@ -40,6 +40,7 @@
 		B92DBF182553F8550059EEC3 /* MaterialPdfViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92DBF162553F8550059EEC3 /* MaterialPdfViewController.xib */; };
 		B9362F6E255BBD6B00452B6B /* QuizAnswerTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9362F6D255BBD6B00452B6B /* QuizAnswerTapGesture.swift */; };
 		B9362F73255BCD0B00452B6B /* LoadAnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9362F72255BCD0B00452B6B /* LoadAnswerModel.swift */; };
+		B9362F78255BF0EB00452B6B /* GetCheckPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9362F77255BF0EB00452B6B /* GetCheckPointModel.swift */; };
 		B946B196253ED63000D027A3 /* OnlineClassCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B8EBE0253ED25A002A6647 /* OnlineClassCollectionViewCell.xib */; };
 		B946B1C0253ED69000D027A3 /* ExtensionUtils.swift in Resources */ = {isa = PBXBuildFile; fileRef = B9B8EBF9253ED269002A6647 /* ExtensionUtils.swift */; };
 		B946B1C1253ED69000D027A3 /* BaseViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = B9B8EBFA253ED269002A6647 /* BaseViewController.swift */; };
@@ -170,6 +171,7 @@
 		B92DBF162553F8550059EEC3 /* MaterialPdfViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaterialPdfViewController.xib; sourceTree = "<group>"; };
 		B9362F6D255BBD6B00452B6B /* QuizAnswerTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnswerTapGesture.swift; sourceTree = "<group>"; };
 		B9362F72255BCD0B00452B6B /* LoadAnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAnswerModel.swift; sourceTree = "<group>"; };
+		B9362F77255BF0EB00452B6B /* GetCheckPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCheckPointModel.swift; sourceTree = "<group>"; };
 		B946B264253EE85600D027A3 /* AllOnlineClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOnlineClassViewController.swift; sourceTree = "<group>"; };
 		B946B265253EE85600D027A3 /* AllOnlineClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllOnlineClassViewController.xib; sourceTree = "<group>"; };
 		B946B26F253EEEC200D027A3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -573,6 +575,7 @@
 				B9AD4DF3254819BA0046BD2D /* CourseStatusModel.swift */,
 				B96C3CC3255529670041CE6B /* GetQuizModel.swift */,
 				B9362F72255BCD0B00452B6B /* LoadAnswerModel.swift */,
+				B9362F77255BF0EB00452B6B /* GetCheckPointModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -884,6 +887,7 @@
 				6A9703292546BC81006CED9E /* ProfileModel.swift in Sources */,
 				B946B206253ED74900D027A3 /* DigitalentURL.swift in Sources */,
 				B946B207253ED74900D027A3 /* OnlineClassCollectionViewCell.swift in Sources */,
+				B9362F78255BF0EB00452B6B /* GetCheckPointModel.swift in Sources */,
 				B9362F73255BCD0B00452B6B /* LoadAnswerModel.swift in Sources */,
 				B9AD4D712547CD2D0046BD2D /* ClassBottomSheetViewController.swift in Sources */,
 				B92DBED82553BAE50059EEC3 /* ClassContentTableViewCell.swift in Sources */,

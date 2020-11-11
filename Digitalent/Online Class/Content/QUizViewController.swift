@@ -16,21 +16,18 @@ class QUizViewController: BaseViewController {
     var quiz_duration = ""
     var getQuizModel: GetQuizModel!
     var indexPage = 0
+    var userId = ""
     @IBOutlet weak var embedView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userId = readStringPreference(key: DigitalentKeys.ID)
         
-        let parameters: [String:Any] = [
-            "material_id": "\(material_id)"
+        let parametersCheckPoint: [String:Any] = [
+            "material_id": "\(material_id)",
+            "user_id": "\(userId)"
         ]
-        postRequest(url: "quiz/get_quiz_course", parameters: parameters, tag: "post get quiz")
-        
-        quiz_duration = "00:01:30"
-    }
-    
-    @IBAction func backAction(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        postRequest(url: "quiz/checkpoint_status", parameters: parametersCheckPoint, tag: "post get checkpoint")
     }
     
     override func onSuccess(data: Data, tag: String) {
@@ -47,11 +44,28 @@ class QUizViewController: BaseViewController {
             }catch{
                 print(error.localizedDescription)
             }
+        }else if tag == "post get checkpoint" {
+            do{
+                let getCheckPointModel = try decoder.decode(GetCheckPointModel.self, from:data)
+                if getCheckPointModel.status == "69"{
+                    let checkPointModel: CheckPointModel = getCheckPointModel.data![0]
+                    indexPage = Int(checkPointModel.lastPosition)! - 1
+                    quiz_duration = checkPointModel.duration
+                }
+                
+                let parameters: [String:Any] = [
+                    "material_id": "\(material_id)"
+                ]
+                postRequest(url: "quiz/get_quiz_course", parameters: parameters, tag: "post get quiz")
+            }catch{
+                print(error.localizedDescription)
+            }
         }
     }
 }
 
 extension QUizViewController: QuizDelegate{
+   
     func openQuiz(index: Int, duration: String){
         let content = QuizContentViewController()
         content.quiz_duration = duration
@@ -71,13 +85,27 @@ extension QUizViewController: QuizDelegate{
     }
     
     func nextAction(index: Int, duration: String) {
-        debugPrint(duration)
         openQuiz(index: index + 1, duration: duration)
     }
     
     func prevAction(index: Int, duration: String) {
-        debugPrint(duration)
         openQuiz(index: index - 1, duration: duration)
+    }
+    
+    func closeAction(index: Int, duration: String) {
+        let parameters: [String: Any] = [
+            "material_id": "\(material_id)",
+            "user_id": "\(userId)",
+            "cour_id": "\(course_id)",
+            "last_pos": "\(index + 1)",
+            "last_score": "0",
+            "duration": "\(duration)"
+        ]
+        
+        postRequest(url: "quiz/checkpoint", parameters: parameters, tag: "save checkpoint")
+        
+        self.dismiss(animated: true, completion: nil)
+        
     }
 
 }
