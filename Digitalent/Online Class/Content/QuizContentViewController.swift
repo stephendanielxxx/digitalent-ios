@@ -53,6 +53,9 @@ class QuizContentViewController: UIViewController {
         totalQuiz.text = "\(totalQuestion) Questions"
         quizTimer.text = "\(timer)"
         
+        let progress =  Float(quizIndex)! / Float(totalQuestion)!
+        progressView.setProgress(progress, animated: true)
+        
         quizQuestion.attributedText = quizModel.question.htmlToAttributedString
         
         if quizModel.quizImage == "none" {
