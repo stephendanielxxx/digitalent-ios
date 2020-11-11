@@ -6,16 +6,22 @@
 //
 
 import UIKit
+import MaterialComponents.MDCCard
+import Toast_Swift
 
-class QuizContentViewController: UIViewController {
+class QuizContentViewController: BaseViewController {
 
     var delegate: QuizDelegate!
     var quizModel: AssessmentQuiz!
+    var course_id = ""
     var submaterial = ""
     var index: Int = 0
     var quizIndex = ""
     var totalQuestion = ""
     var timer = ""
+    var tempAnswer = ""
+    var transactionId = ""
+    var userId = ""
     
     @IBOutlet weak var quizTitle: UILabel!
     @IBOutlet weak var quizNumber: UILabel!
@@ -32,10 +38,22 @@ class QuizContentViewController: UIViewController {
     @IBOutlet weak var answerEText: UITextView!
     @IBOutlet weak var buttonPrev: UIButton!
     @IBOutlet weak var buttonNext: UIButton!
+    @IBOutlet weak var buttonA: MDCCard!
+    @IBOutlet weak var buttonB: MDCCard!
+    @IBOutlet weak var buttonC: MDCCard!
+    @IBOutlet weak var buttonD: MDCCard!
+    @IBOutlet weak var buttonE: MDCCard!
+    @IBOutlet weak var barButtonA: UIView!
+    @IBOutlet weak var barButtonB: UIView!
+    @IBOutlet weak var barButtonC: UIView!
+    @IBOutlet weak var barButtonD: UIView!
+    @IBOutlet weak var barButtonE: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        userId = readStringPreference(key: DigitalentKeys.ID)
+        
         buttonPrev.layer.cornerRadius = 18
         buttonNext.layer.cornerRadius = 18
         
@@ -68,6 +86,40 @@ class QuizContentViewController: UIViewController {
         answerCText.attributedText = quizModel.pil3.htmlToAttributedStringAnswer
         answerDText.attributedText = quizModel.pil4.htmlToAttributedStringAnswer
         answerEText.attributedText = quizModel.pil5.htmlToAttributedStringAnswer
+        
+        let tapA = QuizAnswerTapGesture(target: self, action: #selector(sendAnswer(_:)))
+        tapA.answer = quizModel.pil1
+        tapA.selected = "A"
+        buttonA.addGestureRecognizer(tapA)
+        
+        let tapB = QuizAnswerTapGesture(target: self, action: #selector(sendAnswer(_:)))
+        tapB.answer = quizModel.pil2
+        tapB.selected = "B"
+        buttonB.addGestureRecognizer(tapB)
+        
+        let tapC = QuizAnswerTapGesture(target: self, action: #selector(sendAnswer(_:)))
+        tapC.answer = quizModel.pil3
+        tapC.selected = "C"
+        buttonC.addGestureRecognizer(tapC)
+        
+        let tapD = QuizAnswerTapGesture(target: self, action: #selector(sendAnswer(_:)))
+        tapD.answer = quizModel.pil4
+        tapD.selected = "D"
+        buttonD.addGestureRecognizer(tapD)
+        
+        let tapE = QuizAnswerTapGesture(target: self, action: #selector(sendAnswer(_:)))
+        tapE.answer = quizModel.pil5
+        tapE.selected = "E"
+        buttonE.addGestureRecognizer(tapE)
+        
+        let parameters: [String:Any] = [
+            "transaction_id": "\(transactionId)",
+            "user_id": "\(userId)",
+            "course_id": "\(course_id)",
+            "sub_material_id": "\(quizModel.materialID)",
+            "quiz_id": "\(quizModel.quizID)"
+        ]
+        postRequest(url: "quiz/checkanswer", parameters: parameters, tag: "load answer")
     }
 
     @IBAction func backAction(_ sender: UIButton) {
@@ -75,7 +127,128 @@ class QuizContentViewController: UIViewController {
     }
     
     @IBAction func nextAction(_ sender: UIButton) {
-        delegate.nextAction(index: index)
+        if tempAnswer.isEmpty {
+            showErrorToast(message: "Please select the answer")
+        }else{
+            var point = 0
+            if tempAnswer.caseInsensitiveCompare(quizModel.answer) == .orderedSame {
+                point = 1
+            }
+            
+            
+            let parameters: [String:Any] = [
+                "transaction_id": "\(transactionId)",
+                "user_id": "\(userId)",
+                "course_id": "\(course_id)",
+                "sub_material_id": "\(quizModel.materialID)",
+                "quiz_id": "\(quizModel.quizID)",
+                "user_answer": "\(tempAnswer)",
+                "point": "\(point)"
+            ]
+            postRequest(url: "quiz/insertanswer", parameters: parameters, tag: "insert answer")
+            
+            delegate.nextAction(index: index)
+        }
+        
+    }
+    
+    override func onSuccess(data: Data, tag: String) {
+        let decoder = JSONDecoder()
+        
+        if tag == "load answer" {
+            do{
+                let loadAnswerModel = try decoder.decode(LoadAnswerModel.self, from:data)
+
+                if loadAnswerModel.status == "69" {
+                    switch loadAnswerModel.data![0].userAnswer {
+                    case quizModel.pil1:
+                        barButtonA.backgroundColor = UIColor(named: "color_2C64EE")
+                        tempAnswer = quizModel.pil1
+                        break
+                    case quizModel.pil2:
+                        barButtonB.backgroundColor = UIColor(named: "color_2C64EE")
+                        tempAnswer = quizModel.pil2
+                        break
+                    case quizModel.pil3:
+                        barButtonC.backgroundColor = UIColor(named: "color_2C64EE")
+                        tempAnswer = quizModel.pil3
+                        break
+                    case quizModel.pil4:
+                        barButtonD.backgroundColor = UIColor(named: "color_2C64EE")
+                        tempAnswer = quizModel.pil4
+                        break
+                    case quizModel.pil5:
+                        barButtonE.backgroundColor = UIColor(named: "color_2C64EE")
+                        tempAnswer = quizModel.pil5
+                        break
+                    default:
+                        break
+                    }
+                }
+
+            }catch{
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    @objc func sendAnswer(_ sender: QuizAnswerTapGesture?) {
+        let answer = sender!.answer!
+        let selectedAnswer = sender!.selected!
+        tempAnswer = answer
+        
+        switch selectedAnswer {
+        case "A":
+            barButtonA.backgroundColor = UIColor(named: "color_2C64EE")
+            barButtonB.backgroundColor = UIColor.black
+            barButtonC.backgroundColor = UIColor.black
+            barButtonD.backgroundColor = UIColor.black
+            barButtonE.backgroundColor = UIColor.black
+            break
+        case "B":
+            barButtonA.backgroundColor = UIColor.black
+            barButtonB.backgroundColor = UIColor(named: "color_2C64EE")
+            barButtonC.backgroundColor = UIColor.black
+            barButtonD.backgroundColor = UIColor.black
+            barButtonE.backgroundColor = UIColor.black
+            break
+        case "C":
+            barButtonA.backgroundColor = UIColor.black
+            barButtonB.backgroundColor = UIColor.black
+            barButtonC.backgroundColor = UIColor(named: "color_2C64EE")
+            barButtonD.backgroundColor = UIColor.black
+            barButtonE.backgroundColor = UIColor.black
+            break
+        case "D":
+            barButtonA.backgroundColor = UIColor.black
+            barButtonB.backgroundColor = UIColor.black
+            barButtonC.backgroundColor = UIColor.black
+            barButtonD.backgroundColor = UIColor(named: "color_2C64EE")
+            barButtonE.backgroundColor = UIColor.black
+            break
+        case "E":
+            barButtonA.backgroundColor = UIColor.black
+            barButtonB.backgroundColor = UIColor.black
+            barButtonC.backgroundColor = UIColor.black
+            barButtonD.backgroundColor = UIColor.black
+            barButtonE.backgroundColor = UIColor(named: "color_2C64EE")
+            break
+        default:
+            barButtonA.backgroundColor = UIColor.black
+            barButtonB.backgroundColor = UIColor.black
+            barButtonC.backgroundColor = UIColor.black
+            barButtonD.backgroundColor = UIColor.black
+            barButtonE.backgroundColor = UIColor.black
+        }
+    }
+    
+    func showErrorToast(message: String) {
+        var style = ToastStyle()
+        style.backgroundColor = UIColor.red
+        style.messageColor = UIColor.white
+        ToastManager.shared.style = style
+        self.view.hideAllToasts()
+        self.view.makeToast(message)
     }
 }
 

@@ -9,6 +9,7 @@ import UIKit
 
 class ClassContentViewController: BaseViewController {
     var course_id = ""
+    var transactionId = ""
     var detailClassModel: GetOnlineClassDetailModel!
     
     @IBOutlet weak var tableView: UITableView!
@@ -107,8 +108,10 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
         let quiz = sender!.quiz
         let submaterial = sender!.subMaterial
         let openQuiz = QUizViewController()
+        openQuiz.course_id = course_id
         openQuiz.submaterial = submaterial
         openQuiz.material_id = quiz
+        openQuiz.transactionId = transactionId
         openQuiz.modalPresentationStyle = .fullScreen
         present(openQuiz, animated: true, completion: nil)
     }

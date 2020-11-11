@@ -9,8 +9,10 @@ import UIKit
 
 class QUizViewController: BaseViewController {
 
+    var course_id = ""
     var material_id = ""
     var submaterial = ""
+    var transactionId = ""
     var getQuizModel: GetQuizModel!
     var indexPage = 0
     @IBOutlet weak var embedView: UIView!
@@ -50,6 +52,8 @@ class QUizViewController: BaseViewController {
 extension QUizViewController: QuizDelegate{
     func openQuiz(index: Int){
         let content = QuizContentViewController()
+        content.course_id = course_id
+        content.transactionId = transactionId
         content.delegate = self
         
         let quizModel: AssessmentQuiz = self.getQuizModel.assessmentQuiz[index]

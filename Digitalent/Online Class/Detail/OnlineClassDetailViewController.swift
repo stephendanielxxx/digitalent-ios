@@ -14,6 +14,7 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
     var totalVideo = ""
     var totalQuiz = ""
     var totalPdf = ""
+    var transactionId = ""
     
     var detailClassModel: GetOnlineClassDetailModel!
     
@@ -82,6 +83,7 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
     @IBAction func seeAllAction(_ sender: Any) {
         let contents = ClassContentViewController()
         contents.course_id = courseId
+        contents.transactionId = transactionId
         contents.modalPresentationStyle = .fullScreen
         present(contents, animated: true, completion: nil)
     }
@@ -107,6 +109,9 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
                     }else {
                         joinClassButton.isHidden = false
                     }
+                    
+                    transactionId = courseStatusModel.data![0].transactionID
+                    
                 }else{
                     joinClassButton.isHidden = false
                 }
