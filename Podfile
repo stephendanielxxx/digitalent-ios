@@ -15,7 +15,7 @@ target 'Digitalent' do
   pod 'FittedSheets'
   pod 'ExpandableCell'
   pod 'Toast-Swift', '~> 5.0.1'
-  #pod 'ASPVideoPlayer'
+  pod 'ASPVideoPlayer'
   pod 'DropDown'
   pod 'PopupDialog', '~> 1.1'
   pod 'Firebase/Analytics'

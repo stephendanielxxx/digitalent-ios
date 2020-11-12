@@ -27,6 +27,28 @@ extension UIImageView {
     }
 }
 
+extension UIViewController{
+    func embed(_ viewController:UIViewController, inParent controller:UIViewController, inView view:UIView){
+       viewController.willMove(toParent: controller)
+       viewController.view.frame = view.bounds
+       view.addSubview(viewController.view)
+       controller.addChild(viewController)
+       viewController.didMove(toParent: controller)
+    }
+}
+
+extension UITextView {
+
+  func centerVertically() {
+      let fittingSize = CGSize(width: bounds.width, height: CGFloat.greatestFiniteMagnitude)
+      let size = sizeThatFits(fittingSize)
+      let topOffset = (bounds.size.height - size.height * zoomScale) / 2
+      let positiveTopOffset = max(1, topOffset)
+      contentOffset.y = -positiveTopOffset
+  }
+
+}
+
 extension String {
     var htmlToAttributedString: NSAttributedString? {
         let htmlTemplate = """
@@ -37,6 +59,31 @@ extension String {
                  body {
                    font-family: -apple-system;
                    font-size: 14px;
+                 }
+               </style>
+             </head>
+             <body>
+               \(self)
+             </body>
+           </html>
+           """
+        guard let data = htmlTemplate.data(using: .utf8) else { return nil }
+        do {
+            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            return nil
+        }
+    }
+    
+    var htmlToAttributedStringAnswer: NSAttributedString? {
+        let htmlTemplate = """
+           <!doctype html>
+           <html>
+             <head>
+               <style>
+                 body {
+                   font-family: -apple-system;
+                   font-size: 12px;
                  }
                </style>
              </head>
