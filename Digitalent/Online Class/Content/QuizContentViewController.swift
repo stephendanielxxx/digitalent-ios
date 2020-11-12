@@ -83,6 +83,8 @@ class QuizContentViewController: BaseViewController {
         
         totalSecond = (Int(hours)! * 3600) + (Int(minutes)! * 60) + (Int(seconds)! * 1)
         
+        startTimer()
+        
         let progress =  Float(quizIndex)! / Float(totalQuestion)!
         progressView.setProgress(progress, animated: true)
         
@@ -133,7 +135,7 @@ class QuizContentViewController: BaseViewController {
         ]
         postRequest(url: "quiz/checkanswer", parameters: parameters, tag: "load answer")
         
-        startTimer()
+       
     }
     
     func startTimer(){
