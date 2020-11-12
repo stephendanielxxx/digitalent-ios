@@ -98,6 +98,8 @@ class SettingsViewController: BaseSettingsViewController, DeleteDialogDelegate{
                     let alert = UIAlertController(title: "Delete Success", message: "\(deleteModel.message)", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
                     self.present(alert, animated: true)
+                    
+                    self.logout()
                 }
                 else{
                     let alert = UIAlertController(title: "Delete Failed", message: "\(deleteModel.message)", preferredStyle: .alert)
