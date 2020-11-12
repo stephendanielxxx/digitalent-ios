@@ -13,9 +13,11 @@
             <connections>
                 <outlet property="changeNumber" destination="IJj-lC-cj9" id="mR5-PR-KsQ"/>
                 <outlet property="discardButton" destination="2W0-Qv-NHI" id="OR2-7v-4wS"/>
+                <outlet property="emailCard" destination="gPP-Tm-joy" id="Kcu-9L-c9U"/>
                 <outlet property="emailText" destination="9cK-xg-U0i" id="Z3w-Mm-r3R"/>
                 <outlet property="firstName" destination="Sv6-kF-flQ" id="706-8y-LgG"/>
                 <outlet property="lastName" destination="h1t-Ez-pGh" id="LSB-JW-O2E"/>
+                <outlet property="phoneCard" destination="fzo-95-aDI" id="nWt-Cn-8er"/>
                 <outlet property="saveButton" destination="HHD-3y-BrF" id="IP9-pq-r1t"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -113,7 +115,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9cK-xg-U0i">
+                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9cK-xg-U0i">
                                             <rect key="frame" x="10" y="30" width="346" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="gwt-ND-9rl"/>
@@ -156,7 +158,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJj-lC-cj9">
+                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJj-lC-cj9">
                                             <rect key="frame" x="10" y="30" width="346" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="3Is-sw-5xm"/>

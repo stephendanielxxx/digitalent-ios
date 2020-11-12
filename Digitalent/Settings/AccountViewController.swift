@@ -1,7 +1,7 @@
 
 
 import UIKit
-
+import MaterialComponents.MDCCard
 
 class AccountViewController: BaseViewController {
     @IBOutlet weak var firstName: UITextField!
@@ -10,19 +10,21 @@ class AccountViewController: BaseViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var changeNumber: UITextField!
+    @IBOutlet weak var emailCard: MDCCard!
+    @IBOutlet weak var phoneCard: MDCCard!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         let setChangeEmail = UITapGestureRecognizer(target: self, action: #selector(AccountViewController.openChangeEmail))
-        emailText.isUserInteractionEnabled = true
-        emailText.addGestureRecognizer(setChangeEmail)
+        emailCard.isUserInteractionEnabled = true
+        emailCard.addGestureRecognizer(setChangeEmail)
         
         
         let setChangePhoneNumber = UITapGestureRecognizer(target: self, action: #selector(AccountViewController.openChangePhoneNumber))
-        changeNumber.isUserInteractionEnabled = true
-        changeNumber.addGestureRecognizer(setChangePhoneNumber)
+        phoneCard.isUserInteractionEnabled = true
+        phoneCard.addGestureRecognizer(setChangePhoneNumber)
         
     }
     
