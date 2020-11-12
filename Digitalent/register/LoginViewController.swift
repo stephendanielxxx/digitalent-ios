@@ -22,7 +22,17 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(openForgetPassword(_:)))
+        forgetButton.isUserInteractionEnabled = true
+        forgetButton.addGestureRecognizer(tap)
     }
+    
+    @objc func openForgetPassword(_ sender: UITapGestureRecognizer?) {
+        let forget = ForgetPassViewController()
+        forget.modalPresentationStyle = .fullScreen
+        present(forget, animated: true, completion: nil)
+    }
+    
     @IBAction func signIn(_ sender: UIButton) {
         let parameters: [String:Any] = [
             "email": "\(emailText.text!)",
