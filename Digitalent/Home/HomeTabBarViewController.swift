@@ -33,7 +33,7 @@ class HomeTabBarViewController: UITabBarController {
         
         let homeViewController = HomeViewController()
         let myClassViewController = MyClassViewController()
-        let profile = HomeViewController()
+        let profile = SettingsViewController()
         
         homeViewController.tabBarItem = homeItem
         myClassViewController.tabBarItem = taskItem

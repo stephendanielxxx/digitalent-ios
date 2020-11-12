@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangePhoneNumberViewController" customModule="Digitalent" customModuleProvider="target">
+            <connections>
+                <outlet property="changeNumber" destination="Tjz-se-iXd" id="zmd-WB-m8M"/>
+                <outlet property="saveAction" destination="NB1-cB-sHa" id="Z51-Ib-LMD"/>
+                <outlet property="view" destination="9LD-ER-P5A" id="agd-6w-XOg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="9LD-ER-P5A">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="0EP-hI-A1g">
+                    <rect key="frame" x="0.0" y="39" width="414" height="818"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCg-k2-U3y">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <subviews>
+                                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ja2-h4-wc8">
+                                    <rect key="frame" x="0.0" y="14" width="414" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="414" id="iYR-tW-SpS"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textAttributes key="titleTextAttributes">
+                                        <offsetWrapper key="textShadowOffset" horizontal="900" vertical="0.0"/>
+                                    </textAttributes>
+                                    <items>
+                                        <navigationItem title="Change Phone Number" id="baN-2W-VX4">
+                                            <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="5Mk-mK-GbB">
+                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <connections>
+                                                    <action selector="backButton:" destination="-1" id="Tgx-Jw-BZf"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </navigationItem>
+                                    </items>
+                                </navigationBar>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NB1-cB-sHa">
+                                    <rect key="frame" x="90" y="154" width="246" height="40"/>
+                                    <color key="backgroundColor" name="color_2C64EE"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="246" id="5xu-Qe-QTK"/>
+                                        <constraint firstAttribute="height" constant="40" id="DMM-Cw-uga"/>
+                                    </constraints>
+                                    <state key="normal" title="SAVE CHANGES">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="saveChangePhoneNumber:" destination="-1" eventType="touchUpInside" id="cQE-7J-X2Y"/>
+                                    </connections>
+                                </button>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tjz-se-iXd" userLabel="phone number">
+                                    <rect key="frame" x="14" y="98" width="386" height="34"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="Tjz-se-iXd" firstAttribute="leading" secondItem="hCg-k2-U3y" secondAttribute="leading" constant="14" id="BYM-yQ-LOC"/>
+                                <constraint firstAttribute="trailing" secondItem="Tjz-se-iXd" secondAttribute="trailing" constant="14" id="Cx7-s5-Bt6"/>
+                                <constraint firstAttribute="trailing" secondItem="Ja2-h4-wc8" secondAttribute="trailing" id="IKK-Vw-eZm"/>
+                                <constraint firstItem="Tjz-se-iXd" firstAttribute="top" secondItem="hCg-k2-U3y" secondAttribute="top" constant="98" id="TmI-fy-aga"/>
+                                <constraint firstItem="NB1-cB-sHa" firstAttribute="top" secondItem="Tjz-se-iXd" secondAttribute="bottom" constant="22" id="aOG-U7-tR9"/>
+                                <constraint firstAttribute="trailing" secondItem="NB1-cB-sHa" secondAttribute="trailing" constant="78" id="dey-PL-xcC"/>
+                                <constraint firstItem="NB1-cB-sHa" firstAttribute="leading" secondItem="hCg-k2-U3y" secondAttribute="leading" constant="90" id="yb2-vN-Clh"/>
+                                <constraint firstItem="Ja2-h4-wc8" firstAttribute="top" secondItem="hCg-k2-U3y" secondAttribute="top" constant="14" id="ziN-Hx-0MC"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="hCg-k2-U3y" firstAttribute="height" secondItem="0EP-hI-A1g" secondAttribute="height" id="RV2-tE-G60"/>
+                        <constraint firstItem="hCg-k2-U3y" firstAttribute="leading" secondItem="0EP-hI-A1g" secondAttribute="leading" id="TcG-le-HUA"/>
+                        <constraint firstAttribute="bottom" secondItem="hCg-k2-U3y" secondAttribute="bottom" id="diC-OC-LGb"/>
+                        <constraint firstItem="hCg-k2-U3y" firstAttribute="top" secondItem="0EP-hI-A1g" secondAttribute="top" id="rNM-3Z-Wre"/>
+                        <constraint firstAttribute="trailing" secondItem="hCg-k2-U3y" secondAttribute="trailing" id="xe9-DY-AKd"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="hKP-kS-STa"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="IY0-PO-tTP"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="kdJ-Sp-nqf"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="0EP-hI-A1g" firstAttribute="leading" secondItem="kdJ-Sp-nqf" secondAttribute="leading" id="1UY-Yx-cjB"/>
+                <constraint firstItem="kdJ-Sp-nqf" firstAttribute="bottom" secondItem="0EP-hI-A1g" secondAttribute="bottom" constant="5" id="HQz-8A-5fB"/>
+                <constraint firstItem="kdJ-Sp-nqf" firstAttribute="top" secondItem="0EP-hI-A1g" secondAttribute="top" constant="5" id="Kst-CV-paY"/>
+                <constraint firstItem="kdJ-Sp-nqf" firstAttribute="trailing" secondItem="0EP-hI-A1g" secondAttribute="trailing" id="bYF-ud-iBR"/>
+            </constraints>
+            <point key="canvasLocation" x="257.97101449275362" y="28.794642857142854"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <namedColor name="color_2C64EE">
+            <color red="0.17299999296665192" green="0.3919999897480011" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -7,10 +7,11 @@ import Foundation
 
 // MARK: - Welcome
 struct PhoneModel: Decodable {
-    let empty: String
+    let info, message: String
 
     enum CodingKeys: String, CodingKey {
-        case empty = ""
+        case info = "Info"
+        case message = "Message:"
     }
 }
 
