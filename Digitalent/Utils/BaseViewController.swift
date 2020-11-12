@@ -74,6 +74,24 @@ class BaseViewController: UIViewController {
         }
     }
     
+    func putRequest(url: String, parameters: [String:Any], tag: String){
+        
+        AF.request("\(DigitalentURL.BASE_URL)\(url)",
+                   method: .put,
+                   parameters: parameters,
+                   encoding: URLEncoding.httpBody).responseData { response in
+                    
+                    switch response.result {
+                    case .success(let data):
+                        self.onSuccess(data: data, tag: tag)
+                        break
+                    case .failure(_):
+                        self.onFailed(tag: tag)
+                        break
+                    }
+        }
+    }
+    
     func onSuccess(data: Data, tag: String){}
     
     func onFailed(tag: String){

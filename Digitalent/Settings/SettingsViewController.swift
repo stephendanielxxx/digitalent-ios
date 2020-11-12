@@ -1,20 +1,25 @@
 
 import UIKit
 import Alamofire
+import PopupDialog
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController{
+
+    
     @IBOutlet weak var settingsAccount: UILabel!
     @IBOutlet weak var settingsSecurity: UILabel!
     @IBOutlet weak var settingsNotification: UILabel!
     @IBOutlet weak var deleteAccount: UILabel!
     @IBOutlet weak var settingsSignout: UILabel!
     
+    var delegate: SettingDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let setAccount = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.openSettingsAccount))
         settingsAccount.isUserInteractionEnabled = true
         settingsAccount.addGestureRecognizer(setAccount)
+        
         
         let setSecurity = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.openSecurity))
         settingsSecurity.isUserInteractionEnabled = true
@@ -24,7 +29,6 @@ class SettingsViewController: UIViewController {
         deleteAccount.isUserInteractionEnabled = true
         deleteAccount.addGestureRecognizer(deleteAccountGesture)
         
-
     }
 
     @objc func openSettingsAccount(sender:UITapGestureRecognizer) {
@@ -43,13 +47,35 @@ class SettingsViewController: UIViewController {
         
         self.present(changePass, animated: true, completion: nil)
     }
-  
+
     
     @objc func openDeleteAccount(sender:UITapGestureRecognizer) {
-        let changePass = SecurityViewController()
-        
-        changePass.modalPresentationStyle = .fullScreen
-        
-        self.present(changePass, animated: true, completion: nil)
+        showCustomDialog(animated: true)
     }
+    
+    func showCustomDialog(animated: Bool = true) {
+        
+        // Create a custom view controller
+        let ratingVC = DeleteDialogViewController(nibName: "DeleteDialogViewController", bundle: nil)
+        ratingVC.delegate = self
+        // Create the dialog
+        let popup = PopupDialog(viewController: ratingVC,
+                                buttonAlignment: .horizontal,
+                                transitionStyle: .bounceDown,
+                                tapGestureDismissal: false,
+                                panGestureDismissal: false)
+        
+        present(popup, animated: animated, completion: nil)
+    }
+   
+}
+extension SettingsViewController: DeleteDialogDelegate{
+    func onDeleteAccount(){
+        delegate.onLogout()
+    }
+}
+
+
+protocol SettingDelegate {
+    func onLogout()
 }

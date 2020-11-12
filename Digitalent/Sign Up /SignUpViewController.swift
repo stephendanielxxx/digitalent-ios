@@ -4,7 +4,6 @@ import UIKit
 import Alamofire
 
 
-
 class SignUpViewController: BaseViewController {
     
     @IBOutlet weak var emailText: UITextField!
@@ -16,15 +15,15 @@ class SignUpViewController: BaseViewController {
     
     
     var SignupModel: SignupModel!
-    var iconClick = true
+    var confirmPass = true
+    var passClick = true
     var emailValid = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
-
+    
     @IBAction func signInButton(_ sender: UIButton) {
         
             let signin = LoginViewController()
@@ -39,11 +38,10 @@ class SignUpViewController: BaseViewController {
             "password": "\(passwordText.text!)"
         ]
         postRequest(url: "user/auth/create_user", parameters: parameters, tag: "post sign up")
-        
     }
     
     @IBAction func passwordClick(_ sender: UIButton) {
-        if(iconClick == true) {
+        if(passClick == true) {
             passwordText.isSecureTextEntry = false
             passwordIcon.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
             
@@ -52,22 +50,20 @@ class SignUpViewController: BaseViewController {
             passwordIcon.setImage(UIImage(systemName: "eye.fill"), for: .normal)
         }
         
-        iconClick = !iconClick
+        passClick = !passClick
 
     }
     
     @IBAction func retypepassClick(_ sender: UIButton) {
-        if(iconClick == true) {
-            passwordText.isSecureTextEntry = false
-            passwordIconn.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        if(passClick == true) {
+            retypepassText.isSecureTextEntry = false
+            passwordIconn.setImage(UIImage(systemName: "eye.slash.fill"), for:.normal)
             
         } else {
-            passwordText.isSecureTextEntry = true
+            retypepassText.isSecureTextEntry = true
             passwordIconn.setImage(UIImage(systemName: "eye.fill"), for: .normal)
         }
-        
-        iconClick = !iconClick
-
+        confirmPass = !confirmPass
     }
     
     

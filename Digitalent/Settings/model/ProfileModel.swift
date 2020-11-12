@@ -6,8 +6,9 @@
 import Foundation
 
 // MARK: - Welcome
-struct ProfilModel: Decodable {
+struct ProfileModel: Decodable {
     let code, message: String
+    
 }
 
 

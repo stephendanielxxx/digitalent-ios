@@ -7,10 +7,13 @@ import Foundation
 
 // MARK: - Welcome
 struct ChangeEmailModel: Decodable {
-    let empty: String
-
+    let info: String
+    let messages: String
+    
     enum CodingKeys: String, CodingKey {
-        case empty = ""
+        case info = "Info"
+        case messages = "Message:"
+        
     }
 }
 

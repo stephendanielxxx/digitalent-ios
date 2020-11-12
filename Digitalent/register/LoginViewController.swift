@@ -30,7 +30,6 @@ class LoginViewController: BaseViewController {
         ]
         postRequest(url: "user/auth/login", parameters: parameters, tag: "post login")
         
-        
     }
     
     override func onSuccess(data: Data, tag: String) {
@@ -44,14 +43,11 @@ class LoginViewController: BaseViewController {
                     self.saveStringPreference(value: (loginModel.user?[0].address)!, key: DigitalentKeys.ADDRESS)
                     self.saveStringPreference(value: (loginModel.user?[0].province)!, key: DigitalentKeys.PROVINCE)
                     self.saveStringPreference(value: (loginModel.user?[0].city)!, key: DigitalentKeys.CITY)
+                    self.saveStringPreference(value: (loginModel.user?[0].poscode)!, key: DigitalentKeys.POSCODE)
+                    self.saveStringPreference(value: (loginModel.user?[0].kelas)!, key: DigitalentKeys.KELAS)
                     self.saveStringPreference(value: (loginModel.user?[0].lastEducation)!, key: DigitalentKeys.LAST_EDUCATION)
                     self.saveStringPreference(value: (loginModel.user?[0].selectJob)!, key: DigitalentKeys.SELECT_JOB)
                     self.saveStringPreference(value: (loginModel.user?[0].institution)!, key: DigitalentKeys.INSTITUTION)
-                    self.saveStringPreference(value: (loginModel.user?[0].email)!, key: DigitalentKeys.EMAIL)
-                    self.saveStringPreference(value: (loginModel.user?[0].gender)!, key: DigitalentKeys.GENDER)
-                    self.saveStringPreference(value: (loginModel.user?[0].birthDate)!, key: DigitalentKeys.BIRTH_DATE)
-                    self.saveStringPreference(value: (loginModel.user?[0].phone)!, key: DigitalentKeys.PHONE)
-                    self.saveStringPreference(value: (loginModel.user?[0].email)!, key: DigitalentKeys.EMAIL)
                     self.saveStringPreference(value: (loginModel.user?[0].email)!, key: DigitalentKeys.EMAIL)
                     self.saveStringPreference(value: (loginModel.user?[0].gender)!, key: DigitalentKeys.GENDER)
                     self.saveStringPreference(value: (loginModel.user?[0].birthDate)!, key: DigitalentKeys.BIRTH_DATE)
@@ -63,7 +59,7 @@ class LoginViewController: BaseViewController {
                     self.saveStringPreference(value: (loginModel.user?[0].about)!, key: DigitalentKeys.ABOUT)
                     self.saveStringPreference(value: (loginModel.user?[0].isTeacher)!, key: DigitalentKeys.IS_TEACHER)
                 
-                    let home = HomeViewController()
+                    let home = HomeTabBarViewController()
                     home.modalPresentationStyle = .fullScreen
                     self.present(home, animated: true, completion: nil)
 

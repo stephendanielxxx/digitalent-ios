@@ -27,11 +27,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="fZB-rs-lNs">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXq-Sg-4FH">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="798"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hma-Rh-EHr">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
@@ -52,7 +52,9 @@
                                         <constraint firstAttribute="width" constant="26" id="7rJ-Pe-ann"/>
                                     </constraints>
                                     <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Button" image="eye.fill" catalog="system"/>
+                                    <state key="normal" title="Button" image="eye.fill" catalog="system">
+                                        <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
                                     <connections>
                                         <action selector="passwordClick:" destination="-1" eventType="touchUpInside" id="v3I-o6-rCg"/>
                                     </connections>
@@ -98,7 +100,7 @@
                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="uAq-CP-dCR">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="uAq-CP-dCR">
                                     <rect key="frame" x="83" y="408" width="301" height="42"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -128,20 +130,20 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O44-Mc-eOI">
                                     <rect key="frame" x="14" y="41" width="386" height="100"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="100" id="7rq-69-Voj"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="7rq-69-Voj"/>
                                     </constraints>
                                     <attributedString key="attributedText">
                                         <fragment content="Start Learning with">
                                             <attributes>
                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" metaFont="system" size="44"/>
+                                                <font key="NSFont" metaFont="system" size="40"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                         <fragment content=" DIGITALENT">
                                             <attributes>
                                                 <color key="NSColor" red="0.17254901959999999" green="0.3921568627" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" metaFont="system" size="44"/>
+                                                <font key="NSFont" metaFont="system" size="40"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -175,7 +177,6 @@
                                 <constraint firstItem="SLs-LY-Gj6" firstAttribute="centerY" secondItem="wbx-Wm-0tS" secondAttribute="centerY" id="1Ki-1K-y0l"/>
                                 <constraint firstItem="CbV-0O-A3R" firstAttribute="centerY" secondItem="tiz-GS-fo8" secondAttribute="centerY" id="2Ha-OW-caJ"/>
                                 <constraint firstItem="rUb-D4-rnI" firstAttribute="top" secondItem="CbV-0O-A3R" secondAttribute="bottom" constant="22.5" id="4FR-yT-rhs"/>
-                                <constraint firstItem="bvk-jd-cX8" firstAttribute="baseline" secondItem="wbx-Wm-0tS" secondAttribute="firstBaseline" id="6zH-Ob-t4I"/>
                                 <constraint firstItem="rUb-D4-rnI" firstAttribute="leading" secondItem="hma-Rh-EHr" secondAttribute="leading" constant="50" id="7na-oc-yqi"/>
                                 <constraint firstItem="tiz-GS-fo8" firstAttribute="leading" secondItem="wbx-Wm-0tS" secondAttribute="leading" id="8jf-92-fpq"/>
                                 <constraint firstItem="CbV-0O-A3R" firstAttribute="height" secondItem="bvk-jd-cX8" secondAttribute="height" id="ASl-JN-Wi6"/>
@@ -229,7 +230,7 @@
                 <constraint firstItem="ZXq-Sg-4FH" firstAttribute="top" secondItem="nl0-7j-My8" secondAttribute="top" id="yU9-Za-CkV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-426.08695652173918" y="152.67857142857142"/>
+            <point key="canvasLocation" x="-314" y="131"/>
         </view>
     </objects>
     <resources>

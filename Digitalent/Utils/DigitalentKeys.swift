@@ -4,11 +4,14 @@ import Foundation
 
 struct DigitalentKeys {
     static let ID = "ID"
+    static let PASSWORD = "PASSWORD"
     static let FIRST_NAME = "FIRST_NAME"
     static let LAST_NAME = "LAST_NAME"
     static let ADDRESS = "ADDRESS"
     static let PROVINCE = "PROVINCE"
     static let CITY = "CITY"
+    static let POSCODE = "POSCODE"
+    static let KELAS = "KELAS"
     static let LAST_EDUCATION = "LAST_EDUCATION"
     static let SELECT_JOB = "SELECT_JOB"
     static let INSTITUTION = "INSTITUTION"
@@ -22,6 +25,7 @@ struct DigitalentKeys {
     static let USER_PROFILE = "USER_PROFILE"
     static let ABOUT = "ABOUT"
     static let IS_TEACHER = "IS_TEACHER"
+    
 
 
 
