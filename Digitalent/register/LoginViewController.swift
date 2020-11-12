@@ -47,6 +47,7 @@ class LoginViewController: BaseViewController {
             do{
                 self.loginModel = try decoder.decode(LoginModel.self, from:data)
                 if self.loginModel.user != nil{
+                    self.saveStringPreference(value: passwordText.text!, key: DigitalentKeys.PASSWORD)
                     self.saveStringPreference(value: (loginModel.user?[0].id)!, key: DigitalentKeys.ID)
                     self.saveStringPreference(value: (loginModel.user?[0].firstName)!, key: DigitalentKeys.FIRST_NAME)
                     self.saveStringPreference(value: (loginModel.user?[0].lastName)!, key: DigitalentKeys.LAST_NAME)
