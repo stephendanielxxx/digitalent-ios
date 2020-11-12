@@ -33,6 +33,7 @@ class BaseSettingsViewController: BaseViewController {
         ]
         postRequest(url: "user/auth/logout", parameters: parameters, tag: "logout")
     }
+    
     override func onSuccess(data: Data, tag: String) {
         let decoder = JSONDecoder()
         do{

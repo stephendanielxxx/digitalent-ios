@@ -48,11 +48,14 @@ class SignUpViewController: BaseViewController {
                 "password": "\(passwordText.text!)"
             ]
             postRequest(url: "user/auth/create_user", parameters: parameters, tag: "post sign up")
+            
+            showSpinner(onView: self.view)
         }
         
     }
     
     override func onSuccess(data: Data, tag: String) {
+        removeSpinner()
         let decoder = JSONDecoder()
         do {
             let signUpModel = try decoder.decode(SignupModel.self, from: data)
