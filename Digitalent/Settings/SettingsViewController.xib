@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Digitalent" customModuleProvider="target">
             <connections>
+                <outlet property="LogOut" destination="7S1-eF-Lay" id="7S2-OH-m3o"/>
                 <outlet property="deleteAccount" destination="vh7-gN-hVY" id="EEq-EE-blV"/>
                 <outlet property="settingsAccount" destination="aBp-qi-gSv" id="PiD-Xh-Wcc"/>
                 <outlet property="settingsNotification" destination="cFb-XU-Hxn" id="vEw-ci-MqC"/>

@@ -22,6 +22,7 @@ class DeleteDialogViewController: UIViewController {
 
     @IBAction func deleteAction(_ sender: UIButton) {
         delegate.onDeleteAccount()
+        
     }
     
     @IBAction func noButton(_ sender: UIButton) {

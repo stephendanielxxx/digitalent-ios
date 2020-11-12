@@ -62,7 +62,7 @@ class BaseViewController: UIViewController {
                    method: .post,
                    parameters: parameters,
                    encoding: URLEncoding.httpBody).responseData { response in
-//                    debugPrint(response)
+                 debugPrint(response)
                     switch response.result {
                     case .success(let data):
                         self.onSuccess(data: data, tag: tag)
@@ -123,5 +123,6 @@ extension UIViewController {
         REGEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         return NSPredicate(format: "SELF MATCHES %@", REGEX).evaluate(with: emailAddress)
     }
+    
 }
 
