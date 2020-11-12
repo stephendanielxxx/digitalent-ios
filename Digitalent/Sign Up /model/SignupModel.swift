@@ -5,7 +5,6 @@
 
 import Foundation
 
-// MARK: - Welcome
 struct SignupModel: Decodable {
     let code, message: String
 }

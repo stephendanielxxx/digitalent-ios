@@ -114,6 +114,10 @@
 		B9E3672525467E2F0044509D /* OnlineClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E3672325467E2F0044509D /* OnlineClassDetailViewController.xib */; };
 		B9E3672D254680B30044509D /* ClassDetailTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3672C254680B30044509D /* ClassDetailTapGesture.swift */; };
 		B9E36732254683DE0044509D /* GetOnlineClassDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E36731254683DE0044509D /* GetOnlineClassDetailModel.swift */; };
+		B9FF690A255D03DA0054394E /* FinishQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FF6908255D03DA0054394E /* FinishQuizViewController.swift */; };
+		B9FF690B255D03DA0054394E /* FinishQuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9FF6909255D03DA0054394E /* FinishQuizViewController.xib */; };
+		B9FF6913255D17370054394E /* ChangeProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FF6912255D17370054394E /* ChangeProfileModel.swift */; };
+		B9FF691B255D24020054394E /* ForgetPasswordTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FF691A255D24020054394E /* ForgetPasswordTapGesture.swift */; };
 		E1580D5BB4B4250767633859 /* Pods_DigitalentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE14E8FC709F09B794F3552 /* Pods_DigitalentTests.framework */; };
 		EEB704D1F303C84716A88C22 /* Pods_Digitalent_DigitalentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E89BA3BE3424B523B38D77 /* Pods_Digitalent_DigitalentUITests.framework */; };
 /* End PBXBuildFile section */
@@ -251,6 +255,10 @@
 		B9E3672325467E2F0044509D /* OnlineClassDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineClassDetailViewController.xib; sourceTree = "<group>"; };
 		B9E3672C254680B30044509D /* ClassDetailTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailTapGesture.swift; sourceTree = "<group>"; };
 		B9E36731254683DE0044509D /* GetOnlineClassDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOnlineClassDetailModel.swift; sourceTree = "<group>"; };
+		B9FF6908255D03DA0054394E /* FinishQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishQuizViewController.swift; sourceTree = "<group>"; };
+		B9FF6909255D03DA0054394E /* FinishQuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinishQuizViewController.xib; sourceTree = "<group>"; };
+		B9FF6912255D17370054394E /* ChangeProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileModel.swift; sourceTree = "<group>"; };
+		B9FF691A255D24020054394E /* ForgetPasswordTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordTapGesture.swift; sourceTree = "<group>"; };
 		BC16A3402C35C39AEB428B2D /* Pods-Digitalent-DigitalentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digitalent-DigitalentUITests.debug.xcconfig"; path = "Target Support Files/Pods-Digitalent-DigitalentUITests/Pods-Digitalent-DigitalentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2E89BA3BE3424B523B38D77 /* Pods_Digitalent_DigitalentUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digitalent_DigitalentUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -311,16 +319,9 @@
 			children = (
 				6ABC97172558F576002CDCC6 /* ForgetPassViewController.swift */,
 				6ABC97182558F577002CDCC6 /* ForgetPassViewController.xib */,
-				6A52844625398783001D76EB /* model */,
+				B9FF691A255D24020054394E /* ForgetPasswordTapGesture.swift */,
 			);
 			path = forgett;
-			sourceTree = "<group>";
-		};
-		6A52844625398783001D76EB /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 		6A598A6C254294F100FBEC08 /* Sign Up  */ = {
@@ -371,6 +372,7 @@
 				6A9703302546BD22006CED9E /* PasswordModel.swift */,
 				6A9703352546BD6A006CED9E /* SignoutModel.swift */,
 				6A97033A2546BDA5006CED9E /* DeleteModel.swift */,
+				B9FF6912255D17370054394E /* ChangeProfileModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -414,6 +416,8 @@
 				B9362F6D255BBD6B00452B6B /* QuizAnswerTapGesture.swift */,
 				B980DE14255CE33600D1D19F /* LeaveQuizViewController.swift */,
 				B980DE15255CE33700D1D19F /* LeaveQuizViewController.xib */,
+				B9FF6908255D03DA0054394E /* FinishQuizViewController.swift */,
+				B9FF6909255D03DA0054394E /* FinishQuizViewController.xib */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -728,6 +732,7 @@
 			files = (
 				B9E3672525467E2F0044509D /* OnlineClassDetailViewController.xib in Resources */,
 				B946B1C0253ED69000D027A3 /* ExtensionUtils.swift in Resources */,
+				B9FF690B255D03DA0054394E /* FinishQuizViewController.xib in Resources */,
 				B980DE17255CE33700D1D19F /* LeaveQuizViewController.xib in Resources */,
 				B92DBED92553BAE50059EEC3 /* ClassContentTableViewCell.xib in Resources */,
 				B946B1C1253ED69000D027A3 /* BaseViewController.swift in Resources */,
@@ -910,6 +915,7 @@
 				B946B204253ED74900D027A3 /* ExtensionUtils.swift in Sources */,
 				B9E3672425467E2F0044509D /* OnlineClassDetailViewController.swift in Sources */,
 				B946B266253EE85600D027A3 /* AllOnlineClassViewController.swift in Sources */,
+				B9FF6913255D17370054394E /* ChangeProfileModel.swift in Sources */,
 				B946B205253ED74900D027A3 /* BaseViewController.swift in Sources */,
 				6A3806DC255BBE620067E8CE /* ChangePhoneNumberViewController.swift in Sources */,
 				6A9703292546BC81006CED9E /* ProfileModel.swift in Sources */,
@@ -920,6 +926,7 @@
 				B9362F73255BCD0B00452B6B /* LoadAnswerModel.swift in Sources */,
 				B9AD4D712547CD2D0046BD2D /* ClassBottomSheetViewController.swift in Sources */,
 				B92DBED82553BAE50059EEC3 /* ClassContentTableViewCell.swift in Sources */,
+				B9FF690A255D03DA0054394E /* FinishQuizViewController.swift in Sources */,
 				B9E3672D254680B30044509D /* ClassDetailTapGesture.swift in Sources */,
 				B92DBF172553F8550059EEC3 /* MaterialPdfViewController.swift in Sources */,
 				B946B209253ED74900D027A3 /* HomeViewController.swift in Sources */,
@@ -941,6 +948,7 @@
 				B92DBEE42553F5200059EEC3 /* MaterialVideoViewController.swift in Sources */,
 				B9AD4DF4254819BA0046BD2D /* CourseStatusModel.swift in Sources */,
 				B96C3CC4255529670041CE6B /* GetQuizModel.swift in Sources */,
+				B9FF691B255D24020054394E /* ForgetPasswordTapGesture.swift in Sources */,
 				B96C3CBE255522FE0041CE6B /* QUizViewController.swift in Sources */,
 				B946B271253EEEC200D027A3 /* NotificationViewController.swift in Sources */,
 				6A97033B2546BDA5006CED9E /* DeleteModel.swift in Sources */,

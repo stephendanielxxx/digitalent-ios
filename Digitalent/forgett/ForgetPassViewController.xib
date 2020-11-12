@@ -22,13 +22,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pass_img" translatesAutoresizingMaskIntoConstraints="NO" id="1WC-do-NY2">
-                    <rect key="frame" x="0.0" y="13" width="414" height="450"/>
+                    <rect key="frame" x="0.0" y="13" width="414" height="400"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="450" id="dat-Bl-acL"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="dat-Bl-acL"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ee-4W-zi2" userLabel="email">
-                    <rect key="frame" x="42" y="465" width="330" height="50"/>
+                    <rect key="frame" x="42" y="415" width="330" height="50"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="type your email" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="k2m-Sl-4g3" userLabel="email textfield">
                             <rect key="frame" x="20" y="4" width="271" height="42"/>
@@ -57,11 +57,11 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vE6-oF-G8O" userLabel="Button Reset">
-                    <rect key="frame" x="55" y="546" width="304" height="42"/>
+                    <rect key="frame" x="55" y="496" width="304" height="42"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEND RESET PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LwC-oL-Yhv">
                             <rect key="frame" x="56" y="12" width="182" height="17"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -74,6 +74,15 @@
                         <constraint firstAttribute="trailing" secondItem="LwC-oL-Yhv" secondAttribute="trailing" constant="66" id="pIQ-Z8-otn"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb3-GJ-Xiy">
+                    <rect key="frame" x="160.5" y="570" width="93" height="30"/>
+                    <state key="normal" title="Back to Login">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="CpH-yo-KG3"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="eHz-XO-RlU"/>
             <color key="backgroundColor" name="color_2C64EE"/>
@@ -84,8 +93,10 @@
                 <constraint firstItem="8ee-4W-zi2" firstAttribute="top" secondItem="1WC-do-NY2" secondAttribute="bottom" constant="2" id="9bU-gx-1i7"/>
                 <constraint firstItem="vE6-oF-G8O" firstAttribute="top" secondItem="8ee-4W-zi2" secondAttribute="bottom" constant="31" id="GBn-K7-Qtr"/>
                 <constraint firstItem="vE6-oF-G8O" firstAttribute="leading" secondItem="eHz-XO-RlU" secondAttribute="leading" constant="55" id="LDg-NG-kh7"/>
+                <constraint firstItem="nb3-GJ-Xiy" firstAttribute="top" secondItem="vE6-oF-G8O" secondAttribute="bottom" constant="32" id="MSZ-8p-6cy"/>
                 <constraint firstItem="eHz-XO-RlU" firstAttribute="trailing" secondItem="vE6-oF-G8O" secondAttribute="trailing" constant="55" id="MaM-S7-Vuv"/>
                 <constraint firstItem="8ee-4W-zi2" firstAttribute="leading" secondItem="eHz-XO-RlU" secondAttribute="leading" constant="42" id="TWM-fC-4Qx"/>
+                <constraint firstItem="nb3-GJ-Xiy" firstAttribute="centerX" secondItem="vE6-oF-G8O" secondAttribute="centerX" id="dnf-lk-Hhg"/>
                 <constraint firstItem="eHz-XO-RlU" firstAttribute="top" secondItem="1WC-do-NY2" secondAttribute="top" constant="31" id="sMq-ql-yco"/>
                 <constraint firstItem="eHz-XO-RlU" firstAttribute="trailing" secondItem="8ee-4W-zi2" secondAttribute="trailing" constant="42" id="uKc-Ye-vQj"/>
                 <constraint firstItem="eHz-XO-RlU" firstAttribute="trailing" secondItem="1WC-do-NY2" secondAttribute="trailing" id="xVq-yC-r6z"/>
