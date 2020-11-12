@@ -317,16 +317,8 @@
 			children = (
 				6ABC97172558F576002CDCC6 /* ForgetPassViewController.swift */,
 				6ABC97182558F577002CDCC6 /* ForgetPassViewController.xib */,
-				6A52844625398783001D76EB /* model */,
 			);
 			path = forgett;
-			sourceTree = "<group>";
-		};
-		6A52844625398783001D76EB /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 		6A598A6C254294F100FBEC08 /* Sign Up  */ = {
