@@ -11,9 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeleteDialogViewController" customModule="Digitalent" customModuleProvider="target">
             <connections>
-                <outlet property="noButton" destination="uQ6-YO-EbG" id="eq9-Ib-GF4"/>
+                <outlet property="noButton" destination="uQ6-YO-EbG" id="n5K-oy-B9m"/>
                 <outlet property="view" destination="WhI-1a-eUE" id="a2t-mJ-OHO"/>
-                <outlet property="yesButton" destination="Qhi-OL-TgQ" id="NiC-Bp-Z94"/>
+                <outlet property="yesButton" destination="Qhi-OL-TgQ" id="ZlV-ZO-Ufi"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -54,8 +54,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="deleteAction:" destination="-1" eventType="touchUpInside" id="BUm-9c-D7I"/>
-                                <action selector="yesButton:" destination="-1" eventType="touchUpInside" id="T4k-vM-yS3"/>
+                                <action selector="deleteAction:" destination="-1" eventType="touchUpInside" id="TDQ-CD-dkJ"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQ6-YO-EbG">
@@ -74,7 +73,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="noButton:" destination="-1" eventType="touchUpInside" id="ija-3l-oJy"/>
+                                <action selector="noButton:" destination="-1" eventType="touchUpInside" id="ZP2-iM-fZK"/>
                             </connections>
                         </button>
                     </subviews>

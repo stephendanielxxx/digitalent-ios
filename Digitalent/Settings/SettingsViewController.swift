@@ -71,7 +71,7 @@ class SettingsViewController: UIViewController{
 }
 extension SettingsViewController: DeleteDialogDelegate{
     func onDeleteAccount(){
-        delegate.onLogout()
+        // Api delete account disini
     }
 }
 
