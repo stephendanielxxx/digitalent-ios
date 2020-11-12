@@ -3,7 +3,7 @@ import UIKit
 import Alamofire
 import PopupDialog
 
-class SettingsViewController: BaseViewController, DeleteDialogDelegate{
+class SettingsViewController: BaseSettingsViewController, DeleteDialogDelegate{
     
     
     @IBOutlet weak var settingsAccount: UILabel!
@@ -30,7 +30,15 @@ class SettingsViewController: BaseViewController, DeleteDialogDelegate{
         deleteAccount.isUserInteractionEnabled = true
         deleteAccount.addGestureRecognizer(deleteAccountGesture)
         
+        let signoutAccountGesture = UITapGestureRecognizer(target: self, action: #selector(signOut(sender:)))
+        settingsSignout.isUserInteractionEnabled = true
+        settingsSignout.addGestureRecognizer(signoutAccountGesture)
+        
+        
+    }
     
+    @objc func signOut(sender:UITapGestureRecognizer) {
+        self.logout()
     }
     
     @objc func openSettingsAccount(sender:UITapGestureRecognizer) {
@@ -80,7 +88,7 @@ class SettingsViewController: BaseViewController, DeleteDialogDelegate{
     }
     
     override func onSuccess(data: Data, tag: String) {
-        
+        super.onSuccess(data: data, tag: tag)
         let Decoder = JSONDecoder()
         if tag == "delete account" {
             
@@ -92,6 +100,9 @@ class SettingsViewController: BaseViewController, DeleteDialogDelegate{
                     self.present(alert, animated: true)
                 }
                 else{
+                    let alert = UIAlertController(title: "Delete Failed", message: "\(deleteModel.message)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
+                    self.present(alert, animated: true)
                 }
             }
             catch{

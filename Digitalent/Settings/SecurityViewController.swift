@@ -52,14 +52,18 @@ class SecurityViewController: BaseSettingsViewController {
     }
     
     override func onSuccess(data: Data, tag: String) {
+        super.onSuccess(data: data, tag: tag)
+        
+        self.removeSpinner()
+        
         let decoder = JSONDecoder()
         do{
             let response = try decoder.decode(DeleteModel.self, from:data)
             
             self.showErrorAlert(title: response.message, errorMessage: response.message)
             
-            if response.message.caseInsensitiveCompare("Updated Success") == .orderedSame {
-                self.signout()
+            if response.info.caseInsensitiveCompare("Updated Success") == .orderedSame {
+                self.logout()
             }
             
         }catch{
@@ -68,7 +72,7 @@ class SecurityViewController: BaseSettingsViewController {
     }
     
     func changePassword(oldPassword: String, newPassword: String){
-        let user_id = readStringPreference(key: DigitalentKeys.PASSWORD)
+        let user_id = readStringPreference(key: DigitalentKeys.ID)
             
         let parameters: [String:Any] = [
             "id": "\(user_id)",
