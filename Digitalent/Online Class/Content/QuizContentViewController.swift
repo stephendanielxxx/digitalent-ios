@@ -83,6 +83,8 @@ class QuizContentViewController: BaseViewController {
         
         totalSecond = (Int(hours)! * 3600) + (Int(minutes)! * 60) + (Int(seconds)! * 1)
         
+        startTimer()
+        
         let progress =  Float(quizIndex)! / Float(totalQuestion)!
         progressView.setProgress(progress, animated: true)
         
@@ -133,7 +135,7 @@ class QuizContentViewController: BaseViewController {
         ]
         postRequest(url: "quiz/checkanswer", parameters: parameters, tag: "load answer")
         
-        startTimer()
+       
     }
     
     func startTimer(){
@@ -170,7 +172,7 @@ class QuizContentViewController: BaseViewController {
             // do something when time is up
             let alert = UIAlertController(title: "", message: "Time's Up", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Close", style: .default, handler: {action in
-                self.delegate.closeAction(index: self.index, duration: self.quizTimer.text!)
+                self.delegate.timesUp(index: self.index, duration: self.quizTimer.text!)
             }))
             self.present(alert, animated: true)
         }
@@ -200,7 +202,12 @@ class QuizContentViewController: BaseViewController {
             ]
             postRequest(url: "quiz/insertanswer", parameters: parameters, tag: "insert answer")
             
-            delegate.nextAction(index: index, duration: quizTimer.text!)
+            if quizIndex == totalQuestion {
+                // show finish dialog
+                delegate.finishAction()
+            }else{
+                delegate.nextAction(index: index, duration: quizTimer.text!)
+            }
         }
         
     }
@@ -312,4 +319,6 @@ protocol QuizDelegate {
     func nextAction(index: Int, duration: String)
     func prevAction(index: Int, duration: String)
     func closeAction(index: Int, duration: String)
+    func finishAction()
+    func timesUp(index: Int, duration: String)
 }

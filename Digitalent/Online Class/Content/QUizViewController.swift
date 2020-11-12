@@ -8,7 +8,7 @@
 import UIKit
 
 class QUizViewController: BaseViewController {
-
+    
     var course_id = ""
     var material_id = ""
     var submaterial = ""
@@ -49,7 +49,12 @@ class QUizViewController: BaseViewController {
                 let getCheckPointModel = try decoder.decode(GetCheckPointModel.self, from:data)
                 if getCheckPointModel.status == "69"{
                     let checkPointModel: CheckPointModel = getCheckPointModel.data![0]
-                    indexPage = Int(checkPointModel.lastPosition)! - 1
+                    let lastIndex = Int(checkPointModel.lastPosition)!
+                    if lastIndex > 0 {
+                        indexPage = lastIndex - 1
+                    }else{
+                        indexPage = lastIndex
+                    }
                     quiz_duration = checkPointModel.duration
                 }
                 
@@ -60,12 +65,14 @@ class QUizViewController: BaseViewController {
             }catch{
                 print(error.localizedDescription)
             }
+        }else{
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }
 
-extension QUizViewController: QuizDelegate{
-   
+extension QUizViewController: QuizDelegate, LeaveQuizDelegate, FinishQuizDelegate{
+    
     func openQuiz(index: Int, duration: String){
         let content = QuizContentViewController()
         content.quiz_duration = duration
@@ -92,7 +99,7 @@ extension QUizViewController: QuizDelegate{
         openQuiz(index: index - 1, duration: duration)
     }
     
-    func closeAction(index: Int, duration: String) {
+    func timesUp(index: Int, duration: String) {
         let parameters: [String: Any] = [
             "material_id": "\(material_id)",
             "user_id": "\(userId)",
@@ -105,7 +112,58 @@ extension QUizViewController: QuizDelegate{
         postRequest(url: "quiz/checkpoint", parameters: parameters, tag: "save checkpoint")
         
         self.dismiss(animated: true, completion: nil)
-        
     }
-
+    
+    func closeAction(index: Int, duration: String) {
+        let leaveDialog = LeaveQuizViewController()
+        leaveDialog.delegate = self
+        leaveDialog.index = index
+        leaveDialog.duration = duration
+        leaveDialog.providesPresentationContextTransitionStyle = true
+        leaveDialog.definesPresentationContext = true
+        leaveDialog.modalPresentationStyle = .overCurrentContext
+        leaveDialog.modalTransitionStyle = .crossDissolve
+        present(leaveDialog, animated: true, completion: nil)
+    }
+    
+    func finishAction() {
+        let finishDialog = FinishQuizViewController()
+        finishDialog.delegate = self
+        finishDialog.providesPresentationContextTransitionStyle = true
+        finishDialog.definesPresentationContext = true
+        finishDialog.modalPresentationStyle = .overCurrentContext
+        finishDialog.modalTransitionStyle = .crossDissolve
+        present(finishDialog, animated: true, completion: nil)
+    }
+    
+    func onLeave(index: Int, duration: String){
+        let parameters: [String: Any] = [
+            "material_id": "\(material_id)",
+            "user_id": "\(userId)",
+            "cour_id": "\(course_id)",
+            "last_pos": "\(index + 1)",
+            "last_score": "0",
+            "duration": "\(duration)"
+        ]
+        
+        postRequest(url: "quiz/checkpoint", parameters: parameters, tag: "save checkpoint")
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func onFinish() {
+        let parameters: [String: Any] = [
+            "material_id": "\(material_id)",
+            "user_id": "\(userId)",
+            "cour_id": "\(course_id)",
+            "last_pos": "0",
+            "last_score": "0",
+            "duration": "00:00:01"
+        ]
+        
+        postRequest(url: "quiz/checkpoint", parameters: parameters, tag: "save checkpoint")
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

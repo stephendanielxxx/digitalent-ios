@@ -23,6 +23,7 @@ class SecurityViewController: BaseSettingsViewController {
         
             self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func saveAction(_ sender: Any) {
         let oldPass = readStringPreference(key: DigitalentKeys.PASSWORD)
         if oldPassword.text?.count ?? 0 == 0 {
@@ -49,40 +50,34 @@ class SecurityViewController: BaseSettingsViewController {
             changePassword(oldPassword: oldPassword.text!, newPassword: newPassword.text!)
         }
     }
+    
+    override func onSuccess(data: Data, tag: String) {
+        let decoder = JSONDecoder()
+        do{
+            let response = try decoder.decode(DeleteModel.self, from:data)
+            
+            self.showErrorAlert(title: response.message, errorMessage: response.message)
+            
+            if response.message.caseInsensitiveCompare("Updated Success") == .orderedSame {
+                self.signout()
+            }
+            
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
+    
     func changePassword(oldPassword: String, newPassword: String){
         let user_id = readStringPreference(key: DigitalentKeys.PASSWORD)
-        
-        let URL = "\(DigitalentURL.BASE_URL)/api/apiupdatepassword"
-        
+            
         let parameters: [String:Any] = [
             "id": "\(user_id)",
             "password": "\(newPassword)"
         ]
+    
+        putRequest(url: "api/apiupdatepassword", parameters: parameters, tag: "post update pass")
+        
         self.showSpinner(onView: self.view)
-        AF.request(URL,
-                   method: .post,
-                   parameters: parameters,
-                   encoding: URLEncoding.httpBody).responseData { response in
-                    switch response.result {
-                    case .success(let data):
-                        self.removeSpinner()
-                        let decoder = JSONDecoder()
-                        do{
-                            let response = try decoder.decode(ProfileModel.self, from:data)
-                            
-                            self.showErrorAlert(title: response.message, errorMessage: response.message)
-                            
-                            if response.message.caseInsensitiveCompare("Updated Failed") != .orderedSame {
-                                self.signout()
-                            }
-                            
-                        }catch{
-                            print(error.localizedDescription)
-                        }
-                    case .failure(_):
-                        self.removeSpinner()
-                    }
-        }
     }
   
 }
