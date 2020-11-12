@@ -10,6 +10,7 @@ import UIKit
 class NotificationViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     
     var notificationModel: NotificationModel!
     
@@ -31,7 +32,14 @@ class NotificationViewController: BaseViewController {
             let decoder = JSONDecoder()
             self.notificationModel = try decoder.decode(NotificationModel.self, from:data)
             
-            self.tableView.reloadData()
+            if self.notificationModel.notif.count > 0{
+                emptyView.isHidden = true
+                self.tableView.isHidden = false
+                self.tableView.reloadData()
+            }else{
+                emptyView.isHidden = false
+                self.tableView.isHidden = true
+            }
         }catch{
             print(error.localizedDescription)
         }

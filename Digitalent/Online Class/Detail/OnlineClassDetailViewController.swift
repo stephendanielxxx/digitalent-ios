@@ -14,6 +14,7 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
     var totalVideo = ""
     var totalQuiz = ""
     var totalPdf = ""
+    var transactionId = ""
     
     var detailClassModel: GetOnlineClassDetailModel!
     
@@ -34,7 +35,8 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
         
         scrollView.delegate = self
         
-        let requestUrl = "online/get_detail_course/\(courseId)"
+        let userId = readStringPreference(key: DigitalentKeys.ID)
+        let requestUrl = "online/get_detail_course/\(courseId)/\(userId)"
         getRequest(url: requestUrl, tag: "get course detail")
         
         learNow.layer.cornerRadius = 15
@@ -78,6 +80,14 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func seeAllAction(_ sender: Any) {
+        let contents = ClassContentViewController()
+        contents.course_id = courseId
+        contents.transactionId = transactionId
+        contents.modalPresentationStyle = .fullScreen
+        present(contents, animated: true, completion: nil)
+    }
+    
     override func onSuccess(data: Data, tag: String) {
         let decoder = JSONDecoder()
         
@@ -99,6 +109,11 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
                     }else {
                         joinClassButton.isHidden = false
                     }
+                    
+                    transactionId = courseStatusModel.data![0].transactionID
+                    
+                }else{
+                    joinClassButton.isHidden = false
                 }
             }catch{
                 print(error.localizedDescription)
@@ -120,9 +135,9 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
         courseAuthor.text = "Created By \(detailModel.author)"
         courseDesc.attributedText = detailModel.desc?.htmlToAttributedStringWhite
         
-        videoCount.text = totalVideo
-        quizCount.text = totalQuiz
-        pdfCount.text = totalPdf
+        videoCount.text = detailModel.vid
+        quizCount.text = detailModel.totalQuiz
+        pdfCount.text = detailModel.totalPdf
         
         let userId = readStringPreference(key: DigitalentKeys.ID)
         let parameters: [String:Any] = [

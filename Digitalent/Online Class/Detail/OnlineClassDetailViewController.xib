@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -96,6 +95,9 @@
                                             <state key="normal" title="See All">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="seeAllAction:" destination="-1" eventType="touchUpInside" id="tuz-8V-d7J"/>
+                                            </connections>
                                         </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_youtube" translatesAutoresizingMaskIntoConstraints="NO" id="nnf-ad-Sma">
                                             <rect key="frame" x="22" y="291" width="45" height="45"/>
@@ -265,7 +267,7 @@
                         <constraint firstAttribute="height" constant="50" id="xsD-mq-9oZ"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkz-CM-Sqj" userLabel="Join Button">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkz-CM-Sqj" userLabel="Join Button">
                     <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                     <color key="backgroundColor" name="color_589D0B"/>
                     <constraints>
@@ -281,7 +283,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="color_2C64EE"/>
             <constraints>
                 <constraint firstItem="xoH-3j-eBn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6vb-Xx-chj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VTK-Cr-9NQ" secondAttribute="trailing" id="DgI-gD-Rjp"/>
@@ -310,8 +312,5 @@
         <namedColor name="color_589D0B">
             <color red="0.3449999988079071" green="0.61599999666213989" blue="0.043000001460313797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

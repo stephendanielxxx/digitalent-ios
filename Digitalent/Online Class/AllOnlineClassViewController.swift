@@ -8,7 +8,7 @@
 import UIKit
 
 class AllOnlineClassViewController: BaseViewController {
-
+    
     @IBOutlet weak var onlineClassView: UICollectionView!
     var onlineClassModel: OnlineClassModel!
     var cellMarginSize = 16.0
@@ -58,30 +58,37 @@ extension AllOnlineClassViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onlineClassIdentifier", for: indexPath) as! OnlineClassCollectionViewCell
-            
-            let onlineClass: OnlineModel = onlineClassModel.online[indexPath.row]
-            
-            cell.onlineClassImage.pin_updateWithProgress = true
-            cell.onlineClassImage.layer.cornerRadius = 15
-            cell.onlineClassImage.contentMode = .scaleToFill
-            cell.onlineClassImage.clipsToBounds = true
-            
-            let url = Foundation.URL(string: "\(DigitalentURL.URL_IMAGE_CLASS)\(onlineClass.image)")!
-            
-            cell.onlineClassImage.pin_setImage(from: url)
-            
-            cell.onlineClassLabel.text = onlineClass.title
-            
-            return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "onlineClassIdentifier", for: indexPath) as! OnlineClassCollectionViewCell
+        
+        let onlineClass: OnlineModel = onlineClassModel.online[indexPath.row]
+        
+        cell.onlineClassImage.pin_updateWithProgress = true
+        cell.onlineClassImage.layer.cornerRadius = 15
+        cell.onlineClassImage.contentMode = .scaleToFill
+        cell.onlineClassImage.clipsToBounds = true
+        
+        let url = Foundation.URL(string: "\(DigitalentURL.URL_IMAGE_CLASS)\(onlineClass.image)")!
+        
+        cell.onlineClassImage.pin_setImage(from: url)
+        
+        cell.onlineClassLabel.text = onlineClass.title
+        
+        let tap = ClassDetailTapGesture(target: self, action: #selector(selectCourse(_:)))
+        tap.courseId = onlineClass.id
+        tap.totalVideo = onlineClass.totalVideo
+        tap.totalQuiz = onlineClass.totalQuiz
+        tap.totalPdf = onlineClass.totalPdf
+        cell.baseView.addGestureRecognizer(tap)
+        
+        return cell
         
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let width = self.calculateWidth()
-            return CGSize(width: width, height: 200)
+        let width = self.calculateWidth()
+        return CGSize(width: width, height: 200)
         
     }
     
@@ -91,5 +98,20 @@ extension AllOnlineClassViewController: UICollectionViewDelegate, UICollectionVi
         let width = (self.view.frame.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
         
         return width
+    }
+    
+    @objc func selectCourse(_ sender: ClassDetailTapGesture?) {
+        let courseId = sender!.courseId!
+        let totalVideo = sender!.totalVideo!
+        let totalQuiz = sender!.totalQuiz!
+        let totalPdf = sender!.totalPdf!
+        
+        let detailClass = OnlineClassDetailViewController()
+        detailClass.courseId = courseId
+        detailClass.totalVideo = totalVideo
+        detailClass.totalQuiz = totalQuiz
+        detailClass.totalPdf = totalPdf
+        detailClass.modalPresentationStyle = .fullScreen
+        present(detailClass, animated: true, completion: nil)
     }
 }

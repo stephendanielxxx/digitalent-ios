@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MaterialPdfViewController" customModule="Digitalent" customModuleProvider="target">
+            <connections>
+                <outlet property="pdfView" destination="avQ-JV-A7Y" id="761-Hz-NHE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gna-Gy-u4N">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <color key="barTintColor" name="color_2C64EE"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <offsetWrapper key="textShadowOffset" horizontal="800" vertical="0.0"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="Material" id="AOI-cC-sIV">
+                            <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="nm3-8o-wcs">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="backAction:" destination="-1" id="TkN-rl-9Ak"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="avQ-JV-A7Y" userLabel="PDF View" customClass="PDFView">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="backgroundColor" name="color_2C64EE"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="color_2C64EE"/>
+            <constraints>
+                <constraint firstItem="Gna-Gy-u4N" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ef0-FP-r0A"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="avQ-JV-A7Y" secondAttribute="trailing" id="RT7-jF-8Yd"/>
+                <constraint firstItem="avQ-JV-A7Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dz1-0F-4Hw"/>
+                <constraint firstItem="avQ-JV-A7Y" firstAttribute="top" secondItem="Gna-Gy-u4N" secondAttribute="bottom" id="i73-a9-gdl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gna-Gy-u4N" secondAttribute="trailing" id="sSk-50-6vu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="avQ-JV-A7Y" secondAttribute="bottom" id="w7U-Yg-td1"/>
+                <constraint firstItem="Gna-Gy-u4N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zFh-BI-x7F"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-20.289855072463769" y="107.8125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <namedColor name="color_2C64EE">
+            <color red="0.17299999296665192" green="0.3919999897480011" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

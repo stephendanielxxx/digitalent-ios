@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassContentViewController" customModule="Digitalent" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="FXF-5g-PF6" id="dF9-pb-B0n"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uO4-RF-qKB">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <color key="barTintColor" name="color_2C64EE"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <offsetWrapper key="textShadowOffset" horizontal="800" vertical="0.0"/>
+                    </textAttributes>
+                    <textAttributes key="largeTitleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="Contents" id="YFR-Te-nrN">
+                            <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="dQf-dx-fg6">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="backAction:" destination="-1" id="SJP-Ca-P1H"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FXF-5g-PF6">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="backgroundColor" name="color_2C64EE"/>
+                    <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="color_2C64EE"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uO4-RF-qKB" secondAttribute="trailing" id="253-Xl-pxk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FXF-5g-PF6" secondAttribute="trailing" id="4bd-fs-IhP"/>
+                <constraint firstItem="FXF-5g-PF6" firstAttribute="top" secondItem="uO4-RF-qKB" secondAttribute="bottom" id="NnZ-bX-LFw"/>
+                <constraint firstItem="uO4-RF-qKB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Te2-zG-VyK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FXF-5g-PF6" secondAttribute="bottom" id="bMf-eW-PJ8"/>
+                <constraint firstItem="uO4-RF-qKB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qx7-3H-LMX"/>
+                <constraint firstItem="FXF-5g-PF6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wa1-LC-BLD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-20.289855072463769" y="107.8125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <namedColor name="color_2C64EE">
+            <color red="0.17299999296665192" green="0.3919999897480011" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

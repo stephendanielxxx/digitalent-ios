@@ -20,11 +20,17 @@ struct OnlineModel: Decodable {
     let vid: String?
     let desc: String
     let courseTypeID: String
+    let totalQuiz: String
+    let totalVideo: String
+    let totalPdf: String
 
     enum CodingKeys: String, CodingKey {
         case id, title, price
         case specialPrice = "special_price"
         case image, vid, desc
         case courseTypeID = "course_type_id"
+        case totalQuiz = "total_quiz"
+        case totalVideo = "total_video"
+        case totalPdf = "total_pdf"
     }
 }
