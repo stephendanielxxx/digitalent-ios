@@ -8,7 +8,7 @@
 import UIKit
 
 class QUizViewController: BaseViewController {
-
+    
     var course_id = ""
     var material_id = ""
     var submaterial = ""
@@ -60,12 +60,14 @@ class QUizViewController: BaseViewController {
             }catch{
                 print(error.localizedDescription)
             }
+        }else{
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }
 
-extension QUizViewController: QuizDelegate{
-   
+extension QUizViewController: QuizDelegate, LeaveQuizDelegate{
+    
     func openQuiz(index: Int, duration: String){
         let content = QuizContentViewController()
         content.quiz_duration = duration
@@ -93,6 +95,18 @@ extension QUizViewController: QuizDelegate{
     }
     
     func closeAction(index: Int, duration: String) {
+        let leaveDialog = LeaveQuizViewController()
+        leaveDialog.delegate = self
+        leaveDialog.index = index
+        leaveDialog.duration = duration
+        leaveDialog.providesPresentationContextTransitionStyle = true
+        leaveDialog.definesPresentationContext = true
+        leaveDialog.modalPresentationStyle = .overCurrentContext
+        leaveDialog.modalTransitionStyle = .crossDissolve
+        present(leaveDialog, animated: true, completion: nil)
+    }
+    
+    func onLeave(index: Int, duration: String){
         let parameters: [String: Any] = [
             "material_id": "\(material_id)",
             "user_id": "\(userId)",
@@ -105,7 +119,6 @@ extension QUizViewController: QuizDelegate{
         postRequest(url: "quiz/checkpoint", parameters: parameters, tag: "save checkpoint")
         
         self.dismiss(animated: true, completion: nil)
-        
     }
-
+    
 }
