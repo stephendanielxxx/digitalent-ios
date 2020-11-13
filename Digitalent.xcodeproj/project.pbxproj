@@ -96,6 +96,10 @@
 		B96D54392538309D0064956F /* DigitalentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96D54382538309D0064956F /* DigitalentUITests.swift */; };
 		B980DE16255CE33700D1D19F /* LeaveQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B980DE14255CE33600D1D19F /* LeaveQuizViewController.swift */; };
 		B980DE17255CE33700D1D19F /* LeaveQuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B980DE15255CE33700D1D19F /* LeaveQuizViewController.xib */; };
+		B99C7AAB255E2B38007F907F /* MyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C7AA9255E2B38007F907F /* MyAccountViewController.swift */; };
+		B99C7AAC255E2B38007F907F /* MyAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99C7AAA255E2B38007F907F /* MyAccountViewController.xib */; };
+		B99C7AB5255E5E49007F907F /* GetProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C7AB4255E5E48007F907F /* GetProvinceModel.swift */; };
+		B99C7ABD255E60BE007F907F /* GetCityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C7ABC255E60BE007F907F /* GetCityModel.swift */; };
 		B9AD4D712547CD2D0046BD2D /* ClassBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD4D6F2547CD2D0046BD2D /* ClassBottomSheetViewController.swift */; };
 		B9AD4D722547CD2D0046BD2D /* ClassBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AD4D702547CD2D0046BD2D /* ClassBottomSheetViewController.xib */; };
 		B9AD4DEF2547DC290046BD2D /* JoinClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD4DEE2547DC290046BD2D /* JoinClassModel.swift */; };
@@ -226,6 +230,10 @@
 		B98D7A1A25395B5000C24C16 /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
 		B98D7A462539711C00C24C16 /* HomeBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		B98D7A472539711C00C24C16 /* HomeBannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBannerCollectionViewCell.xib; sourceTree = "<group>"; };
+		B99C7AA9255E2B38007F907F /* MyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewController.swift; sourceTree = "<group>"; };
+		B99C7AAA255E2B38007F907F /* MyAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAccountViewController.xib; sourceTree = "<group>"; };
+		B99C7AB4255E5E48007F907F /* GetProvinceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProvinceModel.swift; sourceTree = "<group>"; };
+		B99C7ABC255E60BE007F907F /* GetCityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCityModel.swift; sourceTree = "<group>"; };
 		B9AD4D6F2547CD2D0046BD2D /* ClassBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassBottomSheetViewController.swift; sourceTree = "<group>"; };
 		B9AD4D702547CD2D0046BD2D /* ClassBottomSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassBottomSheetViewController.xib; sourceTree = "<group>"; };
 		B9AD4DEE2547DC290046BD2D /* JoinClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinClassModel.swift; sourceTree = "<group>"; };
@@ -502,6 +510,7 @@
 		B96D54122538309A0064956F /* Digitalent */ = {
 			isa = PBXGroup;
 			children = (
+				B99C7AA8255E2B26007F907F /* Account */,
 				6A598B912546808400FBEC08 /* Settings */,
 				B946B26E253EEEA900D027A3 /* Notification */,
 				B946B263253EE83E00D027A3 /* Online Class */,
@@ -537,6 +546,25 @@
 				B96D543A2538309D0064956F /* Info.plist */,
 			);
 			path = DigitalentUITests;
+			sourceTree = "<group>";
+		};
+		B99C7AA8255E2B26007F907F /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				B99C7AB3255E5E39007F907F /* Model */,
+				B99C7AA9255E2B38007F907F /* MyAccountViewController.swift */,
+				B99C7AAA255E2B38007F907F /* MyAccountViewController.xib */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		B99C7AB3255E5E39007F907F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B99C7AB4255E5E48007F907F /* GetProvinceModel.swift */,
+				B99C7ABC255E60BE007F907F /* GetCityModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B9AD4D6B2547C8690046BD2D /* BottomSheet */ = {
@@ -738,6 +766,7 @@
 				B946B1C1253ED69000D027A3 /* BaseViewController.swift in Resources */,
 				B946B1C2253ED69000D027A3 /* DigitalentURL.swift in Resources */,
 				B946B1C3253ED69000D027A3 /* OnlineClassCollectionViewCell.swift in Resources */,
+				B99C7AAC255E2B38007F907F /* MyAccountViewController.xib in Resources */,
 				B946B1C4253ED69000D027A3 /* HomeViewController.swift in Resources */,
 				B92DBEE52553F5200059EEC3 /* MaterialVideoViewController.xib in Resources */,
 				B946B1C5253ED69000D027A3 /* HomeBannerCollectionViewCell.swift in Resources */,
@@ -911,6 +940,7 @@
 				B9AD4DEF2547DC290046BD2D /* JoinClassModel.swift in Sources */,
 				B946B258253ED81800D027A3 /* SceneDelegate.swift in Sources */,
 				B9BB32F1253FEFC4009186EF /* MyClassTableViewCell.swift in Sources */,
+				B99C7AB5255E5E49007F907F /* GetProvinceModel.swift in Sources */,
 				B96C3CD0255530D50041CE6B /* QuizContentViewController.swift in Sources */,
 				B946B204253ED74900D027A3 /* ExtensionUtils.swift in Sources */,
 				B9E3672425467E2F0044509D /* OnlineClassDetailViewController.swift in Sources */,
@@ -920,6 +950,7 @@
 				6A3806DC255BBE620067E8CE /* ChangePhoneNumberViewController.swift in Sources */,
 				6A9703292546BC81006CED9E /* ProfileModel.swift in Sources */,
 				B946B206253ED74900D027A3 /* DigitalentURL.swift in Sources */,
+				B99C7AAB255E2B38007F907F /* MyAccountViewController.swift in Sources */,
 				B946B207253ED74900D027A3 /* OnlineClassCollectionViewCell.swift in Sources */,
 				6AE128AE25591EFA00074A21 /* BaseSettingsViewController.swift in Sources */,
 				B9362F78255BF0EB00452B6B /* GetCheckPointModel.swift in Sources */,
@@ -937,6 +968,7 @@
 				6A9703482546D30A006CED9E /* SecurityViewController.swift in Sources */,
 				B946B20D253ED74900D027A3 /* OnlineClassModel.swift in Sources */,
 				B946B20E253ED74900D027A3 /* BannerModel.swift in Sources */,
+				B99C7ABD255E60BE007F907F /* GetCityModel.swift in Sources */,
 				6A9703412546C070006CED9E /* AccountViewController.swift in Sources */,
 				B9BB32F7253FF0D6009186EF /* MyClassModel.swift in Sources */,
 				B9BB3283253FE3C9009186EF /* SearchClassModel.swift in Sources */,

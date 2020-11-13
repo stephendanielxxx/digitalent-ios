@@ -66,6 +66,16 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
         bannerCollectionView.gemini.scaleAnimation().scale(0.85).scaleEffect(.scaleUp)
      
         loadImageProfile()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(openAccount(_:)))
+        imageProfile.isUserInteractionEnabled = true
+        imageProfile.addGestureRecognizer(tap)
+    }
+    
+    @objc func openAccount(_ sender: UITapGestureRecognizer?) {
+        let myAccount = MyAccountViewController()
+        myAccount.modalPresentationStyle = .fullScreen
+        present(myAccount, animated: true, completion: nil)
     }
     
     fileprivate func loadImageProfile(){
