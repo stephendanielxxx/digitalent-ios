@@ -87,11 +87,13 @@ class MyAccountViewController: BaseViewController, UIImagePickerControllerDelega
             let dateFormatterGet = DateFormatter()
             dateFormatterGet.dateFormat = "yyyy-MM-dd"
             debugPrint(selected)
+            debugPrint(date)
             if selected, let selectedDate = date {
                 let newDob = dateFormatterGet.string(from: selectedDate)
                 self.birthdateField.text = newDob
             }
         }
+        
     }
     
     fileprivate func initGenderDropdown() {
