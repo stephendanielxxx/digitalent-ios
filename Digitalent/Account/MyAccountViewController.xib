@@ -18,10 +18,17 @@
                 <outlet property="changeImageButton" destination="hiM-1l-rUF" id="U9e-Zz-NFQ"/>
                 <outlet property="cityField" destination="gzf-rL-Kwx" id="nN8-pX-vwS"/>
                 <outlet property="genderField" destination="BLV-k6-I6c" id="UFe-Ui-9XP"/>
+                <outlet property="gradeField" destination="65K-ke-zFx" id="u0Z-Qr-GmG"/>
+                <outlet property="gradeTitle" destination="H24-k0-IYc" id="ARb-LO-hc5"/>
                 <outlet property="imageProfile" destination="3wK-se-xX8" id="X8k-dC-H1I"/>
+                <outlet property="institutionField" destination="WCe-rN-oyB" id="w3B-Qd-am9"/>
                 <outlet property="institutionLabel" destination="K0G-a4-wmm" id="HBW-cA-5F8"/>
+                <outlet property="jobField" destination="dKk-wp-Yhc" id="eHq-dD-QUG"/>
+                <outlet property="jobTitle" destination="iq9-qs-tFY" id="IAy-lC-Dkc"/>
                 <outlet property="nameLabel" destination="MjJ-B2-Umt" id="7Df-Kd-3Gz"/>
+                <outlet property="occupationField" destination="SDq-g9-bl4" id="pKz-sH-GAg"/>
                 <outlet property="provinceField" destination="F4k-Ln-NFi" id="mZ5-mG-JSN"/>
+                <outlet property="saveButton" destination="cPl-KL-e3N" id="ZCP-eb-kFW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="zipCodeField" destination="dhc-Pg-W5B" id="OkU-2r-MSU"/>
             </connections>
@@ -62,6 +69,9 @@
                             </constraints>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" image="camera.fill" catalog="system"/>
+                            <connections>
+                                <action selector="changeImageAction:" destination="-1" eventType="touchUpInside" id="d2K-Dg-BVU"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDd-uW-lLt" userLabel="Back Button">
                             <rect key="frame" x="8" y="0.0" width="50" height="50"/>
@@ -172,6 +182,9 @@
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" image="calendar" catalog="system"/>
+                                    <connections>
+                                        <action selector="calendarAction:" destination="-1" eventType="touchUpInside" id="dLk-QG-I0f"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vp9-LZ-AE3">
                                     <rect key="frame" x="18" y="218.5" width="60" height="20"/>
@@ -215,6 +228,12 @@
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xb-Pt-JNe">
+                                    <rect key="frame" x="297" y="285" width="67" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="12058" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dhc-Pg-W5B" userLabel="Zip Code Field" customClass="BottomBorderTF" customModule="Digitalent" customModuleProvider="target">
                                     <rect key="frame" x="297" y="313" width="100" height="19"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -224,16 +243,82 @@
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xb-Pt-JNe">
-                                    <rect key="frame" x="297" y="285" width="67" height="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Occupation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpx-0T-GyK">
+                                    <rect key="frame" x="18" y="352" width="84" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Student" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SDq-g9-bl4" userLabel="Province Field" customClass="BottomBorderTF" customModule="Digitalent" customModuleProvider="target">
+                                    <rect key="frame" x="18" y="380" width="100" height="19"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="Zfi-aL-bZP"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H24-k0-IYc">
+                                    <rect key="frame" x="166.5" y="352" width="45" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="65K-ke-zFx" userLabel="City Field" customClass="BottomBorderTF" customModule="Digitalent" customModuleProvider="target">
+                                    <rect key="frame" x="166.5" y="380" width="100" height="19"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="2SY-8X-UnT"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iq9-qs-tFY">
+                                    <rect key="frame" x="297" y="352" width="27" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKk-wp-Yhc" userLabel="Zip Code Field" customClass="BottomBorderTF" customModule="Digitalent" customModuleProvider="target">
+                                    <rect key="frame" x="297" y="380" width="100" height="19"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="GO4-0k-etk"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Institution" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqB-l6-Ar4">
+                                    <rect key="frame" x="18" y="419" width="72" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SMEA Cipinang Muara" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WCe-rN-oyB" userLabel="Bio Field" customClass="BottomBorderTF" customModule="Digitalent" customModuleProvider="target">
+                                    <rect key="frame" x="18" y="447" width="378" height="18.5"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPl-KL-e3N">
+                                    <rect key="frame" x="244" y="474" width="145" height="35"/>
+                                    <color key="backgroundColor" name="color_589D0B"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="5YU-13-VJo"/>
+                                        <constraint firstAttribute="width" constant="145" id="Eqa-M0-ps9"/>
+                                    </constraints>
+                                    <state key="normal" title="SAVE CHANGES">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="saveAction:" destination="-1" eventType="touchUpInside" id="Ci9-BJ-rhI"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="F4W-16-gfT" firstAttribute="top" secondItem="BLV-k6-I6c" secondAttribute="bottom" constant="20" id="1wc-6n-gyP"/>
+                                <constraint firstAttribute="trailing" secondItem="WCe-rN-oyB" secondAttribute="trailing" constant="18" id="2pm-Td-GBD"/>
                                 <constraint firstItem="qhO-nv-mUI" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="3Fj-yz-vH0"/>
                                 <constraint firstItem="oFf-49-2eX" firstAttribute="leading" secondItem="6xF-jh-Q7z" secondAttribute="trailing" constant="24" id="3bo-rU-vG8"/>
                                 <constraint firstItem="gzf-rL-Kwx" firstAttribute="top" secondItem="PYs-Vx-XHn" secondAttribute="bottom" constant="8" symbolic="YES" id="4pF-o7-03D"/>
@@ -241,37 +326,55 @@
                                 <constraint firstItem="PYs-Vx-XHn" firstAttribute="centerX" secondItem="dum-lv-bnL" secondAttribute="centerX" constant="-25" id="7pw-x4-28T"/>
                                 <constraint firstItem="1xb-Pt-JNe" firstAttribute="centerY" secondItem="PYs-Vx-XHn" secondAttribute="centerY" id="7xX-1G-FrM"/>
                                 <constraint firstItem="6xF-jh-Q7z" firstAttribute="top" secondItem="F4W-16-gfT" secondAttribute="bottom" constant="8" symbolic="YES" id="9me-iS-FPY"/>
+                                <constraint firstAttribute="trailing" secondItem="iq9-qs-tFY" secondAttribute="trailing" constant="90" id="A1q-WX-0l7"/>
                                 <constraint firstAttribute="trailing" secondItem="0tg-Zg-GgS" secondAttribute="trailing" constant="18" id="A5O-uq-y4y"/>
                                 <constraint firstAttribute="trailing" secondItem="1xb-Pt-JNe" secondAttribute="trailing" constant="50" id="AqH-uM-vXT"/>
+                                <constraint firstItem="oqB-l6-Ar4" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="BZM-QR-YOD"/>
+                                <constraint firstAttribute="trailing" secondItem="cPl-KL-e3N" secondAttribute="trailing" constant="25" id="Bpx-gM-TxA"/>
                                 <constraint firstItem="TYZ-AE-rra" firstAttribute="centerY" secondItem="F4W-16-gfT" secondAttribute="centerY" id="Cwe-sN-bvW"/>
                                 <constraint firstAttribute="trailing" secondItem="qhO-nv-mUI" secondAttribute="trailing" constant="18" id="DDT-DE-lCs"/>
                                 <constraint firstItem="IkI-u0-UR3" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="DWz-qo-Uwf"/>
                                 <constraint firstItem="Twz-up-sI0" firstAttribute="top" secondItem="dum-lv-bnL" secondAttribute="top" constant="18" id="Dfj-Gl-IAD"/>
+                                <constraint firstItem="Dpx-0T-GyK" firstAttribute="top" secondItem="F4k-Ln-NFi" secondAttribute="bottom" constant="20" id="Ebq-Is-ir1"/>
                                 <constraint firstAttribute="trailing" secondItem="TYZ-AE-rra" secondAttribute="trailing" constant="92" id="FJV-Nl-pNa"/>
                                 <constraint firstAttribute="trailing" secondItem="1nb-C9-CbE" secondAttribute="trailing" constant="25" id="Fr0-k9-DN1"/>
+                                <constraint firstItem="WCe-rN-oyB" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="I7Z-fH-BgA"/>
+                                <constraint firstItem="dKk-wp-Yhc" firstAttribute="top" secondItem="iq9-qs-tFY" secondAttribute="bottom" constant="8" symbolic="YES" id="IpF-zj-jTp"/>
                                 <constraint firstItem="1nb-C9-CbE" firstAttribute="leading" secondItem="oFf-49-2eX" secondAttribute="trailing" constant="8" symbolic="YES" id="J4C-pk-jIb"/>
+                                <constraint firstItem="H24-k0-IYc" firstAttribute="centerY" secondItem="Dpx-0T-GyK" secondAttribute="centerY" id="JIT-hu-4jQ"/>
+                                <constraint firstAttribute="bottom" secondItem="cPl-KL-e3N" secondAttribute="bottom" constant="8" id="Jin-Qb-cTf"/>
                                 <constraint firstItem="dhc-Pg-W5B" firstAttribute="leading" secondItem="1xb-Pt-JNe" secondAttribute="leading" id="KOS-qu-7HW"/>
+                                <constraint firstItem="oqB-l6-Ar4" firstAttribute="top" secondItem="SDq-g9-bl4" secondAttribute="bottom" constant="20" id="M3p-GD-pYn"/>
                                 <constraint firstItem="IkI-u0-UR3" firstAttribute="top" secondItem="0tg-Zg-GgS" secondAttribute="bottom" constant="20" id="MgD-x0-1md"/>
                                 <constraint firstItem="qhO-nv-mUI" firstAttribute="top" secondItem="Vp9-LZ-AE3" secondAttribute="bottom" constant="8" symbolic="YES" id="NtC-ge-yfa"/>
+                                <constraint firstItem="65K-ke-zFx" firstAttribute="leading" secondItem="H24-k0-IYc" secondAttribute="leading" id="OVz-dM-sBy"/>
                                 <constraint firstItem="oFf-49-2eX" firstAttribute="top" secondItem="TYZ-AE-rra" secondAttribute="bottom" constant="8" symbolic="YES" id="OrW-9l-eCC"/>
                                 <constraint firstItem="Twz-up-sI0" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="RYk-q6-c2D"/>
+                                <constraint firstItem="SDq-g9-bl4" firstAttribute="top" secondItem="Dpx-0T-GyK" secondAttribute="bottom" constant="8" symbolic="YES" id="SX2-Pu-T77"/>
                                 <constraint firstItem="0tg-Zg-GgS" firstAttribute="top" secondItem="Twz-up-sI0" secondAttribute="bottom" constant="8" symbolic="YES" id="X97-TZ-3hF"/>
                                 <constraint firstItem="7eC-rm-gXu" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="XWc-gR-l8H"/>
+                                <constraint firstItem="SDq-g9-bl4" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="XdL-71-xnY"/>
                                 <constraint firstItem="F4k-Ln-NFi" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="a6R-6F-5a7"/>
                                 <constraint firstItem="7eC-rm-gXu" firstAttribute="top" secondItem="qhO-nv-mUI" secondAttribute="bottom" constant="20" id="aSC-jk-YLq"/>
                                 <constraint firstItem="0tg-Zg-GgS" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="agB-hC-A1e"/>
                                 <constraint firstItem="6xF-jh-Q7z" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="bCE-2N-Cyx"/>
+                                <constraint firstItem="dKk-wp-Yhc" firstAttribute="leading" secondItem="iq9-qs-tFY" secondAttribute="leading" id="d5M-8q-MqN"/>
                                 <constraint firstItem="Vp9-LZ-AE3" firstAttribute="top" secondItem="6xF-jh-Q7z" secondAttribute="bottom" constant="20" id="dr2-Ue-oYu"/>
                                 <constraint firstItem="gzf-rL-Kwx" firstAttribute="leading" secondItem="PYs-Vx-XHn" secondAttribute="leading" id="eDr-Pp-iZF"/>
                                 <constraint firstItem="Vp9-LZ-AE3" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="i44-TJ-T5V"/>
                                 <constraint firstItem="BLV-k6-I6c" firstAttribute="top" secondItem="IkI-u0-UR3" secondAttribute="bottom" constant="8" symbolic="YES" id="iyJ-rr-tGD"/>
+                                <constraint firstItem="WCe-rN-oyB" firstAttribute="top" secondItem="oqB-l6-Ar4" secondAttribute="bottom" constant="8" symbolic="YES" id="lFd-D2-iqc"/>
+                                <constraint firstItem="Dpx-0T-GyK" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="lNp-0T-pvl"/>
                                 <constraint firstItem="1nb-C9-CbE" firstAttribute="firstBaseline" secondItem="oFf-49-2eX" secondAttribute="firstBaseline" id="mpl-6b-C7T"/>
                                 <constraint firstItem="F4W-16-gfT" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="nav-Uf-9gb"/>
                                 <constraint firstItem="oFf-49-2eX" firstAttribute="leading" secondItem="TYZ-AE-rra" secondAttribute="leading" id="oST-Ev-ybL"/>
+                                <constraint firstItem="iq9-qs-tFY" firstAttribute="centerY" secondItem="H24-k0-IYc" secondAttribute="centerY" id="obW-CU-YJh"/>
                                 <constraint firstItem="BLV-k6-I6c" firstAttribute="leading" secondItem="dum-lv-bnL" secondAttribute="leading" constant="18" id="r4D-O8-opN"/>
                                 <constraint firstAttribute="height" constant="517" id="rpM-uz-S9O"/>
                                 <constraint firstItem="dhc-Pg-W5B" firstAttribute="top" secondItem="1xb-Pt-JNe" secondAttribute="bottom" constant="8" symbolic="YES" id="sds-46-cQN"/>
                                 <constraint firstItem="F4k-Ln-NFi" firstAttribute="top" secondItem="7eC-rm-gXu" secondAttribute="bottom" constant="8" symbolic="YES" id="tdy-T5-tJe"/>
+                                <constraint firstItem="65K-ke-zFx" firstAttribute="top" secondItem="H24-k0-IYc" secondAttribute="bottom" constant="8" symbolic="YES" id="ueM-AB-jVW"/>
+                                <constraint firstItem="H24-k0-IYc" firstAttribute="centerX" secondItem="dum-lv-bnL" secondAttribute="centerX" constant="-18" id="zHK-M1-85S"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -296,7 +399,6 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Byp-fL-6hx" secondAttribute="bottom" id="mqV-DS-rCy"/>
                 <constraint firstItem="Byp-fL-6hx" firstAttribute="top" secondItem="1Za-sZ-rUM" secondAttribute="bottom" id="zCz-xT-IBh"/>
             </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="107.8125"/>
         </view>
     </objects>
@@ -308,6 +410,9 @@
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <namedColor name="color_2C64EE">
             <color red="0.17299999296665192" green="0.3919999897480011" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color_589D0B">
+            <color red="0.3449999988079071" green="0.61599999666213989" blue="0.043000001460313797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -100,6 +100,7 @@
 		B99C7AAC255E2B38007F907F /* MyAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99C7AAA255E2B38007F907F /* MyAccountViewController.xib */; };
 		B99C7AB5255E5E49007F907F /* GetProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C7AB4255E5E48007F907F /* GetProvinceModel.swift */; };
 		B99C7ABD255E60BE007F907F /* GetCityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C7ABC255E60BE007F907F /* GetCityModel.swift */; };
+		B99C7AEC255E7C34007F907F /* UpdateProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99C7AEB255E7C34007F907F /* UpdateProfileModel.swift */; };
 		B9AD4D712547CD2D0046BD2D /* ClassBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD4D6F2547CD2D0046BD2D /* ClassBottomSheetViewController.swift */; };
 		B9AD4D722547CD2D0046BD2D /* ClassBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AD4D702547CD2D0046BD2D /* ClassBottomSheetViewController.xib */; };
 		B9AD4DEF2547DC290046BD2D /* JoinClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AD4DEE2547DC290046BD2D /* JoinClassModel.swift */; };
@@ -234,6 +235,7 @@
 		B99C7AAA255E2B38007F907F /* MyAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAccountViewController.xib; sourceTree = "<group>"; };
 		B99C7AB4255E5E48007F907F /* GetProvinceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProvinceModel.swift; sourceTree = "<group>"; };
 		B99C7ABC255E60BE007F907F /* GetCityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCityModel.swift; sourceTree = "<group>"; };
+		B99C7AEB255E7C34007F907F /* UpdateProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileModel.swift; sourceTree = "<group>"; };
 		B9AD4D6F2547CD2D0046BD2D /* ClassBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassBottomSheetViewController.swift; sourceTree = "<group>"; };
 		B9AD4D702547CD2D0046BD2D /* ClassBottomSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassBottomSheetViewController.xib; sourceTree = "<group>"; };
 		B9AD4DEE2547DC290046BD2D /* JoinClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinClassModel.swift; sourceTree = "<group>"; };
@@ -563,6 +565,7 @@
 			children = (
 				B99C7AB4255E5E48007F907F /* GetProvinceModel.swift */,
 				B99C7ABC255E60BE007F907F /* GetCityModel.swift */,
+				B99C7AEB255E7C34007F907F /* UpdateProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -978,6 +981,7 @@
 				B946B210253ED74900D027A3 /* HomeTabBarViewController.swift in Sources */,
 				B946B212253ED74900D027A3 /* LoginModel.swift in Sources */,
 				B92DBEE42553F5200059EEC3 /* MaterialVideoViewController.swift in Sources */,
+				B99C7AEC255E7C34007F907F /* UpdateProfileModel.swift in Sources */,
 				B9AD4DF4254819BA0046BD2D /* CourseStatusModel.swift in Sources */,
 				B96C3CC4255529670041CE6B /* GetQuizModel.swift in Sources */,
 				B9FF691B255D24020054394E /* ForgetPasswordTapGesture.swift in Sources */,

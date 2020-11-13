@@ -26,6 +26,7 @@ target 'Digitalent' do
   pod 'IQKeyboardManagerSwift'
   pod 'AnimatedCollectionViewLayout'
   pod 'Gemini'
+  pod 'DatePickerDialog'
   # Pods for Digitalent
 
   target 'DigitalentTests' do
