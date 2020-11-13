@@ -7,8 +7,8 @@
 
 import UIKit
 import DropDown
-import DatePickerDialog
 import Alamofire
+import DatePicker
 
 class MyAccountViewController: BaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -46,6 +46,7 @@ class MyAccountViewController: BaseViewController, UIImagePickerControllerDelega
     var imagePicker = UIImagePickerController()
     var provinceId = ""
     var cityId = ""
+    var datePicker: DatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +75,23 @@ class MyAccountViewController: BaseViewController, UIImagePickerControllerDelega
         gradePicker.dataSource = self
         jobPicker.delegate = self
         jobPicker.dataSource = self
+        
+        let minDate = DatePickerHelper.shared.dateFrom(day: 01, month: 01, year: 1900)!
+        let maxDate = DatePickerHelper.shared.dateFrom(day: 31, month: 12, year: 2050)!
+        let today = Date()
+        // Create picker object
+        datePicker = DatePicker()
+        // Setup
+        datePicker.setup(beginWith: today, min: minDate, max: maxDate) { (selected, date) in
+            
+            let dateFormatterGet = DateFormatter()
+            dateFormatterGet.dateFormat = "yyyy-MM-dd"
+            debugPrint(selected)
+            if selected, let selectedDate = date {
+                let newDob = dateFormatterGet.string(from: selectedDate)
+                self.birthdateField.text = newDob
+            }
+        }
     }
     
     fileprivate func initGenderDropdown() {
@@ -109,8 +127,9 @@ class MyAccountViewController: BaseViewController, UIImagePickerControllerDelega
         nameLabel.text = "\(firstName) \(lastName)"
         
         let kelas = readStringPreference(key: DigitalentKeys.KELAS)
+        let jobs = readStringPreference(key: DigitalentKeys.SELECT_JOB)
         let institution = readStringPreference(key: DigitalentKeys.INSTITUTION)
-        institutionLabel.text = "\(kelas) at \(institution)"
+        institutionLabel.text = "\(kelas)\(jobs) at \(institution)"
         
         let image = readStringPreference(key: DigitalentKeys.USER_PROFILE)
         let baseUrl = DigitalentURL.URL_IMAGE_PROFILE
@@ -142,12 +161,8 @@ class MyAccountViewController: BaseViewController, UIImagePickerControllerDelega
         let occupation = readStringPreference(key: DigitalentKeys.LAST_EDUCATION)
         occupationField.text = occupation
         
-        let grade = readStringPreference(key: DigitalentKeys.KELAS)
-        gradeField.text = grade
-        
-        let jobs = readStringPreference(key: DigitalentKeys.SELECT_JOB)
+        gradeField.text = kelas
         jobField.text = jobs
-        
         institutionField.text = institution
         
         let province = readStringPreference(key: DigitalentKeys.PROVINCE)
@@ -228,13 +243,9 @@ class MyAccountViewController: BaseViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func calendarAction(_ sender: UIButton) {
-        DatePickerDialog().show("DatePicker", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) { date in
-                if let dt = date {
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "MM/dd/yyyy"
-                    self.birthdateField.text = formatter.string(from: dt)
-                }
-            }
+       
+        // Display
+        datePicker.show(in: self, on: sender)
     }
     
     @IBAction func changeImageAction(_ sender: UIButton) {
@@ -275,7 +286,7 @@ class MyAccountViewController: BaseViewController, UIImagePickerControllerDelega
         let select_job = jobField.text!
         let institution = institutionField.text!
         let about = aboutField.text!
-    
+        
         let upload_file = imageProfile.image!
         
         var parameters = [String:AnyObject]()
@@ -321,9 +332,9 @@ class MyAccountViewController: BaseViewController, UIImagePickerControllerDelega
                         if let string = element as? String {
                             multipartFormData.append(string.data(using: .utf8)!, withName: keyObj)
                         } else
-                            if let num = element as? Int {
-                                let value = "\(num)"
-                                multipartFormData.append(value.data(using: .utf8)!, withName: keyObj)
+                        if let num = element as? Int {
+                            let value = "\(num)"
+                            multipartFormData.append(value.data(using: .utf8)!, withName: keyObj)
                         }
                     })
                 }
@@ -333,47 +344,47 @@ class MyAccountViewController: BaseViewController, UIImagePickerControllerDelega
                 multipartFormData.append(data, withName: "image", fileName: "\(Date.init().timeIntervalSince1970).jpg", mimeType: "image/jpg")
             }
         },
-                  to: endUrl, method: .post , headers: headers)
-            .responseData { response in
-                
-                switch response.result {
-                case .success(let data):
-                    self.removeSpinner()
-                    let decoder = JSONDecoder()
-                    do{
-                        let updateProfileModel = try decoder.decode(UpdateProfileModel.self, from:data)
-                        if updateProfileModel.code == "200" {
-                            self.saveStringPreference(value: self.aboutField.text!, key: DigitalentKeys.ABOUT)
-                            self.saveStringPreference(value: self.genderField.text!, key: DigitalentKeys.GENDER)
-                            self.saveStringPreference(value: self.birthplaceField.text!, key: DigitalentKeys.TEMPAT_LAHIR)
-                            self.saveStringPreference(value: self.birthdateField.text!, key: DigitalentKeys.BIRTH_DATE)
-                            self.saveStringPreference(value: self.addressField.text!, key: DigitalentKeys.ADDRESS)
-                            self.saveStringPreference(value: self.provinceId, key: DigitalentKeys.PROVINCE)
-                            self.saveStringPreference(value: self.cityId, key: DigitalentKeys.CITY)
-                            self.saveStringPreference(value: self.zipCodeField.text!, key: DigitalentKeys.POSCODE)
-                            self.saveStringPreference(value: self.occupationField.text!, key: DigitalentKeys.LAST_EDUCATION)
-                            self.saveStringPreference(value: self.gradeField.text!, key: DigitalentKeys.KELAS)
-                            self.saveStringPreference(value: self.jobField.text!, key: DigitalentKeys.SELECT_JOB)
-                            self.saveStringPreference(value: self.institutionField.text!, key: DigitalentKeys.INSTITUTION)
-                            self.saveStringPreference(value: updateProfileModel.newImage!, key: DigitalentKeys.USER_PROFILE)
-                            
-                            let alert = UIAlertController(title: "Success", message: "\(updateProfileModel.message)", preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
-                                self.loadData()
-                            }))
-                            self.present(alert, animated: true)
-                        }else{
-                            let alert = UIAlertController(title: "Failed", message: "\(updateProfileModel.message)", preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                            self.present(alert, animated: true)
-                        }
+        to: endUrl, method: .post , headers: headers)
+        .responseData { response in
+            
+            switch response.result {
+            case .success(let data):
+                self.removeSpinner()
+                let decoder = JSONDecoder()
+                do{
+                    let updateProfileModel = try decoder.decode(UpdateProfileModel.self, from:data)
+                    if updateProfileModel.code == "200" {
+                        self.saveStringPreference(value: self.aboutField.text!, key: DigitalentKeys.ABOUT)
+                        self.saveStringPreference(value: self.genderField.text!, key: DigitalentKeys.GENDER)
+                        self.saveStringPreference(value: self.birthplaceField.text!, key: DigitalentKeys.TEMPAT_LAHIR)
+                        self.saveStringPreference(value: self.birthdateField.text!, key: DigitalentKeys.BIRTH_DATE)
+                        self.saveStringPreference(value: self.addressField.text!, key: DigitalentKeys.ADDRESS)
+                        self.saveStringPreference(value: self.provinceId, key: DigitalentKeys.PROVINCE)
+                        self.saveStringPreference(value: self.cityId, key: DigitalentKeys.CITY)
+                        self.saveStringPreference(value: self.zipCodeField.text!, key: DigitalentKeys.POSCODE)
+                        self.saveStringPreference(value: self.occupationField.text!, key: DigitalentKeys.LAST_EDUCATION)
+                        self.saveStringPreference(value: self.gradeField.text!, key: DigitalentKeys.KELAS)
+                        self.saveStringPreference(value: self.jobField.text!, key: DigitalentKeys.SELECT_JOB)
+                        self.saveStringPreference(value: self.institutionField.text!, key: DigitalentKeys.INSTITUTION)
+                        self.saveStringPreference(value: updateProfileModel.newImage!, key: DigitalentKeys.USER_PROFILE)
                         
-                    }catch{
-                        print(error.localizedDescription)
+                        let alert = UIAlertController(title: "Success", message: "\(updateProfileModel.message)", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+                            self.loadData()
+                        }))
+                        self.present(alert, animated: true)
+                    }else{
+                        let alert = UIAlertController(title: "Failed", message: "\(updateProfileModel.message)", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(alert, animated: true)
                     }
-                case .failure(_):
-                    self.removeSpinner()
+                    
+                }catch{
+                    print(error.localizedDescription)
                 }
+            case .failure(_):
+                self.removeSpinner()
+            }
         }
     }
 }
