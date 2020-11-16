@@ -88,7 +88,8 @@ extension AllOnlineClassViewController: UICollectionViewDelegate, UICollectionVi
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.calculateWidth()
-        return CGSize(width: width, height: 200)
+        let height = width / 1.2
+        return CGSize(width: width, height: height)
         
     }
     
