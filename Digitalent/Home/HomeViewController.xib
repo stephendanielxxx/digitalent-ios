@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Digitalent" customModuleProvider="target">
             <connections>
                 <outlet property="bannerCollectionView" destination="AiA-tH-gy1" id="7pl-sh-ob1"/>
-                <outlet property="bannerHeight" destination="U2D-gg-xcx" id="AKC-LM-qr5"/>
                 <outlet property="collectionHeight" destination="U2D-gg-xcx" id="4h1-Kw-xI8"/>
                 <outlet property="greetingLabel" destination="leT-jA-Wxw" id="TuE-tr-ugI"/>
                 <outlet property="imageProfile" destination="rbj-eF-Sde" id="CSO-bX-gUr"/>
@@ -128,7 +127,7 @@
                                     <rect key="frame" x="24" y="240" width="366" height="150"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="U2D-gg-xcx"/>
+                                        <constraint firstAttribute="height" constant="150" id="U2D-gg-xcx"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TUz-fw-fNG">
                                         <size key="itemSize" width="354" height="128"/>
@@ -203,7 +202,6 @@
                                 <constraint firstItem="SiG-gM-Tan" firstAttribute="leading" secondItem="aDa-bP-bL4" secondAttribute="leading" constant="12" id="KlX-Uv-Wlf"/>
                                 <constraint firstItem="ckK-ul-YoJ" firstAttribute="leading" secondItem="aDa-bP-bL4" secondAttribute="leading" constant="12" id="KpJ-dq-Do9"/>
                                 <constraint firstAttribute="trailing" secondItem="ckK-ul-YoJ" secondAttribute="trailing" constant="12" id="L3K-9n-9dz"/>
-                                <constraint firstAttribute="height" priority="250" constant="818" id="LQR-c7-a7X"/>
                                 <constraint firstAttribute="trailing" secondItem="SiG-gM-Tan" secondAttribute="trailing" constant="12" id="Lep-dA-bf2"/>
                                 <constraint firstItem="YoW-Qy-dTe" firstAttribute="leading" secondItem="aDa-bP-bL4" secondAttribute="leading" constant="12" id="Ogh-LU-g9V"/>
                                 <constraint firstAttribute="trailing" secondItem="AiA-tH-gy1" secondAttribute="trailing" constant="24" id="Tnb-q3-jCu"/>
@@ -211,7 +209,6 @@
                                 <constraint firstItem="SiG-gM-Tan" firstAttribute="top" secondItem="ckK-ul-YoJ" secondAttribute="bottom" constant="7.5" id="ZPc-1a-et7"/>
                                 <constraint firstItem="YoW-Qy-dTe" firstAttribute="top" secondItem="XLm-eQ-Vaz" secondAttribute="bottom" constant="21" id="ZYh-a9-nCm"/>
                                 <constraint firstItem="1HO-s3-f4X" firstAttribute="top" secondItem="aDa-bP-bL4" secondAttribute="top" id="ZhO-t4-sUW"/>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="818" id="ZuE-u6-CYh"/>
                                 <constraint firstItem="ckK-ul-YoJ" firstAttribute="top" secondItem="YoW-Qy-dTe" secondAttribute="bottom" constant="8" symbolic="YES" id="c2q-5M-mNK"/>
                                 <constraint firstItem="XLm-eQ-Vaz" firstAttribute="centerX" secondItem="AiA-tH-gy1" secondAttribute="centerX" id="dg6-Af-0uU"/>
                                 <constraint firstAttribute="bottom" secondItem="1YX-EI-czQ" secondAttribute="bottom" constant="25" id="dzi-a5-jUb"/>

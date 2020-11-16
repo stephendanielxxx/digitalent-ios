@@ -114,7 +114,6 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 self.bannerModel = try decoder.decode(BannerModel.self, from:data)
                 pageControl.numberOfPages = self.bannerModel.banner.count
                 pageControl.currentPage = 0
-                collectionHeight.constant = bannerCollectionView.contentSize.height
                 
                 self.bannerCollectionView.reloadData()
             }catch{
@@ -126,12 +125,11 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 
                 itemCount = self.onlineClassModel.online.count
                 
-//                let sisaBawah = CGFloat(Double(((itemCount / 2))) * cellMarginSize * 2)
-                let sisaBawah = CGFloat(200 / 2)
+                let widthOnline = self.calculateWidth()
+                let heightOnline = widthOnline / 1.2
                 
-                let height = CGFloat(itemCount * Int(200) / 2) + sisaBawah + CGFloat(cellMarginSize * 2)
-                self.onlineClassViewHeight.constant = height
-                
+                self.onlineClassViewHeight.constant = heightOnline * CGFloat(itemCount) / 2
+                                
                 self.onlineClassView.reloadData()
             }catch{
                 print(error.localizedDescription)
@@ -263,13 +261,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let width = collectionView.frame.width - 40
             let height = width / 2.186667
             
-            bannerHeight.constant = height
+            collectionHeight.constant = height 
             
             return CGSize(width: width, height: height)
-        }else{
-            let width = self.calculateWidth()
-            let height = width / 1.2
-            return CGSize(width: width, height: height)
+        }else if collectionView == onlineClassView{
+            let widthOnline = self.calculateWidth()
+            let heightOnline = widthOnline / 1.2
+            return CGSize(width: widthOnline, height: heightOnline)
+        }else {
+            return CGSize(width: 0, height: 0)
         }
 
     }
