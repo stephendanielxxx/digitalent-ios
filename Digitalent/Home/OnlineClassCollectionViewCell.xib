@@ -23,7 +23,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_banner_dummy" translatesAutoresizingMaskIntoConstraints="NO" id="4hF-A8-tiG" userLabel="image class">
                                 <rect key="frame" x="0.0" y="0.0" width="207" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="6VZ-Rq-d2F"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="125" id="6VZ-Rq-d2F"/>
+                                    <constraint firstAttribute="width" secondItem="4hF-A8-tiG" secondAttribute="height" multiplier="207:125" id="FaL-wW-y1O"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Now-wc-u60">
@@ -37,7 +38,9 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4hF-A8-tiG" secondAttribute="trailing" id="6md-HF-PJq"/>
                             <constraint firstAttribute="bottom" secondItem="Now-wc-u60" secondAttribute="bottom" constant="8" id="7JJ-DR-CRd"/>
+                            <constraint firstAttribute="width" secondItem="0B2-2i-suO" secondAttribute="height" multiplier="207:157" id="CEQ-bb-l7Y"/>
                             <constraint firstItem="Now-wc-u60" firstAttribute="leading" secondItem="0B2-2i-suO" secondAttribute="leading" constant="8" id="Fq0-zs-RR8"/>
+                            <constraint firstAttribute="height" constant="157" id="JhN-XW-eTz"/>
                             <constraint firstItem="4hF-A8-tiG" firstAttribute="top" secondItem="0B2-2i-suO" secondAttribute="top" id="MkB-Od-xFn"/>
                             <constraint firstItem="Now-wc-u60" firstAttribute="top" secondItem="4hF-A8-tiG" secondAttribute="bottom" id="gpV-5e-lbN"/>
                             <constraint firstAttribute="trailing" secondItem="Now-wc-u60" secondAttribute="trailing" constant="8" id="oBy-6j-vNY"/>
