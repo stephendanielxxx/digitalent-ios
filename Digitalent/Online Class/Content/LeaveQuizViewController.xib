@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeaveQuizViewController" customModule="Digitalent" customModuleProvider="target">
+            <connections>
+                <outlet property="leaveButton" destination="LZU-8a-MzG" id="ZR3-g4-hML"/>
+                <outlet property="stayButton" destination="r6M-4g-wdi" id="f81-X6-5KX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLN-U6-04i" customClass="MDCCard">
+                    <rect key="frame" x="32" y="303" width="350" height="300"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_leave_quiz" translatesAutoresizingMaskIntoConstraints="NO" id="8XN-f2-QUZ">
+                            <rect key="frame" x="104" y="16" width="142" height="122"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="122" id="fge-2A-422"/>
+                                <constraint firstAttribute="width" constant="142" id="fiI-Qd-uyr"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're going to leave this session..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADJ-qi-Iq5">
+                            <rect key="frame" x="24" y="150" width="302" height="53"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't worry your learning progress will be saved" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7l-H4-GhL">
+                            <rect key="frame" x="14" y="210.5" width="322" height="33.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZU-8a-MzG">
+                            <rect key="frame" x="42" y="256" width="100" height="35"/>
+                            <color key="backgroundColor" name="color_FD4146"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="ScD-hV-fYz"/>
+                                <constraint firstAttribute="width" constant="100" id="eNs-6p-Wqe"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="Leave">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="leaveAction:" destination="-1" eventType="touchUpInside" id="S3J-MR-zEV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6M-4g-wdi">
+                            <rect key="frame" x="201" y="256" width="100" height="35"/>
+                            <color key="backgroundColor" name="color_589D0B"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="3Dm-xo-DmM"/>
+                                <constraint firstAttribute="height" constant="35" id="njZ-Sk-v0q"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="Stay">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="stayAction:" destination="-1" eventType="touchUpInside" id="rWh-yX-8QC"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="color_2C64EE"/>
+                    <constraints>
+                        <constraint firstItem="r6M-4g-wdi" firstAttribute="top" secondItem="X7l-H4-GhL" secondAttribute="bottom" constant="12" id="3Li-Ap-08x"/>
+                        <constraint firstAttribute="trailing" secondItem="X7l-H4-GhL" secondAttribute="trailing" constant="14" id="7dF-Qp-F29"/>
+                        <constraint firstItem="X7l-H4-GhL" firstAttribute="leading" secondItem="gLN-U6-04i" secondAttribute="leading" constant="14" id="AzI-bR-knX"/>
+                        <constraint firstAttribute="trailing" secondItem="ADJ-qi-Iq5" secondAttribute="trailing" constant="24" id="B53-bG-x4U"/>
+                        <constraint firstItem="ADJ-qi-Iq5" firstAttribute="top" secondItem="8XN-f2-QUZ" secondAttribute="bottom" constant="12" id="LFA-WM-ktY"/>
+                        <constraint firstItem="ADJ-qi-Iq5" firstAttribute="leading" secondItem="gLN-U6-04i" secondAttribute="leading" constant="24" id="OaZ-V5-7D8"/>
+                        <constraint firstItem="LZU-8a-MzG" firstAttribute="leading" secondItem="gLN-U6-04i" secondAttribute="leading" constant="42" id="OwC-0M-K82"/>
+                        <constraint firstItem="8XN-f2-QUZ" firstAttribute="centerX" secondItem="gLN-U6-04i" secondAttribute="centerX" id="Pkr-af-7fL"/>
+                        <constraint firstItem="LZU-8a-MzG" firstAttribute="top" secondItem="X7l-H4-GhL" secondAttribute="bottom" constant="12" id="Rev-61-AsJ"/>
+                        <constraint firstAttribute="trailing" secondItem="r6M-4g-wdi" secondAttribute="trailing" constant="49" id="hql-ie-WxD"/>
+                        <constraint firstItem="ADJ-qi-Iq5" firstAttribute="centerX" secondItem="8XN-f2-QUZ" secondAttribute="centerX" id="o5y-ME-3bu"/>
+                        <constraint firstItem="r6M-4g-wdi" firstAttribute="centerY" secondItem="LZU-8a-MzG" secondAttribute="centerY" id="p0G-1Q-N22"/>
+                        <constraint firstItem="8XN-f2-QUZ" firstAttribute="top" secondItem="gLN-U6-04i" secondAttribute="top" constant="16" id="r39-5L-nfi"/>
+                        <constraint firstItem="X7l-H4-GhL" firstAttribute="top" secondItem="ADJ-qi-Iq5" secondAttribute="bottom" constant="7.5" id="w1L-8s-SkQ"/>
+                        <constraint firstAttribute="height" constant="300" id="yD8-7E-Sqc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="gLN-U6-04i" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Pa6-8n-sx3"/>
+                <constraint firstItem="gLN-U6-04i" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="S4L-c2-l27"/>
+                <constraint firstItem="gLN-U6-04i" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Uzr-7C-Uf2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gLN-U6-04i" secondAttribute="trailing" constant="32" id="VsO-ww-l89"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="131.91964285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_leave_quiz" width="94" height="98"/>
+        <namedColor name="color_2C64EE">
+            <color red="0.17299999296665192" green="0.3919999897480011" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color_589D0B">
+            <color red="0.3449999988079071" green="0.61599999666213989" blue="0.043000001460313797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color_FD4146">
+            <color red="0.99199998378753662" green="0.25499999523162842" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
