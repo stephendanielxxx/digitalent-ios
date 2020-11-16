@@ -125,10 +125,17 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 
                 itemCount = self.onlineClassModel.online.count
                 
+                var rowCount = 0
+                if itemCount % 2 == 1 {
+                    rowCount = itemCount + 1
+                }
+                
                 let widthOnline = self.calculateWidth()
                 let heightOnline = widthOnline / 1.2
+                let totalRowHeight = heightOnline * CGFloat(rowCount) / 2
+                let totalMarginHeight = CGFloat(Double(rowCount-1) * cellMarginSize)
                 
-                self.onlineClassViewHeight.constant = heightOnline * CGFloat(itemCount) / 2
+                self.onlineClassViewHeight.constant = totalRowHeight + totalMarginHeight
                                 
                 self.onlineClassView.reloadData()
             }catch{
@@ -261,7 +268,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let width = collectionView.frame.width - 40
             let height = width / 2.186667
             
-            collectionHeight.constant = height 
+            collectionHeight.constant = height
             
             return CGSize(width: width, height: height)
         }else if collectionView == onlineClassView{
