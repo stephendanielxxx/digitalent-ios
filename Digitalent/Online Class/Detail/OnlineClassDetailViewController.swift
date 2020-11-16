@@ -81,11 +81,18 @@ class OnlineClassDetailViewController: BaseViewController, UIScrollViewDelegate 
     }
     
     @IBAction func seeAllAction(_ sender: Any) {
-        let contents = ClassContentViewController()
-        contents.course_id = courseId
-        contents.transactionId = transactionId
-        contents.modalPresentationStyle = .fullScreen
-        present(contents, animated: true, completion: nil)
+        
+        if joinClassButton.isHidden {
+            let contents = ClassContentViewController()
+            contents.course_id = courseId
+            contents.transactionId = transactionId
+            contents.modalPresentationStyle = .fullScreen
+            present(contents, animated: true, completion: nil)
+        }else{
+            showBottomView()
+        }
+        
+        
     }
     
     override func onSuccess(data: Data, tag: String) {

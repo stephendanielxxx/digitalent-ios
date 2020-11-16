@@ -38,7 +38,8 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_banner_dummy" translatesAutoresizingMaskIntoConstraints="NO" id="ShO-R4-wfx">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="230" id="u6F-hl-Icv"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="230" id="u6F-hl-Icv"/>
+                                        <constraint firstAttribute="width" secondItem="ShO-R4-wfx" secondAttribute="height" multiplier="9:5" id="veB-h3-UjA"/>
                                     </constraints>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIt-8d-rtZ" userLabel="Content View">

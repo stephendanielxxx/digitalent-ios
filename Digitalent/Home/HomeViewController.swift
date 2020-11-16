@@ -21,6 +21,7 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
     @IBOutlet weak var onlineClassViewHeight: NSLayoutConstraint!
     @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var searchClass: UISearchBar!
+    @IBOutlet weak var bannerHeight: NSLayoutConstraint!
     
     var bannerModel: BannerModel!
     var onlineClassModel: OnlineClassModel!
@@ -45,15 +46,7 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
         scrollView.refreshControl = UIRefreshControl()
         scrollView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
-        getRequest(url: "home/get_home_banner", tag: "get banner")
-        
-        getRequest(url: "home/get_online_course", tag: "get online class")
-        
-        let userId = readStringPreference(key: DigitalentKeys.ID)
-        let parameters: [String:Any] = [
-            "id": "\(userId)"
-        ]
-        postRequest(url: "api/apiprofil", parameters: parameters, tag: "post profile")
+       
         
         setupGridView()
         
@@ -64,12 +57,24 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
         searchClass.delegate = self
         
         bannerCollectionView.gemini.scaleAnimation().scale(0.85).scaleEffect(.scaleUp)
-     
-        loadImageProfile()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(openAccount(_:)))
         imageProfile.isUserInteractionEnabled = true
         imageProfile.addGestureRecognizer(tap)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getRequest(url: "home/get_home_banner", tag: "get banner")
+        
+        getRequest(url: "home/get_online_course", tag: "get online class")
+        
+        let userId = readStringPreference(key: DigitalentKeys.ID)
+        let parameters: [String:Any] = [
+            "id": "\(userId)"
+        ]
+        postRequest(url: "api/apiprofil", parameters: parameters, tag: "post profile")
+        
+        loadImageProfile()
     }
     
     @objc func openAccount(_ sender: UITapGestureRecognizer?) {
@@ -109,7 +114,6 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 self.bannerModel = try decoder.decode(BannerModel.self, from:data)
                 pageControl.numberOfPages = self.bannerModel.banner.count
                 pageControl.currentPage = 0
-                collectionHeight.constant = bannerCollectionView.contentSize.height
                 
                 self.bannerCollectionView.reloadData()
             }catch{
@@ -121,12 +125,18 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 
                 itemCount = self.onlineClassModel.online.count
                 
-//                let sisaBawah = CGFloat(Double(((itemCount / 2))) * cellMarginSize * 2)
-                let sisaBawah = CGFloat(200 / 2)
+                var rowCount = 0
+                if itemCount % 2 == 1 {
+                    rowCount = itemCount + 1
+                }
                 
-                let height = CGFloat(itemCount * Int(200) / 2) + sisaBawah + CGFloat(cellMarginSize * 2)
-                self.onlineClassViewHeight.constant = height
+                let widthOnline = self.calculateWidth()
+                let heightOnline = widthOnline / 1.2
+                let totalRowHeight = heightOnline * CGFloat(rowCount) / 2
+                let totalMarginHeight = CGFloat(Double(rowCount-1) * cellMarginSize)
                 
+                self.onlineClassViewHeight.constant = totalRowHeight + totalMarginHeight
+                                
                 self.onlineClassView.reloadData()
             }catch{
                 print(error.localizedDescription)
@@ -136,9 +146,8 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 self.homeProfileModel = try decoder.decode(HomeProfileModel.self, from:data)
                 
                 let firstName = self.homeProfileModel.profil[0].firstName
-                let lastName = self.homeProfileModel.profil[0].lastName
                 
-                greetingLabel.text = "Hello \(firstName) \(lastName) !"
+                greetingLabel.text = "Hello \(firstName) !"
             }catch{
                 print(error.localizedDescription)
             }
@@ -253,15 +262,23 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                                                                                     owner: self, options: nil)?.first as? HomeBannerCollectionViewCell else {
                 return CGSize.zero
             }
-            
+
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
-            return CGSize(width: collectionView.frame.width - 40, height: 150)
-        }else{
-            let width = self.calculateWidth()
-            return CGSize(width: width, height: 200)
+            let width = collectionView.frame.width - 40
+            let height = width / 2.186667
+            
+            collectionHeight.constant = height
+            
+            return CGSize(width: width, height: height)
+        }else if collectionView == onlineClassView{
+            let widthOnline = self.calculateWidth()
+            let heightOnline = widthOnline / 1.2
+            return CGSize(width: widthOnline, height: heightOnline)
+        }else {
+            return CGSize(width: 0, height: 0)
         }
-        
+
     }
     
     func calculateWidth() -> CGFloat{

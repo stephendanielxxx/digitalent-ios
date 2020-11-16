@@ -31,6 +31,12 @@ class ForgetPassViewController: BaseViewController {
             ]
             
             postRequest(url: "api/Resetpass/forgot_password", parameters: parameter, tag: "post reset pass")
+            
+            let alert = UIAlertController(title: "", message: "Please check your email to reset password.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true)
         }
     }
     
