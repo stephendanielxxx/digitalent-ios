@@ -14,7 +14,6 @@
                 <outlet property="LogOut" destination="7S1-eF-Lay" id="7S2-OH-m3o"/>
                 <outlet property="deleteAccount" destination="vh7-gN-hVY" id="EEq-EE-blV"/>
                 <outlet property="settingsAccount" destination="aBp-qi-gSv" id="PiD-Xh-Wcc"/>
-                <outlet property="settingsNotification" destination="cFb-XU-Hxn" id="vEw-ci-MqC"/>
                 <outlet property="settingsSecurity" destination="lwG-D6-g5m" id="ZhH-Kg-fjS"/>
                 <outlet property="settingsSignout" destination="7S1-eF-Lay" id="Ogk-Ox-QPr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -45,19 +44,12 @@
                                         <constraint firstAttribute="width" constant="32" id="TOE-JS-OkS"/>
                                     </constraints>
                                 </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 532" translatesAutoresizingMaskIntoConstraints="NO" id="J4z-0O-TCR" userLabel="notif">
-                                    <rect key="frame" x="14" y="246.5" width="32" height="32"/>
-                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="32" id="IGr-qQ-JkA"/>
-                                    </constraints>
-                                </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon feather-lock" translatesAutoresizingMaskIntoConstraints="NO" id="z0h-3v-vdQ" userLabel="security">
                                     <rect key="frame" x="19" y="198" width="22" height="27"/>
                                     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon ionic-md-log-out" translatesAutoresizingMaskIntoConstraints="NO" id="Yne-bO-DHW" userLabel="sign out">
-                                    <rect key="frame" x="14" y="297.5" width="32" height="32"/>
+                                    <rect key="frame" x="14" y="249.5" width="32" height="32"/>
                                     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="32" id="BbT-xk-ThN"/>
@@ -65,7 +57,7 @@
                                     </constraints>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 75" translatesAutoresizingMaskIntoConstraints="NO" id="GHW-hN-0zv" userLabel="delete">
-                                    <rect key="frame" x="14" y="348.5" width="32" height="32"/>
+                                    <rect key="frame" x="14" y="300.5" width="32" height="32"/>
                                     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="32" id="Yfe-hl-hhL"/>
@@ -84,20 +76,14 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFb-XU-Hxn">
-                                    <rect key="frame" x="51" y="252" width="355" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vh7-gN-hVY">
-                                    <rect key="frame" x="51" y="354" width="271" height="21"/>
+                                    <rect key="frame" x="51" y="306" width="271" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7S1-eF-Lay">
-                                    <rect key="frame" x="51" y="303" width="298" height="21"/>
+                                    <rect key="frame" x="51" y="255" width="298" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -105,25 +91,19 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="cFb-XU-Hxn" firstAttribute="leading" secondItem="J4z-0O-TCR" secondAttribute="trailing" constant="5" id="061-2A-hEM"/>
                                 <constraint firstItem="7S1-eF-Lay" firstAttribute="leading" secondItem="Yne-bO-DHW" secondAttribute="trailing" constant="5" id="2uv-sW-AF2"/>
                                 <constraint firstAttribute="trailing" secondItem="vh7-gN-hVY" secondAttribute="trailing" constant="92" id="5cl-5n-df4"/>
                                 <constraint firstAttribute="trailing" secondItem="aBp-qi-gSv" secondAttribute="trailing" constant="23" id="6N5-iR-6l0"/>
                                 <constraint firstItem="z0h-3v-vdQ" firstAttribute="leading" secondItem="q5D-DT-lxe" secondAttribute="leading" constant="19" id="86V-l9-7qQ"/>
                                 <constraint firstItem="vh7-gN-hVY" firstAttribute="top" secondItem="7S1-eF-Lay" secondAttribute="bottom" constant="30" id="8CG-KO-wap"/>
                                 <constraint firstItem="vh7-gN-hVY" firstAttribute="leading" secondItem="GHW-hN-0zv" secondAttribute="trailing" constant="5" id="9wC-Ze-ygm"/>
-                                <constraint firstItem="7S1-eF-Lay" firstAttribute="top" secondItem="cFb-XU-Hxn" secondAttribute="bottom" constant="30" id="ALe-Ix-b4M"/>
                                 <constraint firstItem="z0h-3v-vdQ" firstAttribute="width" secondItem="Haz-Eb-FDj" secondAttribute="width" multiplier="0.6875" id="ASG-Xo-QoH"/>
-                                <constraint firstItem="J4z-0O-TCR" firstAttribute="centerY" secondItem="cFb-XU-Hxn" secondAttribute="centerY" id="Bbz-2S-9sr"/>
                                 <constraint firstItem="Yne-bO-DHW" firstAttribute="centerY" secondItem="7S1-eF-Lay" secondAttribute="centerY" id="C9Y-2k-lzl"/>
-                                <constraint firstAttribute="trailing" secondItem="cFb-XU-Hxn" secondAttribute="trailing" constant="8" id="GfX-j1-hcJ"/>
                                 <constraint firstItem="z0h-3v-vdQ" firstAttribute="centerY" secondItem="lwG-D6-g5m" secondAttribute="centerY" id="LBi-Ui-5vr"/>
                                 <constraint firstItem="Haz-Eb-FDj" firstAttribute="centerY" secondItem="aBp-qi-gSv" secondAttribute="centerY" id="Mat-9G-Mnm"/>
                                 <constraint firstItem="vh7-gN-hVY" firstAttribute="centerY" secondItem="GHW-hN-0zv" secondAttribute="centerY" id="PK9-6Y-oYm"/>
                                 <constraint firstAttribute="trailing" secondItem="lwG-D6-g5m" secondAttribute="trailing" constant="20" id="Qyk-0S-gQQ"/>
-                                <constraint firstItem="J4z-0O-TCR" firstAttribute="leading" secondItem="q5D-DT-lxe" secondAttribute="leading" constant="14" id="Sby-id-uVz"/>
                                 <constraint firstAttribute="trailing" secondItem="7S1-eF-Lay" secondAttribute="trailing" constant="65" id="Uii-ll-gS2"/>
-                                <constraint firstItem="J4z-0O-TCR" firstAttribute="width" secondItem="z0h-3v-vdQ" secondAttribute="width" multiplier="1.45455" id="Xdm-IS-TSu"/>
                                 <constraint firstItem="aBp-qi-gSv" firstAttribute="leading" secondItem="Haz-Eb-FDj" secondAttribute="trailing" constant="5" id="YGf-2W-3Ox"/>
                                 <constraint firstItem="lwG-D6-g5m" firstAttribute="leading" secondItem="z0h-3v-vdQ" secondAttribute="trailing" constant="10" id="atv-g2-AJI"/>
                                 <constraint firstItem="S6O-3q-nhM" firstAttribute="leading" secondItem="q5D-DT-lxe" secondAttribute="leading" constant="14" id="bI5-DA-hya"/>
@@ -133,9 +113,9 @@
                                 <constraint firstItem="GHW-hN-0zv" firstAttribute="leading" secondItem="q5D-DT-lxe" secondAttribute="leading" constant="14" id="pHo-Yt-JCQ"/>
                                 <constraint firstAttribute="trailing" secondItem="S6O-3q-nhM" secondAttribute="trailing" constant="14" id="pcb-CE-cgj"/>
                                 <constraint firstItem="aBp-qi-gSv" firstAttribute="top" secondItem="q5D-DT-lxe" secondAttribute="top" constant="150" id="qHr-hq-EEi"/>
-                                <constraint firstItem="cFb-XU-Hxn" firstAttribute="top" secondItem="lwG-D6-g5m" secondAttribute="bottom" constant="30" id="qMv-Xm-PuH"/>
                                 <constraint firstItem="Yne-bO-DHW" firstAttribute="leading" secondItem="q5D-DT-lxe" secondAttribute="leading" constant="14" id="vQO-P8-mtH"/>
                                 <constraint firstItem="Haz-Eb-FDj" firstAttribute="leading" secondItem="q5D-DT-lxe" secondAttribute="leading" constant="14" id="yzS-vN-Knd"/>
+                                <constraint firstItem="Yne-bO-DHW" firstAttribute="top" secondItem="z0h-3v-vdQ" secondAttribute="bottom" constant="24.5" id="zgk-qx-wOn"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -162,7 +142,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Group 532" width="22" height="26"/>
         <image name="Group 75" width="19" height="27"/>
         <image name="Icon feather-lock" width="22" height="24.5"/>
         <image name="Icon ionic-md-log-out" width="24" height="24"/>
