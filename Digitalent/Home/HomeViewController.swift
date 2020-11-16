@@ -21,6 +21,7 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
     @IBOutlet weak var onlineClassViewHeight: NSLayoutConstraint!
     @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var searchClass: UISearchBar!
+    @IBOutlet weak var bannerHeight: NSLayoutConstraint!
     
     var bannerModel: BannerModel!
     var onlineClassModel: OnlineClassModel!
@@ -256,15 +257,20 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                                                                                     owner: self, options: nil)?.first as? HomeBannerCollectionViewCell else {
                 return CGSize.zero
             }
-            
+
             cell.setNeedsLayout()
             cell.layoutIfNeeded()
-            return CGSize(width: collectionView.frame.width - 40, height: 150)
+            let width = collectionView.frame.width - 40
+            let height = width / 2.186667
+            
+            bannerHeight.constant = height
+            
+            return CGSize(width: width, height: height)
         }else{
             let width = self.calculateWidth()
             return CGSize(width: width, height: 200)
         }
-        
+
     }
     
     func calculateWidth() -> CGFloat{

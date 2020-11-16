@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Digitalent" customModuleProvider="target">
             <connections>
                 <outlet property="bannerCollectionView" destination="AiA-tH-gy1" id="7pl-sh-ob1"/>
+                <outlet property="bannerHeight" destination="U2D-gg-xcx" id="AKC-LM-qr5"/>
                 <outlet property="collectionHeight" destination="U2D-gg-xcx" id="4h1-Kw-xI8"/>
                 <outlet property="greetingLabel" destination="leT-jA-Wxw" id="TuE-tr-ugI"/>
                 <outlet property="imageProfile" destination="rbj-eF-Sde" id="CSO-bX-gUr"/>
@@ -127,7 +128,7 @@
                                     <rect key="frame" x="24" y="240" width="366" height="150"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="150" id="U2D-gg-xcx"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="U2D-gg-xcx"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TUz-fw-fNG">
                                         <size key="itemSize" width="354" height="128"/>

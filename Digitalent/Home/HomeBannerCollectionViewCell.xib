@@ -22,6 +22,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_banner_dummy" translatesAutoresizingMaskIntoConstraints="NO" id="upz-xP-10n">
                                 <rect key="frame" x="0.0" y="0.0" width="328" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="Aup-UO-fWU"/>
+                                    <constraint firstAttribute="width" secondItem="upz-xP-10n" secondAttribute="height" multiplier="164:75" id="LbW-tD-Hoo"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="328" id="e2E-9c-BFG"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
