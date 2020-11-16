@@ -136,9 +136,8 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 self.homeProfileModel = try decoder.decode(HomeProfileModel.self, from:data)
                 
                 let firstName = self.homeProfileModel.profil[0].firstName
-                let lastName = self.homeProfileModel.profil[0].lastName
                 
-                greetingLabel.text = "Hello \(firstName) \(lastName) !"
+                greetingLabel.text = "Hello \(firstName) !"
             }catch{
                 print(error.localizedDescription)
             }

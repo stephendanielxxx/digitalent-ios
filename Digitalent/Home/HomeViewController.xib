@@ -32,7 +32,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDa-bP-bL4" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="852.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="850"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1HO-s3-f4X" userLabel="Top Background">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -46,9 +46,9 @@
                                                 <constraint firstAttribute="height" constant="100" id="gKv-ns-FoV"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leT-jA-Wxw">
-                                            <rect key="frame" x="124" y="53" width="241" height="26.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leT-jA-Wxw">
+                                            <rect key="frame" x="124" y="54" width="241" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -64,14 +64,14 @@
                                                 <action selector="notifAction:" destination="-1" eventType="touchUpInside" id="zDg-zq-zoy"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What will you learn today?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhX-Sy-URZ">
-                                            <rect key="frame" x="30" y="136" width="354" height="26.5"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What will you learn today?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhX-Sy-URZ">
+                                            <rect key="frame" x="30" y="136" width="354" height="24"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hFe-lf-pUs">
-                                            <rect key="frame" x="124" y="79.5" width="150" height="4"/>
+                                            <rect key="frame" x="124" y="78" width="150" height="4"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="tintColor" name="color_589D0B"/>
                                             <constraints>
@@ -80,19 +80,19 @@
                                             </constraints>
                                         </progressView>
                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okH-hT-6AN">
-                                            <rect key="frame" x="282" y="73" width="22" height="17"/>
+                                            <rect key="frame" x="282" y="71.5" width="22" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete your profile!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMa-kR-DUr">
-                                            <rect key="frame" x="127" y="83.5" width="144" height="17"/>
+                                            <rect key="frame" x="127" y="82" width="144" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <searchBar contentMode="redraw" placeholder="Today I will learn" translatesAutoresizingMaskIntoConstraints="NO" id="CR4-Mx-q74">
-                                            <rect key="frame" x="24" y="174.5" width="366" height="44"/>
+                                            <rect key="frame" x="24" y="172" width="366" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="KCu-iU-uQt"/>
                                             </constraints>
@@ -124,7 +124,7 @@
                                     </constraints>
                                 </view>
                                 <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AiA-tH-gy1" customClass="GeminiCollectionView" customModule="Gemini">
-                                    <rect key="frame" x="24" y="242.5" width="366" height="150"/>
+                                    <rect key="frame" x="24" y="240" width="366" height="150"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="150" id="U2D-gg-xcx"/>
@@ -137,18 +137,18 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="XLm-eQ-Vaz">
-                                    <rect key="frame" x="146" y="408" width="122.5" height="27.5"/>
+                                    <rect key="frame" x="146" y="405.5" width="122.5" height="27.5"/>
                                     <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="currentPageIndicatorTintColor" name="color_2C64EE"/>
                                 </pageControl>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoW-Qy-dTe">
-                                    <rect key="frame" x="12" y="456.5" width="105" height="21"/>
+                                    <rect key="frame" x="12" y="454" width="105" height="21"/>
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckK-ul-YoJ">
-                                    <rect key="frame" x="12" y="485.5" width="390" height="33.5"/>
+                                    <rect key="frame" x="12" y="483" width="390" height="33.5"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Pilih paket belajarmu dan nikmati akses belajar dengan mudah dan menyenangkan!">
                                             <attributes>
@@ -160,7 +160,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SiG-gM-Tan">
-                                    <rect key="frame" x="12" y="526.5" width="390" height="250"/>
+                                    <rect key="frame" x="12" y="524" width="390" height="250"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="250" id="4XJ-HS-6AN"/>
@@ -173,7 +173,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1YX-EI-czQ" userLabel="See All Button">
-                                    <rect key="frame" x="120" y="790.5" width="174" height="37"/>
+                                    <rect key="frame" x="120" y="788" width="174" height="37"/>
                                     <color key="backgroundColor" name="color_2C64EE"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="37" id="DyE-6M-QPA"/>
