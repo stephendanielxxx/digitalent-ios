@@ -45,15 +45,7 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
         scrollView.refreshControl = UIRefreshControl()
         scrollView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
-        getRequest(url: "home/get_home_banner", tag: "get banner")
-        
-        getRequest(url: "home/get_online_course", tag: "get online class")
-        
-        let userId = readStringPreference(key: DigitalentKeys.ID)
-        let parameters: [String:Any] = [
-            "id": "\(userId)"
-        ]
-        postRequest(url: "api/apiprofil", parameters: parameters, tag: "post profile")
+       
         
         setupGridView()
         
@@ -64,12 +56,24 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
         searchClass.delegate = self
         
         bannerCollectionView.gemini.scaleAnimation().scale(0.85).scaleEffect(.scaleUp)
-     
-        loadImageProfile()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(openAccount(_:)))
         imageProfile.isUserInteractionEnabled = true
         imageProfile.addGestureRecognizer(tap)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getRequest(url: "home/get_home_banner", tag: "get banner")
+        
+        getRequest(url: "home/get_online_course", tag: "get online class")
+        
+        let userId = readStringPreference(key: DigitalentKeys.ID)
+        let parameters: [String:Any] = [
+            "id": "\(userId)"
+        ]
+        postRequest(url: "api/apiprofil", parameters: parameters, tag: "post profile")
+        
+        loadImageProfile()
     }
     
     @objc func openAccount(_ sender: UITapGestureRecognizer?) {
