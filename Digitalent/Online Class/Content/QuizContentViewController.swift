@@ -56,7 +56,7 @@ class QuizContentViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         userId = readStringPreference(key: DigitalentKeys.ID)
         
         buttonPrev.layer.cornerRadius = 18
@@ -143,7 +143,7 @@ class QuizContentViewController: BaseViewController {
     }
     
     func stopTimer(){
-
+        timer?.invalidate()
     }
 
     @objc func countdown() {
@@ -179,10 +179,17 @@ class QuizContentViewController: BaseViewController {
     }
 
     @IBAction func backAction(_ sender: UIButton) {
-        delegate.prevAction(index: index, duration: quizTimer.text!)
+        
+        if quizTimer.text != nil && !quizTimer.text!.isEmpty{
+            delegate.prevAction(index: index, duration: quizTimer.text!)
+        }else{
+            delegate.prevAction(index: index, duration: quiz_duration)
+        }
+        
     }
     
     @IBAction func nextAction(_ sender: UIButton) {
+        
         if tempAnswer.isEmpty {
             showErrorToast(message: "Please select the answer")
         }else{
@@ -206,7 +213,11 @@ class QuizContentViewController: BaseViewController {
                 // show finish dialog
                 delegate.finishAction()
             }else{
-                delegate.nextAction(index: index, duration: quizTimer.text!)
+                if quizTimer.text != nil && !quizTimer.text!.isEmpty {
+                    delegate.nextAction(index: index, duration: quizTimer.text!)
+                }else{
+                    delegate.nextAction(index: index, duration: quiz_duration)
+                }
             }
         }
         

@@ -85,6 +85,12 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
             cell.pdfIcon.addGestureRecognizer(tapPdf)
         }
         
+        if materi.doneStat == "0"{
+            cell.doneIcon.isHidden = true
+            cell.doneHeight.constant = 0
+            cell.doneWidth.constant = 0
+        }
+        
         return cell
     }
     

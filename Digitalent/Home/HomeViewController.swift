@@ -46,8 +46,6 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
         scrollView.refreshControl = UIRefreshControl()
         scrollView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
-       
-        
         setupGridView()
         
         searchClass.searchTextField.backgroundColor = .clear
@@ -64,6 +62,8 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        showSpinner(onView: self.view)
         getRequest(url: "home/get_home_banner", tag: "get banner")
         
         getRequest(url: "home/get_online_course", tag: "get online class")
@@ -120,6 +120,7 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 print(error.localizedDescription)
             }
         }else if tag == "get online class"{
+            self.removeSpinner()
             do{
                 self.onlineClassModel = try decoder.decode(OnlineClassModel.self, from:data)
                 
