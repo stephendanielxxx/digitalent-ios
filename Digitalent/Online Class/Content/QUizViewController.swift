@@ -111,6 +111,8 @@ extension QUizViewController: QuizDelegate, LeaveQuizDelegate, FinishQuizDelegat
         
         postRequest(url: "quiz/checkpoint", parameters: parameters, tag: "save checkpoint")
         
+        countScore()
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -163,7 +165,26 @@ extension QUizViewController: QuizDelegate, LeaveQuizDelegate, FinishQuizDelegat
         
         postRequest(url: "quiz/checkpoint", parameters: parameters, tag: "save checkpoint")
         
+        countScore()
+        
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func countScore(){
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = Date()
+        let currentDate = dateFormatterGet.string(from: date)
+        
+        let params:[String: Any] = [
+            "user_id": "\(userId)",
+            "course_id": "\(course_id)",
+            "sub_material_id": "\(material_id)",
+            "start_at": "\(currentDate)",
+            "total_score": "0"
+        ]
+        
+        postRequest(url: "quiz/insert_scorepunyadigitalent", parameters: params, tag: "post total score")
     }
     
 }

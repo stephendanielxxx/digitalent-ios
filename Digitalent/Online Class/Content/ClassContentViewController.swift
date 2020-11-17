@@ -17,12 +17,16 @@ class ClassContentViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         let nibClass = UINib(nibName: "ClassContentTableViewCell", bundle: nil)
         tableView.register(nibClass, forCellReuseIdentifier: "classContentIdentifier")
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         let userId = readStringPreference(key: DigitalentKeys.ID)
         let requestUrl = "online/get_detail_course/\(course_id)/\(userId)"
         getRequest(url: requestUrl, tag: "get course detail")
