@@ -64,6 +64,8 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
             
             let tapVideo = ClassContentTapGesture(target: self, action: #selector(openVideo(_:)))
             tapVideo.video = materi.video!
+            tapVideo.material_id = materi.materialID!
+            
             cell.videoIcon.addGestureRecognizer(tapVideo)
         }
         
@@ -74,6 +76,7 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
             tapQuiz.quiz = materi.materialID!
             tapQuiz.subMaterial = materi.submaterial!
             tapQuiz.quiz_duration = materi.quizDuration
+            
             cell.quizIcon.addGestureRecognizer(tapQuiz)
         }
         
@@ -82,6 +85,8 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
             
             let tapPdf = ClassContentTapGesture(target: self, action: #selector(openPdf(_:)))
             tapPdf.pdf = materi.pdf!
+            tapPdf.material_id = materi.materialID!
+            
             cell.pdfIcon.addGestureRecognizer(tapPdf)
         }
         
@@ -96,17 +101,24 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
     
     @objc func openVideo(_ sender: ClassContentTapGesture?) {
         let video = sender!.video
+        let material_id = sender!.material_id
+        
         let openVideo = MaterialVideoViewController()
         openVideo.video = video
+        openVideo.course_id = course_id
+        openVideo.sub_material_id = material_id
         openVideo.modalPresentationStyle = .fullScreen
         present(openVideo, animated: true, completion: nil)
     }
     
     @objc func openPdf(_ sender: ClassContentTapGesture?) {
         let pdf = sender!.pdf
+        let material_id = sender!.material_id
         
         let openPdf = MaterialPdfViewController()
         openPdf.pdf = pdf
+        openPdf.course_id = course_id
+        openPdf.sub_material_id = material_id
         openPdf.modalPresentationStyle = .fullScreen
         present(openPdf, animated: true, completion: nil)
     }
@@ -115,6 +127,7 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
         let quiz = sender!.quiz
         let submaterial = sender!.subMaterial
         let duration = sender!.quiz_duration
+        
         let openQuiz = QUizViewController()
         openQuiz.quiz_duration = duration
         openQuiz.course_id = course_id
