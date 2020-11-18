@@ -22,6 +22,7 @@ class QuizContentViewController: BaseViewController {
     var transactionId = ""
     var userId = ""
     var quiz_duration = ""
+    var score = 0
     
     var totalHour = Int()
     var totalMinut = Int()
@@ -172,7 +173,7 @@ class QuizContentViewController: BaseViewController {
             // do something when time is up
             let alert = UIAlertController(title: "", message: "Time's Up", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Close", style: .default, handler: {action in
-                self.delegate.timesUp(index: self.index, duration: self.quizTimer.text!)
+                self.delegate.timesUp(index: self.index, duration: self.quizTimer.text!, score: self.score)
             }))
             self.present(alert, animated: true)
         }
@@ -181,9 +182,9 @@ class QuizContentViewController: BaseViewController {
     @IBAction func backAction(_ sender: UIButton) {
         
         if quizTimer.text != nil && !quizTimer.text!.isEmpty{
-            delegate.prevAction(index: index, duration: quizTimer.text!)
+            delegate.prevAction(index: index, duration: quizTimer.text!, score: score)
         }else{
-            delegate.prevAction(index: index, duration: quiz_duration)
+            delegate.prevAction(index: index, duration: quiz_duration, score: score)
         }
         
     }
@@ -196,6 +197,7 @@ class QuizContentViewController: BaseViewController {
             var point = 0
             if tempAnswer.caseInsensitiveCompare(quizModel.answer) == .orderedSame {
                 point = 1
+                score = score + 1
             }
             
             let parameters: [String:Any] = [
@@ -211,12 +213,12 @@ class QuizContentViewController: BaseViewController {
             
             if quizIndex == totalQuestion {
                 // show finish dialog
-                delegate.finishAction()
+                delegate.finishAction(score: score)
             }else{
                 if quizTimer.text != nil && !quizTimer.text!.isEmpty {
-                    delegate.nextAction(index: index, duration: quizTimer.text!)
+                    delegate.nextAction(index: index, duration: quizTimer.text!, score: score)
                 }else{
-                    delegate.nextAction(index: index, duration: quiz_duration)
+                    delegate.nextAction(index: index, duration: quiz_duration, score: score)
                 }
             }
         }
@@ -322,14 +324,14 @@ class QuizContentViewController: BaseViewController {
         self.view.makeToast(message)
     }
     @IBAction func closeAction(_ sender: UIBarButtonItem) {
-        delegate.closeAction(index: index, duration: quizTimer.text!)
+        delegate.closeAction(index: index, duration: quizTimer.text!, score: score)
     }
 }
 
 protocol QuizDelegate {
-    func nextAction(index: Int, duration: String)
-    func prevAction(index: Int, duration: String)
-    func closeAction(index: Int, duration: String)
-    func finishAction()
-    func timesUp(index: Int, duration: String)
+    func nextAction(index: Int, duration: String, score: Int)
+    func prevAction(index: Int, duration: String, score: Int)
+    func closeAction(index: Int, duration: String, score: Int)
+    func finishAction(score: Int)
+    func timesUp(index: Int, duration: String, score: Int)
 }
