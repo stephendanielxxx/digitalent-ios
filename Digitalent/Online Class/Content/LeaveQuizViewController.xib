@@ -43,52 +43,66 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZU-8a-MzG">
-                            <rect key="frame" x="42" y="256" width="100" height="35"/>
-                            <color key="backgroundColor" name="color_FD4146"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11T-j3-OdD">
+                            <rect key="frame" x="45.5" y="256" width="259" height="35"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZU-8a-MzG">
+                                    <rect key="frame" x="16" y="0.0" width="100" height="35"/>
+                                    <color key="backgroundColor" name="color_FD4146"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="ScD-hV-fYz"/>
+                                        <constraint firstAttribute="width" constant="100" id="eNs-6p-Wqe"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <state key="normal" title="Leave">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="leaveAction:" destination="-1" eventType="touchUpInside" id="S3J-MR-zEV"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6M-4g-wdi">
+                                    <rect key="frame" x="143" y="0.0" width="100" height="35"/>
+                                    <color key="backgroundColor" name="color_589D0B"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="3Dm-xo-DmM"/>
+                                        <constraint firstAttribute="height" constant="35" id="njZ-Sk-v0q"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <state key="normal" title="Stay">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="stayAction:" destination="-1" eventType="touchUpInside" id="rWh-yX-8QC"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="35" id="ScD-hV-fYz"/>
-                                <constraint firstAttribute="width" constant="100" id="eNs-6p-Wqe"/>
+                                <constraint firstAttribute="trailing" secondItem="r6M-4g-wdi" secondAttribute="trailing" constant="16" id="Cxp-cE-83c"/>
+                                <constraint firstAttribute="width" constant="259" id="DQi-U9-BB5"/>
+                                <constraint firstItem="LZU-8a-MzG" firstAttribute="leading" secondItem="11T-j3-OdD" secondAttribute="leading" constant="16" id="EZo-yI-FWJ"/>
+                                <constraint firstItem="r6M-4g-wdi" firstAttribute="centerY" secondItem="LZU-8a-MzG" secondAttribute="centerY" id="ave-70-RED"/>
+                                <constraint firstItem="r6M-4g-wdi" firstAttribute="top" secondItem="11T-j3-OdD" secondAttribute="top" id="lZ1-WO-yU6"/>
+                                <constraint firstAttribute="bottom" secondItem="LZU-8a-MzG" secondAttribute="bottom" id="n1k-c2-27M"/>
+                                <constraint firstAttribute="bottom" secondItem="r6M-4g-wdi" secondAttribute="bottom" id="peu-aT-S63"/>
+                                <constraint firstItem="LZU-8a-MzG" firstAttribute="top" secondItem="11T-j3-OdD" secondAttribute="top" id="qed-O1-Hb0"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <state key="normal" title="Leave">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="leaveAction:" destination="-1" eventType="touchUpInside" id="S3J-MR-zEV"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6M-4g-wdi">
-                            <rect key="frame" x="201" y="256" width="100" height="35"/>
-                            <color key="backgroundColor" name="color_589D0B"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="100" id="3Dm-xo-DmM"/>
-                                <constraint firstAttribute="height" constant="35" id="njZ-Sk-v0q"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <state key="normal" title="Stay">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="stayAction:" destination="-1" eventType="touchUpInside" id="rWh-yX-8QC"/>
-                            </connections>
-                        </button>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" name="color_2C64EE"/>
                     <constraints>
-                        <constraint firstItem="r6M-4g-wdi" firstAttribute="top" secondItem="X7l-H4-GhL" secondAttribute="bottom" constant="12" id="3Li-Ap-08x"/>
                         <constraint firstAttribute="trailing" secondItem="X7l-H4-GhL" secondAttribute="trailing" constant="14" id="7dF-Qp-F29"/>
                         <constraint firstItem="X7l-H4-GhL" firstAttribute="leading" secondItem="gLN-U6-04i" secondAttribute="leading" constant="14" id="AzI-bR-knX"/>
                         <constraint firstAttribute="trailing" secondItem="ADJ-qi-Iq5" secondAttribute="trailing" constant="24" id="B53-bG-x4U"/>
                         <constraint firstItem="ADJ-qi-Iq5" firstAttribute="top" secondItem="8XN-f2-QUZ" secondAttribute="bottom" constant="12" id="LFA-WM-ktY"/>
                         <constraint firstItem="ADJ-qi-Iq5" firstAttribute="leading" secondItem="gLN-U6-04i" secondAttribute="leading" constant="24" id="OaZ-V5-7D8"/>
-                        <constraint firstItem="LZU-8a-MzG" firstAttribute="leading" secondItem="gLN-U6-04i" secondAttribute="leading" constant="42" id="OwC-0M-K82"/>
+                        <constraint firstItem="11T-j3-OdD" firstAttribute="top" secondItem="X7l-H4-GhL" secondAttribute="bottom" constant="12" id="Pi6-Im-mEj"/>
                         <constraint firstItem="8XN-f2-QUZ" firstAttribute="centerX" secondItem="gLN-U6-04i" secondAttribute="centerX" id="Pkr-af-7fL"/>
-                        <constraint firstItem="LZU-8a-MzG" firstAttribute="top" secondItem="X7l-H4-GhL" secondAttribute="bottom" constant="12" id="Rev-61-AsJ"/>
-                        <constraint firstAttribute="trailing" secondItem="r6M-4g-wdi" secondAttribute="trailing" constant="49" id="hql-ie-WxD"/>
+                        <constraint firstAttribute="bottom" secondItem="11T-j3-OdD" secondAttribute="bottom" constant="9" id="ghA-Pt-X1F"/>
                         <constraint firstItem="ADJ-qi-Iq5" firstAttribute="centerX" secondItem="8XN-f2-QUZ" secondAttribute="centerX" id="o5y-ME-3bu"/>
-                        <constraint firstItem="r6M-4g-wdi" firstAttribute="centerY" secondItem="LZU-8a-MzG" secondAttribute="centerY" id="p0G-1Q-N22"/>
                         <constraint firstItem="8XN-f2-QUZ" firstAttribute="top" secondItem="gLN-U6-04i" secondAttribute="top" constant="16" id="r39-5L-nfi"/>
+                        <constraint firstItem="11T-j3-OdD" firstAttribute="centerX" secondItem="X7l-H4-GhL" secondAttribute="centerX" id="teg-Oo-gmv"/>
                         <constraint firstItem="X7l-H4-GhL" firstAttribute="top" secondItem="ADJ-qi-Iq5" secondAttribute="bottom" constant="7.5" id="w1L-8s-SkQ"/>
                         <constraint firstAttribute="height" constant="300" id="yD8-7E-Sqc"/>
                     </constraints>

@@ -12,6 +12,7 @@ class LeaveQuizViewController: UIViewController {
     var delegate: LeaveQuizDelegate!
     var index: Int!
     var duration = ""
+    var score = 0
     
     @IBOutlet weak var leaveButton: UIButton!
     @IBOutlet weak var stayButton: UIButton!
@@ -26,7 +27,7 @@ class LeaveQuizViewController: UIViewController {
     }
     
     @IBAction func leaveAction(_ sender: UIButton) {
-        delegate.onLeave(index: index, duration: duration)
+        delegate.onLeave(index: index, duration: duration, score: score)
     }
     
     @IBAction func stayAction(_ sender: UIButton) {
@@ -35,5 +36,5 @@ class LeaveQuizViewController: UIViewController {
 }
 
 protocol LeaveQuizDelegate {
-    func onLeave(index: Int, duration: String)
+    func onLeave(index: Int, duration: String, score: Int)
 }

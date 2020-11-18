@@ -17,6 +17,9 @@ class ClassContentTableViewCell: UITableViewCell {
     @IBOutlet weak var videoIcon: UIButton!
     @IBOutlet weak var quizIcon: UIButton!
     @IBOutlet weak var pdfIcon: UIButton!
+    @IBOutlet weak var doneIcon: UIImageView!
+    @IBOutlet weak var doneHeight: NSLayoutConstraint!
+    @IBOutlet weak var doneWidth: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()

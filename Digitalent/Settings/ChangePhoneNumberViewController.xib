@@ -21,92 +21,75 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="0EP-hI-A1g">
-                    <rect key="frame" x="0.0" y="39" width="414" height="818"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCg-k2-U3y">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCg-k2-U3y">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                            <subviews>
-                                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ja2-h4-wc8">
-                                    <rect key="frame" x="0.0" y="14" width="414" height="44"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="414" id="iYR-tW-SpS"/>
-                                    </constraints>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <textAttributes key="titleTextAttributes">
-                                        <offsetWrapper key="textShadowOffset" horizontal="900" vertical="0.0"/>
-                                    </textAttributes>
-                                    <items>
-                                        <navigationItem title="Change Phone Number" id="baN-2W-VX4">
-                                            <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="5Mk-mK-GbB">
-                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <connections>
-                                                    <action selector="backButton:" destination="-1" id="Tgx-Jw-BZf"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </navigationItem>
-                                    </items>
-                                </navigationBar>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NB1-cB-sHa">
-                                    <rect key="frame" x="90" y="154" width="246" height="40"/>
-                                    <color key="backgroundColor" name="color_2C64EE"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="246" id="5xu-Qe-QTK"/>
-                                        <constraint firstAttribute="height" constant="40" id="DMM-Cw-uga"/>
-                                    </constraints>
-                                    <state key="normal" title="SAVE CHANGES">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="10"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="saveChangePhoneNumber:" destination="-1" eventType="touchUpInside" id="cQE-7J-X2Y"/>
-                                    </connections>
-                                </button>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tjz-se-iXd" userLabel="phone number">
-                                    <rect key="frame" x="14" y="98" width="386" height="34"/>
-                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" textContentType="tel"/>
-                                </textField>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ja2-h4-wc8">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textAttributes key="titleTextAttributes">
+                                <offsetWrapper key="textShadowOffset" horizontal="900" vertical="0.0"/>
+                            </textAttributes>
+                            <items>
+                                <navigationItem title="Change Phone Number" id="baN-2W-VX4">
+                                    <barButtonItem key="leftBarButtonItem" image="arrow.left" catalog="system" id="5Mk-mK-GbB">
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="-1" id="Tgx-Jw-BZf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tjz-se-iXd" userLabel="Phone Number">
+                            <rect key="frame" x="26" y="119" width="362" height="34"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" textContentType="tel"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NB1-cB-sHa">
+                            <rect key="frame" x="85" y="173" width="244" height="40"/>
+                            <color key="backgroundColor" name="color_2C64EE"/>
                             <constraints>
-                                <constraint firstItem="Tjz-se-iXd" firstAttribute="leading" secondItem="hCg-k2-U3y" secondAttribute="leading" constant="14" id="BYM-yQ-LOC"/>
-                                <constraint firstAttribute="trailing" secondItem="Tjz-se-iXd" secondAttribute="trailing" constant="14" id="Cx7-s5-Bt6"/>
-                                <constraint firstAttribute="trailing" secondItem="Ja2-h4-wc8" secondAttribute="trailing" id="IKK-Vw-eZm"/>
-                                <constraint firstItem="Tjz-se-iXd" firstAttribute="top" secondItem="hCg-k2-U3y" secondAttribute="top" constant="98" id="TmI-fy-aga"/>
-                                <constraint firstItem="NB1-cB-sHa" firstAttribute="top" secondItem="Tjz-se-iXd" secondAttribute="bottom" constant="22" id="aOG-U7-tR9"/>
-                                <constraint firstAttribute="trailing" secondItem="NB1-cB-sHa" secondAttribute="trailing" constant="78" id="dey-PL-xcC"/>
-                                <constraint firstItem="NB1-cB-sHa" firstAttribute="leading" secondItem="hCg-k2-U3y" secondAttribute="leading" constant="90" id="yb2-vN-Clh"/>
-                                <constraint firstItem="Ja2-h4-wc8" firstAttribute="top" secondItem="hCg-k2-U3y" secondAttribute="top" constant="14" id="ziN-Hx-0MC"/>
+                                <constraint firstAttribute="height" constant="40" id="UNc-0V-Uh1"/>
                             </constraints>
-                        </view>
+                            <state key="normal" title="SAVE CHANGES">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="saveChangePhoneNumber:" destination="-1" eventType="touchUpInside" id="cQE-7J-X2Y"/>
+                            </connections>
+                        </button>
                     </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="hCg-k2-U3y" firstAttribute="height" secondItem="0EP-hI-A1g" secondAttribute="height" id="RV2-tE-G60"/>
-                        <constraint firstItem="hCg-k2-U3y" firstAttribute="leading" secondItem="0EP-hI-A1g" secondAttribute="leading" id="TcG-le-HUA"/>
-                        <constraint firstAttribute="bottom" secondItem="hCg-k2-U3y" secondAttribute="bottom" id="diC-OC-LGb"/>
-                        <constraint firstItem="hCg-k2-U3y" firstAttribute="top" secondItem="0EP-hI-A1g" secondAttribute="top" id="rNM-3Z-Wre"/>
-                        <constraint firstAttribute="trailing" secondItem="hCg-k2-U3y" secondAttribute="trailing" id="xe9-DY-AKd"/>
+                        <constraint firstAttribute="trailing" secondItem="Ja2-h4-wc8" secondAttribute="trailing" id="8Cq-DW-5S6"/>
+                        <constraint firstItem="Ja2-h4-wc8" firstAttribute="top" secondItem="hCg-k2-U3y" secondAttribute="top" id="Aqq-mT-r72"/>
+                        <constraint firstAttribute="trailing" secondItem="NB1-cB-sHa" secondAttribute="trailing" constant="85" id="Asv-xc-aXL"/>
+                        <constraint firstItem="NB1-cB-sHa" firstAttribute="top" secondItem="Tjz-se-iXd" secondAttribute="bottom" constant="20" id="DuY-T2-kVx"/>
+                        <constraint firstItem="Tjz-se-iXd" firstAttribute="leading" secondItem="hCg-k2-U3y" secondAttribute="leading" constant="26" id="Ign-5R-mDo"/>
+                        <constraint firstAttribute="trailing" secondItem="Tjz-se-iXd" secondAttribute="trailing" constant="26" id="MES-2M-SPE"/>
+                        <constraint firstItem="Tjz-se-iXd" firstAttribute="top" secondItem="Ja2-h4-wc8" secondAttribute="bottom" constant="75" id="YM3-Iy-CCJ"/>
+                        <constraint firstItem="NB1-cB-sHa" firstAttribute="leading" secondItem="hCg-k2-U3y" secondAttribute="leading" constant="85" id="d3i-na-c53"/>
+                        <constraint firstItem="Ja2-h4-wc8" firstAttribute="leading" secondItem="hCg-k2-U3y" secondAttribute="leading" id="l64-hz-rGS"/>
                     </constraints>
-                    <viewLayoutGuide key="contentLayoutGuide" id="hKP-kS-STa"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="IY0-PO-tTP"/>
-                </scrollView>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="kdJ-Sp-nqf"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="0EP-hI-A1g" firstAttribute="leading" secondItem="kdJ-Sp-nqf" secondAttribute="leading" id="1UY-Yx-cjB"/>
-                <constraint firstItem="kdJ-Sp-nqf" firstAttribute="bottom" secondItem="0EP-hI-A1g" secondAttribute="bottom" constant="5" id="HQz-8A-5fB"/>
-                <constraint firstItem="kdJ-Sp-nqf" firstAttribute="top" secondItem="0EP-hI-A1g" secondAttribute="top" constant="5" id="Kst-CV-paY"/>
-                <constraint firstItem="kdJ-Sp-nqf" firstAttribute="trailing" secondItem="0EP-hI-A1g" secondAttribute="trailing" id="bYF-ud-iBR"/>
+                <constraint firstItem="kdJ-Sp-nqf" firstAttribute="bottom" secondItem="hCg-k2-U3y" secondAttribute="bottom" id="Fq6-hq-PSL"/>
+                <constraint firstItem="hCg-k2-U3y" firstAttribute="top" secondItem="kdJ-Sp-nqf" secondAttribute="top" id="LJx-lz-MkY"/>
+                <constraint firstItem="hCg-k2-U3y" firstAttribute="leading" secondItem="kdJ-Sp-nqf" secondAttribute="leading" id="h9g-9t-LPk"/>
+                <constraint firstItem="kdJ-Sp-nqf" firstAttribute="trailing" secondItem="hCg-k2-U3y" secondAttribute="trailing" id="zRn-m3-Jev"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="257.97101449275362" y="28.794642857142854"/>
         </view>
     </objects>

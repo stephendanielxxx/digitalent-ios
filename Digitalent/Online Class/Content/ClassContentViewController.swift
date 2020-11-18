@@ -17,12 +17,16 @@ class ClassContentViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         let nibClass = UINib(nibName: "ClassContentTableViewCell", bundle: nil)
         tableView.register(nibClass, forCellReuseIdentifier: "classContentIdentifier")
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         let userId = readStringPreference(key: DigitalentKeys.ID)
         let requestUrl = "online/get_detail_course/\(course_id)/\(userId)"
         getRequest(url: requestUrl, tag: "get course detail")
@@ -64,6 +68,8 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
             
             let tapVideo = ClassContentTapGesture(target: self, action: #selector(openVideo(_:)))
             tapVideo.video = materi.video!
+            tapVideo.material_id = materi.materialID!
+            
             cell.videoIcon.addGestureRecognizer(tapVideo)
         }
         
@@ -74,6 +80,7 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
             tapQuiz.quiz = materi.materialID!
             tapQuiz.subMaterial = materi.submaterial!
             tapQuiz.quiz_duration = materi.quizDuration
+            
             cell.quizIcon.addGestureRecognizer(tapQuiz)
         }
         
@@ -82,7 +89,15 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
             
             let tapPdf = ClassContentTapGesture(target: self, action: #selector(openPdf(_:)))
             tapPdf.pdf = materi.pdf!
+            tapPdf.material_id = materi.materialID!
+            
             cell.pdfIcon.addGestureRecognizer(tapPdf)
+        }
+        
+        if materi.doneStat == "0"{
+            cell.doneIcon.isHidden = true
+            cell.doneHeight.constant = 0
+            cell.doneWidth.constant = 0
         }
         
         return cell
@@ -90,17 +105,24 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
     
     @objc func openVideo(_ sender: ClassContentTapGesture?) {
         let video = sender!.video
+        let material_id = sender!.material_id
+        
         let openVideo = MaterialVideoViewController()
         openVideo.video = video
+        openVideo.course_id = course_id
+        openVideo.sub_material_id = material_id
         openVideo.modalPresentationStyle = .fullScreen
         present(openVideo, animated: true, completion: nil)
     }
     
     @objc func openPdf(_ sender: ClassContentTapGesture?) {
         let pdf = sender!.pdf
+        let material_id = sender!.material_id
         
         let openPdf = MaterialPdfViewController()
         openPdf.pdf = pdf
+        openPdf.course_id = course_id
+        openPdf.sub_material_id = material_id
         openPdf.modalPresentationStyle = .fullScreen
         present(openPdf, animated: true, completion: nil)
     }
@@ -109,6 +131,7 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
         let quiz = sender!.quiz
         let submaterial = sender!.subMaterial
         let duration = sender!.quiz_duration
+        
         let openQuiz = QUizViewController()
         openQuiz.quiz_duration = duration
         openQuiz.course_id = course_id
