@@ -115,6 +115,7 @@
 		B9BB32F1253FEFC4009186EF /* MyClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB32EF253FEFC4009186EF /* MyClassTableViewCell.swift */; };
 		B9BB32F2253FEFC4009186EF /* MyClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BB32F0253FEFC4009186EF /* MyClassTableViewCell.xib */; };
 		B9BB32F7253FF0D6009186EF /* MyClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB32F6253FF0D6009186EF /* MyClassModel.swift */; };
+		B9BDFDDA2563884D006F41B6 /* SubmitProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDFDD92563884C006F41B6 /* SubmitProgressModel.swift */; };
 		B9E3672425467E2F0044509D /* OnlineClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3672225467E2F0044509D /* OnlineClassDetailViewController.swift */; };
 		B9E3672525467E2F0044509D /* OnlineClassDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E3672325467E2F0044509D /* OnlineClassDetailViewController.xib */; };
 		B9E3672D254680B30044509D /* ClassDetailTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3672C254680B30044509D /* ClassDetailTapGesture.swift */; };
@@ -261,6 +262,7 @@
 		B9BB32EF253FEFC4009186EF /* MyClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassTableViewCell.swift; sourceTree = "<group>"; };
 		B9BB32F0253FEFC4009186EF /* MyClassTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyClassTableViewCell.xib; sourceTree = "<group>"; };
 		B9BB32F6253FF0D6009186EF /* MyClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassModel.swift; sourceTree = "<group>"; };
+		B9BDFDD92563884C006F41B6 /* SubmitProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitProgressModel.swift; sourceTree = "<group>"; };
 		B9E3672225467E2F0044509D /* OnlineClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineClassDetailViewController.swift; sourceTree = "<group>"; };
 		B9E3672325467E2F0044509D /* OnlineClassDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineClassDetailViewController.xib; sourceTree = "<group>"; };
 		B9E3672C254680B30044509D /* ClassDetailTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailTapGesture.swift; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 				B96C3CC3255529670041CE6B /* GetQuizModel.swift */,
 				B9362F72255BCD0B00452B6B /* LoadAnswerModel.swift */,
 				B9362F77255BF0EB00452B6B /* GetCheckPointModel.swift */,
+				B9BDFDD92563884C006F41B6 /* SubmitProgressModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -984,6 +987,7 @@
 				B99C7AEC255E7C34007F907F /* UpdateProfileModel.swift in Sources */,
 				B9AD4DF4254819BA0046BD2D /* CourseStatusModel.swift in Sources */,
 				B96C3CC4255529670041CE6B /* GetQuizModel.swift in Sources */,
+				B9BDFDDA2563884D006F41B6 /* SubmitProgressModel.swift in Sources */,
 				B9FF691B255D24020054394E /* ForgetPasswordTapGesture.swift in Sources */,
 				B96C3CBE255522FE0041CE6B /* QUizViewController.swift in Sources */,
 				B946B271253EEEC200D027A3 /* NotificationViewController.swift in Sources */,

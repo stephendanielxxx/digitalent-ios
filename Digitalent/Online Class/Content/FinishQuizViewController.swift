@@ -12,6 +12,7 @@ class FinishQuizViewController: UIViewController {
     @IBOutlet weak var backAction: UIButton!
     
     var delegate: FinishQuizDelegate!
+    var score = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +23,10 @@ class FinishQuizViewController: UIViewController {
     }
 
     @IBAction func backAction(_ sender: UIButton) {
-        delegate.onFinish()
+        delegate.onFinish(score: score)
     }
 }
 
 protocol FinishQuizDelegate {
-    func onFinish()
+    func onFinish(score: Int)
 }
