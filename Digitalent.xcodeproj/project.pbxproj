@@ -30,6 +30,8 @@
 		6A9703492546D30A006CED9E /* SecurityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A9703472546D30A006CED9E /* SecurityViewController.xib */; };
 		6A97034F2547CB20006CED9E /* DeleteDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A97034D2547CB20006CED9E /* DeleteDialogViewController.swift */; };
 		6A9703502547CB20006CED9E /* DeleteDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A97034E2547CB20006CED9E /* DeleteDialogViewController.xib */; };
+		6AACEE3E256D049500BB43FF /* DialogSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AACEE3C256D049500BB43FF /* DialogSignUpViewController.swift */; };
+		6AACEE3F256D049500BB43FF /* DialogSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AACEE3D256D049500BB43FF /* DialogSignUpViewController.xib */; };
 		6ABC97192558F577002CDCC6 /* ForgetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABC97172558F576002CDCC6 /* ForgetPassViewController.swift */; };
 		6ABC971A2558F577002CDCC6 /* ForgetPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ABC97182558F577002CDCC6 /* ForgetPassViewController.xib */; };
 		6AE128AE25591EFA00074A21 /* BaseSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE128AD25591EF900074A21 /* BaseSettingsViewController.swift */; };
@@ -177,6 +179,8 @@
 		6A9703472546D30A006CED9E /* SecurityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityViewController.xib; sourceTree = "<group>"; };
 		6A97034D2547CB20006CED9E /* DeleteDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDialogViewController.swift; sourceTree = "<group>"; };
 		6A97034E2547CB20006CED9E /* DeleteDialogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteDialogViewController.xib; sourceTree = "<group>"; };
+		6AACEE3C256D049500BB43FF /* DialogSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogSignUpViewController.swift; sourceTree = "<group>"; };
+		6AACEE3D256D049500BB43FF /* DialogSignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DialogSignUpViewController.xib; sourceTree = "<group>"; };
 		6ABC97172558F576002CDCC6 /* ForgetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassViewController.swift; sourceTree = "<group>"; };
 		6ABC97182558F577002CDCC6 /* ForgetPassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPassViewController.xib; sourceTree = "<group>"; };
 		6AE128AD25591EF900074A21 /* BaseSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSettingsViewController.swift; sourceTree = "<group>"; };
@@ -342,6 +346,8 @@
 				6A598A6D254294FA00FBEC08 /* model */,
 				6A94639E25394043007AA0A1 /* SignUpViewController.swift */,
 				6A94639F25394043007AA0A1 /* SignUpViewController.xib */,
+				6AACEE3C256D049500BB43FF /* DialogSignUpViewController.swift */,
+				6AACEE3D256D049500BB43FF /* DialogSignUpViewController.xib */,
 			);
 			path = "Sign Up ";
 			sourceTree = "<group>";
@@ -784,6 +790,7 @@
 				6ABC971A2558F577002CDCC6 /* ForgetPassViewController.xib in Resources */,
 				B946B1C9253ED69000D027A3 /* HomeTabBarViewController.swift in Resources */,
 				B946B1CA253ED69000D027A3 /* LoginModel.swift in Resources */,
+				6AACEE3F256D049500BB43FF /* DialogSignUpViewController.xib in Resources */,
 				B92DBF182553F8550059EEC3 /* MaterialPdfViewController.xib in Resources */,
 				B92DBECF2553A8740059EEC3 /* ClassContentViewController.xib in Resources */,
 				B946B1CB253ED69000D027A3 /* FirstViewController.swift in Resources */,
@@ -954,6 +961,7 @@
 				B9FF6913255D17370054394E /* ChangeProfileModel.swift in Sources */,
 				B946B205253ED74900D027A3 /* BaseViewController.swift in Sources */,
 				6A3806DC255BBE620067E8CE /* ChangePhoneNumberViewController.swift in Sources */,
+				6AACEE3E256D049500BB43FF /* DialogSignUpViewController.swift in Sources */,
 				6A9703292546BC81006CED9E /* ProfileModel.swift in Sources */,
 				B946B206253ED74900D027A3 /* DigitalentURL.swift in Sources */,
 				B99C7AAB255E2B38007F907F /* MyAccountViewController.swift in Sources */,

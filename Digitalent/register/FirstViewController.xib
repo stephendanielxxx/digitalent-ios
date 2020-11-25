@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController" customModule="Digitalent" customModuleProvider="target">
             <connections>
                 <outlet property="signIn" destination="JYC-gI-p81" id="nDa-RG-xCn"/>
+                <outlet property="signUp" destination="SxD-Jh-OSJ" id="Vj3-tZ-GHs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -105,6 +106,9 @@
                                             </fragment>
                                         </attributedString>
                                     </state>
+                                    <connections>
+                                        <action selector="signUpButton:" destination="-1" eventType="touchUpInside" id="mIk-Qb-DZt"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

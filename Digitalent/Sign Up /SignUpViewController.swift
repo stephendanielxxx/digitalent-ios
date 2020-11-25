@@ -60,11 +60,18 @@ class SignUpViewController: BaseViewController {
         do {
             let signUpModel = try decoder.decode(SignupModel.self, from: data)
             if signUpModel.code == "200" {
-                let alert = UIAlertController(title: "Success", message: "Register success. Please check your email to activate your account.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
-                    self.dismiss(animated: true, completion: nil)
-                }))
-                self.present(alert, animated: true)
+                let dialogSignup = DialogSignUpViewController()
+                dialogSignup.delegate = self
+                dialogSignup.providesPresentationContextTransitionStyle = true
+                dialogSignup.definesPresentationContext = true
+                dialogSignup.modalPresentationStyle = .overCurrentContext
+                dialogSignup.modalTransitionStyle = .crossDissolve
+                present(dialogSignup, animated: true, completion: nil)
+//                let alert = UIAlertController(title: "Success", message: "Register success. Please check your email to activate your account.", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+//                    self.dismiss(animated: true, completion: nil)
+//                }))
+//                self.present(alert, animated: true)
             }else{
                 let alert = UIAlertController(title: "Error", message: "\(signUpModel.message)", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
@@ -99,6 +106,11 @@ class SignUpViewController: BaseViewController {
             passwordIconn.setImage(UIImage(systemName: "eye.fill"), for: .normal)
         }
         confirmPass = !confirmPass
+    }
+}
+extension SignUpViewController: DialogSignUp {
+    func onclose() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
