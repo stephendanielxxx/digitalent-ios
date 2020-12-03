@@ -126,14 +126,17 @@ class HomeViewController: BaseViewController, UISearchBarDelegate {
                 
                 itemCount = self.onlineClassModel.online.count
                 
-                var rowCount = 0
+                var rowCount: Int = 0
+                
+                rowCount = itemCount / 2
+                
                 if itemCount % 2 == 1 {
                     rowCount = itemCount + 1
                 }
                 
                 let widthOnline = self.calculateWidth()
                 let heightOnline = widthOnline / 1.2
-                let totalRowHeight = heightOnline * CGFloat(rowCount) / 2
+                let totalRowHeight = heightOnline * CGFloat(rowCount)
                 let totalMarginHeight = CGFloat(Double(rowCount-1) * cellMarginSize)
                 
                 self.onlineClassViewHeight.constant = totalRowHeight + totalMarginHeight
