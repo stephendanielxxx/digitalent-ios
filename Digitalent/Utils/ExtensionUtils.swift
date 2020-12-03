@@ -171,7 +171,7 @@ extension String {
     var generateTransactionId: String{
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HHmmss"
+        dateFormatter.dateFormat = "ddMMyyyyHHmmss"
         return "\(dateFormatter.string(from: date))\(self)"
     }
 }
