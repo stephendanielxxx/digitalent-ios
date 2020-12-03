@@ -73,7 +73,7 @@ extension ClassContentViewController: UITableViewDelegate, UITableViewDataSource
             cell.videoIcon.addGestureRecognizer(tapVideo)
         }
         
-        if materi.materialID != nil {
+        if materi.stats != nil && materi.stats == "Y"{
             cell.quizIcon.isHidden = false
             
             let tapQuiz = ClassContentTapGesture(target: self, action: #selector(openQuiz(_:)))
