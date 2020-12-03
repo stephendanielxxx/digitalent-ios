@@ -94,6 +94,14 @@ class QuizContentViewController: BaseViewController {
         if quizModel.quizImage == "none" {
             quizImage.isHidden = true
             imageHeight.constant = 0
+        }else{
+            quizImage.pin_updateWithProgress = true
+            quizImage.contentMode = .scaleToFill
+            quizImage.clipsToBounds = true
+            
+            let url = Foundation.URL(string: "\(DigitalentURL.URL_IMAGE_QUIZ)\(quizModel.quizImage)")!
+            
+            quizImage.pin_setImage(from: url)
         }
         
         answerAText.attributedText = quizModel.pil1.htmlToAttributedStringAnswer
