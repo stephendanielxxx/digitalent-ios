@@ -108,7 +108,7 @@ class QuizContentViewController: BaseViewController {
         answerBText.attributedText = quizModel.pil2.htmlToAttributedStringAnswer
         answerCText.attributedText = quizModel.pil3.htmlToAttributedStringAnswer
         answerDText.attributedText = quizModel.pil4.htmlToAttributedStringAnswer
-        answerEText.attributedText = quizModel.pil5.htmlToAttributedStringAnswer
+        answerEText.attributedText = quizModel.pil5?.htmlToAttributedStringAnswer
         
         let tapA = QuizAnswerTapGesture(target: self, action: #selector(sendAnswer(_:)))
         tapA.answer = quizModel.pil1
@@ -260,7 +260,7 @@ class QuizContentViewController: BaseViewController {
                         break
                     case quizModel.pil5:
                         barButtonE.backgroundColor = UIColor(named: "color_2C64EE")
-                        tempAnswer = quizModel.pil5
+                        tempAnswer = quizModel.pil5 ?? ""
                         break
                     default:
                         break

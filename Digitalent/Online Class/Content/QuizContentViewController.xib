@@ -343,7 +343,7 @@
                                         <constraint firstAttribute="trailing" secondItem="JxJ-Nd-Zym" secondAttribute="trailing" id="vQo-4R-PTc"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4e3-Ox-641" userLabel="Option E" customClass="MDCCard">
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4e3-Ox-641" userLabel="Option E" customClass="MDCCard">
                                     <rect key="frame" x="23" y="813" width="368" height="55"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Answer E" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9d-MO-7Zg">
