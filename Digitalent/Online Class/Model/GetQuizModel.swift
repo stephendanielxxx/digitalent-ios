@@ -20,7 +20,8 @@ struct AssessmentQuiz: Decodable {
     let materialID, quizID: String
     let quizImage, quizAudio: String
     let question, pil1, pil2, pil3: String
-    let pil4, pil5: String
+    let pil4: String
+    let pil5: String?
     let gfStatus: String
     let answer: String
 
